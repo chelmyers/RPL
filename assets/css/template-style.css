@@ -1,0 +1,219 @@
+/* 
+Title:    Responsive Pattern Library
+Version:  1.0
+Author:   Chelsea Myers  
+
+COLORS
+Light Gray: #CED3D9
+Dark Gray:  #333
+Link:       #4F86C9
+Link Hover: #386396
+
+INDEX
+- CSS RESET
+- GENERAL STYLES
+- MEDIA QUERY: 800px & up;
+*/
+
+
+
+/* ===============
+   CSS RESET
+   =============== */
+html, body, div, span, iframe,
+h1, h2, h3, h4, h5, h6, p, a, code, 
+em, img, small, b, u, i, center, ol, ul, li,
+fieldset, form, label, table, tbody, tfoot, 
+thead, tr, th, td, article, aside, canvas,
+footer, header, menu, nav, section, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+
+
+/* ===============
+   GENERAL STYLES
+   =============== */
+* {
+	box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', Arial, sans-serif;
+  font-size: 0.875em;
+  line-height: 1.5em;
+  margin: 0 auto;
+  color: #333;
+}
+
+
+/*Typography*/
+h1 {
+  font-size: 1.5em;
+  line-height: 1.5em;
+}
+h2 {
+  font-size: 2.2em;
+  line-height: 1.3em;
+  margin: 0.65em 0;
+}
+h3 {
+  font-size: 1.5em;
+  line-height: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+h4 {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+p, ul, ol, pre, table, blockquote {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.container {
+	padding: 1em;
+}
+
+a {
+	color: #4F86C9;
+}
+
+a:hover {
+	color: #386396;
+}
+@media only screen and (min-width: 750px) {
+	body {
+		font-size: 1em;
+	}
+	h1 {
+ 	 	font-size: 2em;
+  	 	line-height: 1.3em;
+	}
+	.container {
+		padding: 2em;
+	}
+
+}
+
+
+/* ===============
+   HEADER & NAVIGATION
+   =============== */
+
+header {
+	background-color: #CED3D9;
+	padding: 1em;
+}
+
+.btn {
+	border-radius: 3px;
+	border: 1px solid #333;
+	display: inline-block;
+	padding: 0.25em;
+	margin:0;
+	float: left;
+	margin-right: 0.25em;
+	background: rgba(0, 0, 0, 0.2);
+}
+	.btn:hover {
+		background: rgba(0, 0, 0, 0.1);
+	}
+
+.btn-back:before {
+	content: '\276E';
+	margin-right: 0.25em;
+}
+
+@media only screen and (min-width: 400px) {
+	.btn-back {
+		margin-right: 0.75em;
+	}
+}
+
+nav {
+	position: relative;
+}
+	nav ul {
+		margin:0;
+	}
+		nav ul li {
+			border-bottom: 1px solid #333;
+			padding: 0.25em;
+		}
+		nav ul li:hover {
+			background: #CED3D9;
+		}
+			nav ul li a {
+				text-decoration: none;
+				display: block;
+			}
+
+nav h2 {
+	margin:0;
+	font-size: 1.75em;
+	cursor: pointer;
+	border-bottom: 1px solid #333;
+	padding: 0.25em 0;
+}
+
+.active {
+	font-weight:900;
+}
+
+.copyright {
+	display: none;
+}
+
+
+/* ===============
+   INDEX STYLES
+   =============== */
+.index .current-page {
+	display: none;
+}
+.index .btn-back {
+	display: none;
+}
+@media only screen and (min-width: 400px) {
+	
+}
+
+
+/* ===============
+   PAGE STYLES
+   =============== */
+
+@media only screen and (min-width: 750px) {
+	nav {
+		float: left;
+		width: 33%;
+		padding-right: 2em;
+		max-width: 300px;
+	}
+}
+
+
+
+
+
+
