@@ -4,10 +4,11 @@ Version:  1.0
 Author:   Chelsea Myers  
 
 COLORS
-Light Gray: #CED3D9
-Dark Gray:  #333
+Light Gray: #EFEFEF
+Dark Gray:  #444
 Link:       #4F86C9
 Link Hover: #386396
+Border:     #BFBFBF
 
 INDEX
 - CSS RESET
@@ -59,7 +60,7 @@ body {
   font-size: 0.875em;
   line-height: 1.5em;
   margin: 0 auto;
-  color: #333;
+  color: #444;
 }
 
 
@@ -121,13 +122,13 @@ a:hover {
    =============== */
 
 header {
-	background-color: #CED3D9;
+	background-color: #EFEFEF;
 	padding: 1em;
 }
 
 .btn {
 	border-radius: 3px;
-	border: 1px solid #333;
+	border: 1px solid #444;
 	display: inline-block;
 	padding: 0.25em;
 	margin:0;
@@ -157,11 +158,12 @@ nav {
 		margin:0;
 	}
 		nav ul li {
-			border-bottom: 1px solid #333;
+			border-bottom: 1px solid #BFBFBF;
 			padding: 0.25em;
+			line-height: 1.75em;
 		}
 		nav ul li:hover {
-			background: #CED3D9;
+			background: #EFEFEF;
 		}
 			nav ul li a {
 				text-decoration: none;
@@ -172,7 +174,7 @@ nav h2 {
 	margin:0;
 	font-size: 1.75em;
 	cursor: pointer;
-	border-bottom: 1px solid #333;
+	border-bottom: 1px solid #444;
 	padding: 0.25em 0;
 }
 
@@ -184,6 +186,12 @@ nav h2 {
 	display: none;
 }
 
+@media only screen and (min-width: 750px) {
+	nav ul li {
+		line-height: 2em;
+	}
+}
+
 
 /* ===============
    INDEX STYLES
@@ -193,9 +201,6 @@ nav h2 {
 }
 .index .btn-back {
 	display: none;
-}
-@media only screen and (min-width: 400px) {
-	
 }
 
 
