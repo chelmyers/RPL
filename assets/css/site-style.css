@@ -1,0 +1,271 @@
+/* 
+Title:    Responsive Pattern Library
+Version:  1.0
+Author:   Chelsea Myers  
+
+COLORS
+Light Gray: #EFEFEF
+Dark Gray:  #444
+Link:       #4F86C9
+Link Hover: #386396
+Border:     #BFBFBF
+
+INDEX
+- CSS RESET
+- GENERAL STYLES
+- MEDIA QUERY: 800px & up;
+*/
+
+
+
+/* ===============
+   CSS RESET
+   =============== */
+html, body, div, span, iframe,
+h1, h2, h3, h4, h5, h6, p, a, code, 
+em, img, small, b, u, i, center, ol, ul, li,
+fieldset, form, label, table, tbody, tfoot, 
+thead, tr, th, td, article, aside, canvas,
+footer, header, menu, nav, section, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+
+
+/* ===============
+   GENERAL STYLES
+   =============== */
+* {
+	box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', Arial, sans-serif;
+  font-size: 0.875em;
+  line-height: 1.5em;
+  margin: 0 auto;
+  color: #444;
+}
+
+
+/*Typography*/
+h1 {
+  font-size: 1.5em;
+  line-height: 1.5em;
+}
+h2 {
+  font-size: 2.2em;
+  line-height: 1.3em;
+  margin: 0.65em 0;
+}
+h3 {
+  font-size: 1.5em;
+  line-height: 1em;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+h4 {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin-top: 1.25em;
+  margin-bottom: 0.75em;
+}
+p, ul, ol, pre, table, blockquote {
+  margin-top: 0.5em;
+  margin-bottom: 1.5em;
+}
+
+.container {
+	padding: 1em;
+	max-width: 1300px;
+	margin: 0 auto;
+	overflow: auto;
+}
+
+a {
+	color: #4F86C9;
+}
+
+a:hover {
+	color: #386396;
+}
+@media only screen and (min-width: 750px) {
+	body {
+		font-size: 1em;
+	}
+	h1 {
+ 	 	font-size: 2em;
+  	 	line-height: 1.3em;
+	}
+	.container {
+		padding: 2em;
+	}
+
+}
+
+
+/* ===============
+   HEADER & NAVIGATION
+   =============== */
+
+header {
+	background-color: #EFEFEF;
+}
+
+.header-inner{
+	max-width: 1300px;
+	margin:0 auto;
+	padding: 1em;
+}
+
+.btn a, a.btn{
+	border-radius: 3px;
+	border: 1px solid #BFBFBF;
+	display: inline-block;
+	background: #EFEFEF;
+	margin: 0.25em;
+	font-size: 1rem;
+	position: relative;
+	text-decoration: none;
+	padding: 0 0.50em;
+}
+	.btn:hover {
+		background: rgba(0, 0, 0, 0.1);
+	}
+
+.btn-back {
+	float: left;
+	margin:0;
+	margin-right: 0.25em;
+}
+	.btn-back:before {
+		content: '\276E';
+		margin-right: 0.25em;
+	}
+
+@media only screen and (min-width: 400px) {
+	.btn-back {
+		margin-right: 0.75em;
+	}
+}
+@media only screen and (min-width: 750px) {
+	.header-inner {
+		padding: 1em 2em;
+	}
+}
+
+
+
+.active {
+	font-weight:900;
+}
+	.active a:before {
+		content: '\276F';
+		margin-right: 5px;
+	}
+
+.copyright {
+	display: none;
+}
+
+@media only screen and (min-width: 750px) {
+	nav ul li {
+		line-height: 2em;
+	}
+}
+
+
+/* ===============
+   INDEX STYLES
+   =============== */
+.index .current-page {
+	display: none;
+}
+.index .btn-back {
+	display: none;
+}
+
+
+/* ===============
+   PAGE STYLES
+   =============== */
+
+.main p {
+	max-width: 750px;
+}
+
+@media only screen and (min-width: 750px) {
+	nav {
+		float: left;
+		width: 33%;
+		padding-right: 2em;
+		max-width: 300px;
+	}
+
+	.main {
+		float: left;
+		width: 67%;
+	}
+}
+
+
+
+
+/* ===============
+   NAVIGATION STYLES
+   =============== */
+header {
+	width: 100%;
+}
+
+header h1 {
+	display: inline-block;
+}
+
+nav, nav ul {
+	margin:0;
+	padding:0;
+}
+
+nav li {
+	list-style: none;
+	display: inline-block;
+	padding: 0.25em;
+}
+	nav li a {
+		text-decoration: none;
+	}
+
+
+@media only screen and (min-width: 500px){
+	nav, nav ul {
+		float: right;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+

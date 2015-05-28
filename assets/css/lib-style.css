@@ -77,22 +77,25 @@ h2 {
 h3 {
   font-size: 1.5em;
   line-height: 1em;
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
 }
 h4 {
   font-size: 1em;
   line-height: 1.5em;
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
+  margin-top: 1.25em;
+  margin-bottom: 0.75em;
 }
 p, ul, ol, pre, table, blockquote {
-  margin-top: 1.5em;
+  margin-top: 0.5em;
   margin-bottom: 1.5em;
 }
 
 .container {
 	padding: 1em;
+	max-width: 1300px;
+	margin: 0 auto;
+	overflow: auto;
 }
 
 a {
@@ -116,6 +119,9 @@ a:hover {
 
 }
 
+iframe {
+	width: 100%;
+}
 
 /* ===============
    HEADER & NAVIGATION
@@ -123,31 +129,47 @@ a:hover {
 
 header {
 	background-color: #EFEFEF;
+}
+
+.header-inner{
+	max-width: 1300px;
+	margin:0 auto;
 	padding: 1em;
 }
 
-.btn {
+.btn a, a.btn{
 	border-radius: 3px;
-	border: 1px solid #444;
+	border: 1px solid #BFBFBF;
 	display: inline-block;
-	padding: 0.25em;
-	margin:0;
-	float: left;
-	margin-right: 0.25em;
-	background: rgba(0, 0, 0, 0.2);
+	background: #EFEFEF;
+	margin: 0.25em;
+	font-size: 1rem;
+	position: relative;
+	text-decoration: none;
+	padding: 0 0.50em;
 }
-	.btn:hover {
+	.btn a:hover {
 		background: rgba(0, 0, 0, 0.1);
 	}
 
-.btn-back:before {
-	content: '\276E';
+.btn-back {
+	float: left;
+	margin:0;
 	margin-right: 0.25em;
 }
+	.btn-back:before {
+		content: '\276E';
+		margin-right: 0.25em;
+	}
 
 @media only screen and (min-width: 400px) {
 	.btn-back {
 		margin-right: 0.75em;
+	}
+}
+@media only screen and (min-width: 750px) {
+	.header-inner {
+		padding: 1em 2em;
 	}
 }
 
@@ -181,6 +203,10 @@ nav h2 {
 .active {
 	font-weight:900;
 }
+	.active a:before {
+		content: '\276F';
+		margin-right: 5px;
+	}
 
 .copyright {
 	display: none;
@@ -208,12 +234,21 @@ nav h2 {
    PAGE STYLES
    =============== */
 
+.main p {
+	max-width: 750px;
+}
+
 @media only screen and (min-width: 750px) {
 	nav {
 		float: left;
 		width: 33%;
 		padding-right: 2em;
 		max-width: 300px;
+	}
+
+	.main {
+		float: left;
+		width: 67%;
 	}
 }
 
