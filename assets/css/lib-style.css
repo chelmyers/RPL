@@ -85,10 +85,11 @@ h4 {
   line-height: 1.5em;
   margin-top: 1.25em;
   margin-bottom: 0.75em;
+  font-weight: 900;
 }
 p, ul, ol, pre, table, blockquote {
   margin-top: 0.5em;
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
 }
 
 .container {
@@ -123,11 +124,14 @@ iframe {
 	width: 100%;
 }
 
+hr {
+	margin-top: 2em;
+}
 /* ===============
    HEADER & NAVIGATION
    =============== */
 
-header {
+header, footer {
 	background-color: #EFEFEF;
 }
 
@@ -256,8 +260,39 @@ h3 .btn {
 	margin-left: 10px;
 }
 
+.pattern {
+	border-top: 1px solid #BFBFBF;
+	margin-bottom: 2em;
+}
 
 
+.list-compare {
+	float: left;
+	width: 50%;
+	padding: 0 0.5em;
+	margin-top:0;
+}
+	p + .list-compare {
+		margin-top: -1em;
+	}
 
+	.list-compare li:first-child {
+		list-style: none;
+		margin:0;
+		font-weight: 900;
+		margin-bottom: -0.5em;
+	}
 
+	.list-compare li{
+		list-style: disc;
+		margin-left: 1em;
+	}
+
+.difficulty {
+	text-transform: uppercase;
+	font-weight: bold;
+}
+	.difficulty:after {
+		content: ' - ';
+	}
 

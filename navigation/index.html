@@ -10,7 +10,6 @@
 	<link rel="icon" type="image/png" sizes="96x96" href="../assets/images/favicon-96x96.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16x16.png">
 
-
 	<!-- Load in template styles -->
 	<link rel="stylesheet" href="../assets/css/lib-style.css">
 
@@ -28,16 +27,14 @@
 <body class="index">
 	<header>
 		<div class="header-inner">
-			<p class="btn btn-back">Back</p>
 			<h1>Responsive Pattern Lib.</h1>
-			<p class="current-page"></p>
 		</div>
 	</header>
 
 	<div class="container">		
 		<nav>
 			<ul id="menu">
-				<li><a href="../index.html">Overview</a></li>
+				<li><a href="../index.html">Welcome</a></li>
 				<li class="active"><a href="index.html">Navigation</a></li>
 				<li><a href="../layouts/index.html">Layouts</a></li>
 				<li><a href="../media/index.html">Media</a></li>
@@ -50,12 +47,27 @@
 
 		<section class="main">
 			<h2 class="page-title">Navigation</h2>
-			<p>This is a responsive pattern library template. You can download it at: something.io/repo. This is created uses HTML and CSS. More advance developers can adapt this template using Grunt or PHP.</p>
+			<p>A website's navigation is the most important tool to the user.  It should provide quick access to all the website has to offer. It should also not get in the way. Below are examples of popular responsive patterns that make navigation websites easy on both small and large screens.</p>
 
 			<div class="pattern">
-				<h3>Header<span class="btn"><a href="pat-1-header.html">View Pattern</a></span></h3>
+				<h3>Top Navigation or "Do Nothing" Pattern<span class="btn"><a href="pat-1-header.html">View Pattern</a></span></h3>
 
-				<p>This is a responsive pattern library template. You can download it at: something.io/repo. This is created uses HTML and CSS. More advance developers can adapt this template using Grunt or PHP.</p>
+				<p><span class="difficulty">Easy</span> This pattern is very simple and easy to implement. The navigation does not change much from small to large screen. All pages can be seen as once and sometimes shift under the page title on smaller screens.</p>
+
+
+				
+				<ul class="list-compare">
+					<li><h4>Pros:</h4></li>
+					<li>Easy to implement</li>
+					<li>Clear and accessible</li>
+				</ul>
+
+				
+				<ul class="list-compare">
+					<li><h4>Cons:</h4></li>
+					<li>Long navigations can take up too much screen realestate on smaller screens</li>
+					<li>Not scalable</li>
+				</ul>
 
 				<h4>Example</h4>
 				<iframe src="pat-1-header.html" frameborder="0" height="100"></iframe>
@@ -91,10 +103,6 @@ header {
 	margin:0 auto;
 }
 
-header h1 {
-	display: inline-block;
-}
-
 nav, nav ul {
 	margin:0;
 	padding:0;
@@ -113,22 +121,106 @@ nav li {
 @media only screen and (min-width: 500px){
 	header h1 {
 		float: left;
-	}
-	nav, nav ul {
-		float: right;
 		display: inline-block;
+	}
+	nav {
+		float: right;
+		text-align: right;
 	}
 }
 
 </code>
 </pre>
+			</div><!--end pattern-->
 
-<hr/>
 
-<h3>Footer</h3>
-<p>This is a responsive pattern library template. You can download it at: something.io/repo. This is created uses HTML and CSS. More advance developers can adapt this template using Grunt or PHP.</p>
+			<div class="pattern">
+				<h3>Anchor Footer Menu <span class="btn"><a href="pat-2-anchor.html">View Pattern</a></span></h3>
+				<p><span class="difficulty">Easy</span> This pattern consists of a jump link in the header that links to a menu in the footer. It is easy to create but the jump to the bottom of the page can be jarring.</p>
+				
+				<ul class="list-compare">
+					<li><h4>Pros:</h4></li>
+					<li>Easy to implement</li>
+					<li>Can fit large menus</li>
+					<li>Saves screen realesta</li>
+				</ul>
 
-			</div>
+				
+				<ul class="list-compare">
+					<li><h4>Cons:</h4></li>
+					<li>User won't think to look for the menu in the footer</li>
+					<li>Jumping to the bottom of the page can be jarring</li>
+				</ul>
+
+				<h4>Example</h4>
+				<iframe src="pat-2-anchor.html" frameborder="0" height="250"></iframe>
+
+				<h4>HTML</h4>
+<pre>
+<code class="language-markup">
+&lt;header>
+	&lt;div class="header-inner">
+		&lt;h1>Header&lt;/h1>
+		&lt;p class="menu-btn">&lt;a href="#menu">Menu&lt;/a>&lt;/p>
+	&lt;/div>
+&lt;/header>
+&lt;div class="content">
+	&lt;p>Content goes here.&lt;/p>
+&lt;/div>
+&lt;footer>
+	&lt;div class="footer-inner">
+		&lt;h3>Footer Menu&lt;/h3>
+		&lt;nav id="menu">
+			&lt;ul>
+				&lt;li>&lt;a href="#">Item 1&lt;/a>&lt;/li>
+				&lt;li>&lt;a href="#">Item 2&lt;/a>&lt;/li>
+				&lt;li>&lt;a href="#">Item 3&lt;/a>&lt;/li>
+			&lt;/ul>
+		&lt;/nav>
+	&lt;/div>
+&lt;/footer>
+</code>
+</pre>
+				<h4>CSS</h4>
+<pre>
+<code class="language-css">
+header {
+	width: 100%;
+	overflow: auto;
+}
+	header h1 {
+		display: inline-block;
+	}
+
+.header-inner, .footer-inner{
+	max-width: 1330px;
+	overflow: auto;
+	margin:0 auto;
+	padding: 1em;
+}
+
+.menu-btn {
+	float:right;
+}
+
+nav, nav ul {
+	margin:0;
+	padding:0;
+}
+
+nav li {
+	list-style: none;
+	padding: 0.50em;
+}
+	nav li a {
+		text-decoration: none;
+	}
+
+
+</code>
+</pre>
+
+			</div><!--end pattern-->
 		</section>
 	</div>
 	<script src="../assets/plugins/prism.js"></script>

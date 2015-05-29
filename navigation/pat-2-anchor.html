@@ -18,43 +18,39 @@
   <![endif]-->
 
   <style>
-  	/*Pattern 1 - Top Nav*/
-	header {
-		width: 100%;
-		overflow: auto;
-	}
+  	  	/*Pattern 2 - Anchor*/
+		header {
+			width: 100%;
+			overflow: auto;
+		}
+			header h1 {
+				display: inline-block;
+			}
 
-	.header-inner {
-		max-width: 1330px;
-		overflow: auto;
-		margin:0 auto;
-	}
-
-	nav, nav ul {
-		margin:0;
-		padding:0;
-	}
-
-	nav li {
-		list-style: none;
-		display: inline-block;
-		padding: 0.25em;
-	}
-		nav li a {
-			text-decoration: none;
+		.header-inner, .footer-inner{
+			max-width: 1330px;
+			overflow: auto;
+			margin:0 auto;
+			padding: 1em;
 		}
 
+		.menu-btn {
+			float:right;
+		}
 
-	@media only screen and (min-width: 500px){
-		header h1 {
-			float: left;
-			display: inline-block;
+		nav, nav ul {
+			margin:0;
+			padding:0;
 		}
-		nav {
-			float: right;
-			text-align: right;
+
+		nav li {
+			list-style: none;
+			padding: 0.50em;
 		}
-	}
+			nav li a {
+				text-decoration: none;
+			}
+
   </style>
 </head>
 
@@ -62,7 +58,16 @@
 	<header>
 		<div class="header-inner">
 			<h1>Header</h1>
-			<nav>
+			<p class="menu-btn"><a href="#menu">Menu</a></p>
+		</div>
+	</header>
+	<div class="content">
+		<p>Content goes here.</p>
+	</div>
+	<footer>
+		<div class="footer-inner">
+			<h3>Footer Menu</h3>
+			<nav id="menu">
 				<ul>
 					<li><a href="#">Item 1</a></li>
 					<li><a href="#">Item 2</a></li>
@@ -70,6 +75,6 @@
 				</ul>
 			</nav>
 		</div>
-	</header>
+	</footer>
 </body>
 </html>
