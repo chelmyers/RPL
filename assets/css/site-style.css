@@ -232,6 +232,13 @@ header {
    =============== */
 header {
 	width: 100%;
+	overflow: auto;
+}
+
+.header-inner {
+	max-width: 1330px;
+	overflow: auto;
+	margin:0 auto;
 }
 
 header h1 {
@@ -254,11 +261,14 @@ nav li {
 
 
 @media only screen and (min-width: 500px){
+	header h1 {
+		float: left;
+	}
 	nav, nav ul {
 		float: right;
+		display: inline-block;
 	}
 }
-
 
 
 

@@ -9,6 +9,7 @@
 
   <!-- Load in template styles -->
   <link rel="stylesheet" href="../assets/css/lib-style.css">
+  <link rel="stylesheet" href="../assets/plugins/prism.css">
 
   <!-- Load in Google Font: Lato -->
   <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
@@ -51,27 +52,79 @@
 				<p>This is a responsive pattern library template. You can download it at: something.io/repo. This is created uses HTML and CSS. More advance developers can adapt this template using Grunt or PHP.</p>
 
 				<h4>Example</h4>
-				<iframe src="pat-1-header.html" frameborder="0"></iframe>
+				<iframe src="pat-1-header.html" frameborder="0" height="100"></iframe>
 
 				<h4>HTML</h4>
-				<pre><code class="html">
-				    <header>
-				        <div class="header-inner">
-				            <h1>Company Name</h1>
-				            <nav>
-				                <ul>
-				                    <li><a href="#">Item 1</a></li>
-				                    <li><a href="#">Item 2</a></li>
-				                    <li><a href="#">Item 3</a></li>
-				                </ul>
-				            </nav>
-				        </div>
-				    </header>
-				</code>
-				</pre>
+<pre>
+<code class="language-markup">
+&lt;header&gt;
+	&lt;div class="header-inner"&gt;
+		&lt;h1&gt;Company Name&lt;/h1&gt;
+		&lt;nav&gt;
+			&lt;ul&gt;
+				&lt;li&gt;&lt;a href="#"&gt;Item 1&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="#"&gt;Item 2&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="#"&gt;Item 3&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/nav&gt;
+	&lt;/div&gt;
+&lt;/header&gt;
+</code>
+</pre>
+				<h4>CSS</h4>
+<pre>
+<code class="language-css">
+header {
+	width: 100%;
+	overflow: auto;
+}
+
+.header-inner {
+	max-width: 1330px;
+	overflow: auto;
+	margin:0 auto;
+}
+
+header h1 {
+	display: inline-block;
+}
+
+nav, nav ul {
+	margin:0;
+	padding:0;
+}
+
+nav li {
+	list-style: none;
+	display: inline-block;
+	padding: 0.25em;
+}
+	nav li a {
+		text-decoration: none;
+	}
+
+
+@media only screen and (min-width: 500px){
+	header h1 {
+		float: left;
+	}
+	nav, nav ul {
+		float: right;
+		display: inline-block;
+	}
+}
+
+</code>
+</pre>
+
+<hr/>
+
+<h3>Footer</h3>
+<p>This is a responsive pattern library template. You can download it at: something.io/repo. This is created uses HTML and CSS. More advance developers can adapt this template using Grunt or PHP.</p>
 
 			</div>
 		</section>
 	</div>
+	<script src="../assets/plugins/prism.js"></script>
 </body>
 </html>
