@@ -129,24 +129,37 @@ header, section {
 				</ul>
 
 				<h4>Example</h4>
-				<iframe src="pat-02-mostlyfluid.html" frameborder="0" height="400"></iframe>
+				<iframe src="pat-02-mostlyfluid.html" frameborder="0" height="600"></iframe>
 
 				<h4>HTML</h4>
 <pre>
 <code class="language-markup">
 &lt;header>
-  &lt;h1>Page Heading (h1)&lt;/h1>
+	&lt;h1>Page Heading (h1)&lt;/h1>
 &lt;/header>
-
 &lt;section>
-  &lt;p>Paragraph (p) - Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.&lt;p>
-  &lt;h2>Heading 2 (h2)&lt;/h2>
-  &lt;p>Paragraph (p) - Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.&lt;/p>
-  &lt;ul>
-    &lt;li>List Item 1. Objectively innovate empowered manufactured products whereas parallel platforms.&lt;/li>
-    &lt;li>List Item 2. Proactively envisioned multimedia based expertise and cross-media growth strategies.&lt;/li>
-    &lt;li>List Item 3. Completely pursue scalable customer service through sustainable potentialities.&lt;/li>
-  &lt;/ul>
+	&lt;!--Primary Article -->
+	&lt;article class="primary">
+	  &lt;h2>Primary Article (h2)&lt;/h2>
+	  &lt;img src="http://placehold.it/400x300" alt="">
+	  &lt;p>Paragraph (p) - Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.&lt;p>
+	  &lt;p>Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically.primarytain clicks-and-mortar solutions without functional solutions.&lt;/p>
+	  &lt;p>Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service.&lt;/p>
+	&lt;/article>
+
+	&lt;!-- Secondary Articles -->
+	&lt;article class="secondary">
+	  &lt;h3>Secondary Article (h3)&lt;/h3>
+	  &lt;p>Paragraph (p) - Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.&lt;/p>
+	&lt;/article>
+	&lt;article class="secondary">
+	  &lt;h3>Secondary Article (h3)&lt;/h3>
+	  &lt;p>Paragraph (p) - Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.&lt;/p>
+	&lt;/article>
+	&lt;article class="secondary">
+	  &lt;h3>Secondary Article (h3)&lt;/h3>
+	  &lt;p>Paragraph (p) - Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.&lt;/p>
+	&lt;/article>
 &lt;/section>
 </code>
 </pre>
@@ -157,9 +170,37 @@ header, section {
 body {
   font-size: 1em;
 }
+
 header, section {
   padding:0.75em;
 }
+
+section {
+  overflow: auto;
+}
+
+article {
+  padding: 1em;
+}
+  article img {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    margin: 0 auto;
+  }
+
+.primary {
+  padding-top:0;
+}
+
+.secondary p {
+  margin-bottom:0;
+}
+
+h2, h3, h4 {
+  border-bottom: 1px solid darkgray;
+}
+
 
 @media screen and (min-width: 600px) {
   body {
@@ -168,6 +209,17 @@ header, section {
   header, section {
     padding:1em;
     margin-bottom:1em;
+  }
+  article {
+    float: left;
+    margin-bottom: 1em;
+  }
+  .primary img {
+    float:left;
+    margin: 0 0.5em 0.5em 0;
+  }
+  .secondary {
+    width: 33%;
   }
 }
 </code>
