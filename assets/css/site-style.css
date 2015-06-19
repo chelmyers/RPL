@@ -108,10 +108,7 @@ a:hover {
 	body {
 		font-size: 1em;
 	}
-	.site h1 {
- 	 	font-size: 2em;
-  	 	line-height: 1.3em;
-	}
+	
 	.container {
 		padding: 2em;
 	}
@@ -135,10 +132,7 @@ header, footer {
 	padding: 1em;
 }
 
-	.site .header-inner h1 {
-		font-size: 1.5em;
-		line-height: 1;
-	}
+	
 
 nav ul li {
 	list-style: none;

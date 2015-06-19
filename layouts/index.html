@@ -51,18 +51,17 @@
 			<div class="pattern">
 				<h3>Tiny Tweaks<span class="btn"><a href="pat-01-tinytweaks.html">View Pattern</a></span></h3>
 
-				<p><span class="difficulty">Easy</span> Pattern description.</p>
+				<p><span class="difficulty">Easy</span> A simple layout that does not change much from small to large screens. Common changes may include font sizes, padding values, and elements displayed on page.</p>
 
 				<ul class="list-compare">
 					<li><h4>Pros:</h4></li>
-					<li>Item 1</li>
-					<li>Item 2</li>
+					<li>The easiest layout to create that you will come across</li>
+					<li>Less debugging needed across multiple devices</li>
 				</ul>
 
 				<ul class="list-compare">
 					<li><h4>Cons:</h4></li>
-					<li>Item 1</li>
-					<li>Item 2</li>
+					<li>Cannot hold a lot of content (not scalable)</li>
 				</ul>
 
 				<h4>Example</h4>
@@ -71,14 +70,42 @@
 				<h4>HTML</h4>
 <pre>
 <code class="language-markup">
-&lt;!-- Markup goes here. -->
+&lt;header>
+  &lt;h1>Page Heading (h1)&lt;/h1>
+&lt;/header>
+
+&lt;section>
+  &lt;p>Paragraph (p) - Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.&lt;p>
+  &lt;h2>Heading 2 (h2)&lt;/h2>
+  &lt;p>Paragraph (p) - Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.&lt;/p>
+  &lt;ul>
+    &lt;li>List Item 1. Objectively innovate empowered manufactured products whereas parallel platforms.&lt;/li>
+    &lt;li>List Item 2. Proactively envisioned multimedia based expertise and cross-media growth strategies.&lt;/li>
+    &lt;li>List Item 3. Completely pursue scalable customer service through sustainable potentialities.&lt;/li>
+  &lt;/ul>
+&lt;/section>
 </code>
 </pre>
-				<h4>CSS</h4>
+
+<h4>CSS</h4>
 <pre>
 <code class="language-css">
-/*Styles go here*/
+body {
+  font-size: 1em;
+}
+header, section {
+  padding:0.75em;
+}
 
+@media screen and (min-width: 600px) {
+  body {
+    font-size: 0.875em;
+  }
+  header, section {
+    padding:1em;
+    margin-bottom:1em;
+  }
+}
 </code>
 </pre>
 			</div><!--end pattern-->
