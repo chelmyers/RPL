@@ -43,9 +43,7 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 }
-ol, ul {
-	list-style: none;
-}
+
 
 
 /* ===============
@@ -66,8 +64,8 @@ body {
 
 /*Typography*/
 h1 {
-  font-size: 1.5em;
-  line-height: 1.5em;
+  font-size: 2.5em;
+  line-height: 1;
 }
 h2 {
   font-size: 2.2em;
@@ -128,10 +126,21 @@ header, footer {
 	background-color: #EFEFEF;
 }
 
+
+
 .header-inner{
 	max-width: 1300px;
 	margin:0 auto;
 	padding: 1em;
+}
+
+	.header-inner h1 {
+		font-size: 1.5em;
+		line-height: 1;
+	}
+
+nav ul li {
+	list-style: none;
 }
 
 .btn a, a.btn{
@@ -149,21 +158,8 @@ header, footer {
 		background: rgba(0, 0, 0, 0.1);
 	}
 
-.btn-back {
-	float: left;
-	margin:0;
-	margin-right: 0.25em;
-}
-	.btn-back:before {
-		content: '\276E';
-		margin-right: 0.25em;
-	}
 
-@media only screen and (min-width: 400px) {
-	.btn-back {
-		margin-right: 0.75em;
-	}
-}
+
 @media only screen and (min-width: 750px) {
 	.header-inner {
 		padding: 1em 2em;
@@ -210,7 +206,9 @@ header, footer {
 	max-width: 750px;
 }
 
-
+ul {
+	padding-left: 1.2em;
+}
 
 
 
