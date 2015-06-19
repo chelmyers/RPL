@@ -103,11 +103,12 @@ a {
 a:hover {
 	color: #386396;
 }
+
 @media only screen and (min-width: 750px) {
 	body {
 		font-size: 1em;
 	}
-	h1 {
+	.site h1 {
  	 	font-size: 2em;
   	 	line-height: 1.3em;
 	}
@@ -134,7 +135,7 @@ header, footer {
 	padding: 1em;
 }
 
-	.header-inner h1 {
+	.site .header-inner h1 {
 		font-size: 1.5em;
 		line-height: 1;
 	}
