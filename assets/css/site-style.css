@@ -214,6 +214,30 @@ article > h3 {
 	margin-top:0;
 }
 
+body {
+  font-size: 1em;
+}
 
+header, section {
+  padding:0.75em;
+}
+
+section h2, aside h3{
+	margin-top: 0;
+}
+
+aside ul {
+	margin:0;
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    font-size: 0.875em;
+  }
+  header, section {
+    padding:1em;
+    margin-bottom:1em;
+  }
+}
 
 

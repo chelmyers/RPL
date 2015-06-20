@@ -50,6 +50,8 @@
 				<li>Patterns:</li>
 				<li><a href="#tiny-tweaks">Tiny Tweaks</a></li>
 				<li><a href="#mostly-fluid">Mostly Fluid</a></li>
+				<li><a href="#column-drop">Column Drop</a></li>
+				<li><a href="#layout-shift">Layout Shift</a></li>
 			</ul>
 			<p>Section description.</p>
 
@@ -121,17 +123,17 @@ header, section {
 			<div id="mostly-fluid" class="pattern">
 				<h3>Mostly Fluid<span class="btn"><a href="pat-02-mostlyfluid.html">View Pattern</a></span></h3>
 
-				<p><span class="difficulty">Easy</span> A simple layout that does not change much from small to large screens. Common changes may include font sizes, padding values, and elements displayed on page.</p>
+				<p><span class="difficulty">Easy</span> This most popular layout is based on a fluid grid. The grid then uses media queries to shift columns to span full width and fit better on smaller screens. </p>
 
 				<ul class="list-compare">
 					<li><h4>Pros:</h4></li>
-					<li>The easiest layout to create that you will come across</li>
-					<li>Less debugging needed across multiple devices</li>
+					<li>Easy to implement</li>
+					<li>Can be used in simple and complex design systems</li>
 				</ul>
 
 				<ul class="list-compare">
 					<li><h4>Cons:</h4></li>
-					<li>Cannot hold a lot of content (not scalable)</li>
+					<li>All content gets stack in one column and the page can get long</li>
 				</ul>
 
 				<h4>Example</h4>
@@ -231,6 +233,164 @@ h2, h3, h4 {
 </code>
 </pre>
 			</div><!--end pattern-->
+
+
+
+
+
+
+
+
+			<!-- Column Drop -->
+			<div id="column-drop" class="pattern">
+				<h3>Column Drop<span class="btn"><a href="pat-03-columndrop.html">View Pattern</a></span></h3>
+
+				<p><span class="difficulty">Easy</span> A simple layout that does not change much from small to large screens. Common changes may include font sizes, padding values, and elements displayed on page.</p>
+
+				<ul class="list-compare">
+					<li><h4>Pros:</h4></li>
+					<li>The easiest layout to create that you will come across</li>
+					<li>Less debugging needed across multiple devices</li>
+				</ul>
+
+				<ul class="list-compare">
+					<li><h4>Cons:</h4></li>
+					<li>Cannot hold a lot of content (not scalable)</li>
+				</ul>
+
+				<h4>Example</h4>
+				<iframe src="pat-03-columndrop.html" frameborder="0" height="600"></iframe>
+
+				<h4>HTML</h4>
+<pre>
+<code class="language-markup">
+&lt;header>
+  &lt;h1>Page Heading (h1)&lt;/h1>
+&lt;/header>
+&lt;aside>
+  &lt;h3>Secondary Nav (h3)&lt;/h3>
+  &lt;ul>
+    &lt;li>&lt;a href="#">List Item 1&lt;/a>&lt;/li>
+    &lt;li>&lt;a href="#">List Item 2&lt;/a>&lt;/li>
+    &lt;li>&lt;a href="#">List Item 3&lt;/a>&lt;/li>
+  &lt;/ul>
+&lt;/aside>
+
+&lt;section>
+  &lt;h2>Heading 2 (h2)&lt;/h2>
+  &lt;p>Paragraph (p) - Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.&lt;/p>
+  &lt;p>Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.&lt;/p>
+  &lt;p>Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service..&lt;/p>
+&lt;/section>
+
+&lt;aside>
+  &lt;h3>Heading 3&lt;/h3>
+  &lt;p>Paragraph (p) - Phosfluorescently engage worldwide methodologies with web-enabled technology. Interactively coordinate proactive e-commerce via process-centric "outside the box" thinking. Completely pursue scalable customer service through sustainable potentialities.&lt;/p>
+&lt;/aside>
+</code>
+</pre>
+
+<h4>CSS</h4>
+<pre>
+<code class="language-css">
+aside, section, header {
+  padding: 0.75em;
+}
+
+@media screen and (min-width: 600px) {
+  aside {
+    width: 25%;
+  }
+
+  section {
+    width: 50%;
+  }
+
+  aside, section {
+    float: left;
+  }
+}
+</code>
+</pre>
+		</div><!--end pattern-->
+		
+
+
+
+
+		<!-- Layout Shifter -->
+			<div id="layout-shift" class="pattern">
+				<h3>Layout Shifter<span class="btn"><a href="pat-04-layoutshift.html">View Pattern</a></span></h3>
+
+				<p><span class="difficulty">Easy</span> A simple layout that does not change much from small to large screens. Common changes may include font sizes, padding values, and elements displayed on page.</p>
+
+				<ul class="list-compare">
+					<li><h4>Pros:</h4></li>
+					<li>The easiest layout to create that you will come across</li>
+					<li>Less debugging needed across multiple devices</li>
+				</ul>
+
+				<ul class="list-compare">
+					<li><h4>Cons:</h4></li>
+					<li>Cannot hold a lot of content (not scalable)</li>
+				</ul>
+
+				<h4>Example</h4>
+				<iframe src="pat-04-layoutshift.html" frameborder="0" height="600"></iframe>
+
+				<h4>HTML</h4>
+<pre>
+<code class="language-markup">
+&lt;header>
+  &lt;h1>Page Heading (h1)&lt;/h1>
+&lt;/header>
+&lt;aside>
+  &lt;h3>Secondary Nav (h3)&lt;/h3>
+  &lt;ul>
+    &lt;li>&lt;a href="#">List Item 1&lt;/a>&lt;/li>
+    &lt;li>&lt;a href="#">List Item 2&lt;/a>&lt;/li>
+    &lt;li>&lt;a href="#">List Item 3&lt;/a>&lt;/li>
+  &lt;/ul>
+&lt;/aside>
+
+&lt;section>
+  &lt;h2>Heading 2 (h2)&lt;/h2>
+  &lt;p>Paragraph (p) - Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.&lt;/p>
+  &lt;p>Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.&lt;/p>
+  &lt;p>Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service..&lt;/p>
+&lt;/section>
+
+&lt;aside>
+  &lt;h3>Heading 3&lt;/h3>
+  &lt;p>Paragraph (p) - Phosfluorescently engage worldwide methodologies with web-enabled technology. Interactively coordinate proactive e-commerce via process-centric "outside the box" thinking. Completely pursue scalable customer service through sustainable potentialities.&lt;/p>
+&lt;/aside>
+</code>
+</pre>
+
+<h4>CSS</h4>
+<pre>
+<code class="language-css">
+aside, section, header {
+  padding: 0.75em;
+}
+
+@media screen and (min-width: 600px) {
+  aside {
+    width: 25%;
+  }
+
+  section {
+    width: 50%;
+  }
+
+  aside, section {
+    float: left;
+  }
+}
+</code>
+</pre>
+			</div><!--end pattern-->
+
 		
 		</section>
 
