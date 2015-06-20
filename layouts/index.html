@@ -444,80 +444,94 @@ aside, section, header {
 				<h4>HTML</h4>
 <pre>
 <code class="language-markup">
-&lt;header>
-  &lt;h1>Page Heading (h1)&lt;/h1>
-&lt;/header>
+&lt;body id="page">
+  &lt;header>
+    &lt;h1>Page Heading (h1)&lt;/h1>
+  &lt;/header>
 
-&lt;aside>
-  &lt;h3>Secondary Nav (h3)&lt;/h3>
-  &lt;ul>
-    &lt;li>&lt;a href="#">List Item 1&lt;/a>&lt;/li>
-    &lt;li>&lt;a href="#">List Item 2&lt;/a>&lt;/li>
-    &lt;li>&lt;a href="#">List Item 3&lt;/a>&lt;/li>
-  &lt;/ul>
-&lt;/aside>
-&lt;section>
-  &lt;h2>Heading 2 (h2)&lt;/h2>
-  &lt;p>Paragraph (p) - Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.&lt;/p>
-  &lt;p>Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.&lt;/p>
-  &lt;p>Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service..&lt;/p>
-&lt;/section>
-&lt;article class="secondary">
-  &lt;h3>Secondary Article (h3)&lt;/h3>
-  &lt;p>Paragraph (p) - Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.&lt;/p>
-&lt;/article>
-&lt;article class="secondary">
-  &lt;h3>Secondary Article (h3)&lt;/h3>
-  &lt;p>Paragraph (p) - Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.&lt;/p>
-&lt;/article>
-&lt;article class="secondary">
-  &lt;h3>Secondary Article (h3)&lt;/h3>
-  &lt;p>Paragraph (p) - Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.&lt;/p>
-&lt;/article>
-&lt;article class="secondary">
-  &lt;h3>Secondary Article (h3)&lt;/h3>
-  &lt;p>Paragraph (p) - Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.&lt;/p>
-&lt;/article>
-&lt;article class="secondary">
-  &lt;h3>Secondary Article (h3)&lt;/h3>
-  &lt;p>Paragraph (p) - Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.&lt;/p>
-&lt;/article>
-&lt;article class="secondary">
-  &lt;h3>Secondary Article (h3)&lt;/h3>
-  &lt;p>Paragraph (p) - Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.&lt;/p>
-&lt;/article>
+  &lt;aside>
+    &lt;h3>Secondary Nav (h3)&lt;/h3>
+    &lt;ul>
+      &lt;li>&lt;a href="#">List Item 1&lt;/a>&lt;/li>
+      &lt;li>&lt;a href="#">List Item 2&lt;/a>&lt;/li>
+      &lt;li>&lt;a href="#">List Item 3&lt;/a>&lt;/li>
+    &lt;/ul>
+  &lt;/aside>
+
+  &lt;section>
+    &lt;a id="menu-toggle" href="#">Menu&lt;/a>
+    &lt;h2>Heading 2 (h2)&lt;/h2>
+    &lt;p>Paragraph (p) - Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.&lt;/p>
+    &lt;p>Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.&lt;/p>
+    &lt;p>Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service..&lt;/p>
+  &lt;/section>
+ &lt;/body>
 </code>
 </pre>
 
 <h4>CSS</h4>
 <pre>
 <code class="language-css">
-.secondary h3 {
-  border-bottom: 1px solid darkgray;
+aside {
+	display: none; 
+	width: 30%;
+	max-width:200px;
 }
 
-@media screen and (min-width:600px) {
-  aside {
-    width: 25%;
-  }
-
-  section {
-    width: 75%;
-  }
-
-  .secondary {
-    width: 50%;
-  }
-
-  aside, section, .secondary {
-    float: left;
-  }
+section, aside {
+	float: left;
 }
 
-@media screen and (min-width:800px) {
-  .secondary {
-    width: 33%;
+.open aside{
+	display: block;
+}
+
+.open section {
+	width: 70%;
+}
+
+@media screen and (min-width: 600px) {
+	#menu-toggle {
+		display: none;
+	}
+
+	aside {
+		display: block;
+	}
+
+	section {
+		width: 70%;
+	}
+}
+</code>
+</pre>
+
+<h4>JS</h4>
+<pre>
+<code class="language-javascript">
+var menuTog = document.getElementById("menu-toggle");
+var page = document.getElementById("page");
+
+
+function toggleClass(el, classWanted) {
+  var classes = el.className.split(/\s+/);
+  var found;
+
+  for(i = 0; i < classes.length; i++) {
+    if (classes[i] === classWanted) {
+      classes.splice(i, 1);
+      var found = true;      }
   }
+
+  if (found != true) {
+      classes.push(classWanted);
+  }
+
+  el.className = classes.join(' ');
+}
+
+menuTog.onclick = function() {
+ toggleClass(page, "open");
 }
 </code>
 </pre>
