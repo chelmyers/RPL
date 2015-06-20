@@ -45,7 +45,7 @@
     aside {
       display: block;
     }
-    
+
     section {
       width: 70%;
     }
@@ -55,7 +55,6 @@
 </head>
 
 <body id="page">
-	<!-- Insert pattern mark-up here -->
   <header>
     <h1>Page Heading (h1)</h1>
   </header>
@@ -81,9 +80,7 @@
 
   var menuTog = document.getElementById("menu-toggle");
   var page = document.getElementById("page");
-  menuTog.onclick = function() {
-   toggleClass(page, "open");
-  }
+
 
   function toggleClass(el, classWanted) {
     var classes = el.className.split(/\s+/);
@@ -102,7 +99,9 @@
     el.className = classes.join(' ');
   }
 
-
+  menuTog.onclick = function() {
+   toggleClass(page, "open");
+  }
 
   </script>
 </body>
