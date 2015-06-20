@@ -322,17 +322,17 @@ aside, section, header {
 			<div id="layout-shift" class="pattern">
 				<h3>Layout Shifter<span class="btn"><a href="pat-04-layoutshift.html">View Pattern</a></span></h3>
 
-				<p><span class="difficulty">Easy</span> A simple layout that does not change much from small to large screens. Common changes may include font sizes, padding values, and elements displayed on page.</p>
+				<p><span class="difficulty">Medium</span> Instead of only have one media queries, layout shifter pattern tend to have more. This pattern becomes more complicated but also allows greater control over how the design looks at different sizes.</p>
 
 				<ul class="list-compare">
 					<li><h4>Pros:</h4></li>
-					<li>The easiest layout to create that you will come across</li>
-					<li>Less debugging needed across multiple devices</li>
+					<li>Increased control of appearance on different screen sizes</li>
+					<li>Creates more scalable designs</li>
 				</ul>
 
 				<ul class="list-compare">
 					<li><h4>Cons:</h4></li>
-					<li>Cannot hold a lot of content (not scalable)</li>
+					<li>More complicated styles needed</li>
 				</ul>
 
 				<h4>Example</h4>
@@ -344,6 +344,7 @@ aside, section, header {
 &lt;header>
   &lt;h1>Page Heading (h1)&lt;/h1>
 &lt;/header>
+
 &lt;aside>
   &lt;h3>Secondary Nav (h3)&lt;/h3>
   &lt;ul>
@@ -352,39 +353,67 @@ aside, section, header {
     &lt;li>&lt;a href="#">List Item 3&lt;/a>&lt;/li>
   &lt;/ul>
 &lt;/aside>
-
 &lt;section>
   &lt;h2>Heading 2 (h2)&lt;/h2>
   &lt;p>Paragraph (p) - Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.&lt;/p>
   &lt;p>Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.&lt;/p>
   &lt;p>Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service..&lt;/p>
 &lt;/section>
-
-&lt;aside>
-  &lt;h3>Heading 3&lt;/h3>
-  &lt;p>Paragraph (p) - Phosfluorescently engage worldwide methodologies with web-enabled technology. Interactively coordinate proactive e-commerce via process-centric "outside the box" thinking. Completely pursue scalable customer service through sustainable potentialities.&lt;/p>
-&lt;/aside>
+&lt;article class="secondary">
+  &lt;h3>Secondary Article (h3)&lt;/h3>
+  &lt;p>Paragraph (p) - Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.&lt;/p>
+&lt;/article>
+&lt;article class="secondary">
+  &lt;h3>Secondary Article (h3)&lt;/h3>
+  &lt;p>Paragraph (p) - Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.&lt;/p>
+&lt;/article>
+&lt;article class="secondary">
+  &lt;h3>Secondary Article (h3)&lt;/h3>
+  &lt;p>Paragraph (p) - Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.&lt;/p>
+&lt;/article>
+&lt;article class="secondary">
+  &lt;h3>Secondary Article (h3)&lt;/h3>
+  &lt;p>Paragraph (p) - Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.&lt;/p>
+&lt;/article>
+&lt;article class="secondary">
+  &lt;h3>Secondary Article (h3)&lt;/h3>
+  &lt;p>Paragraph (p) - Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.&lt;/p>
+&lt;/article>
+&lt;article class="secondary">
+  &lt;h3>Secondary Article (h3)&lt;/h3>
+  &lt;p>Paragraph (p) - Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.&lt;/p>
+&lt;/article>
 </code>
 </pre>
 
 <h4>CSS</h4>
 <pre>
 <code class="language-css">
-aside, section, header {
-  padding: 0.75em;
+.secondary h3 {
+  border-bottom: 1px solid darkgray;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width:600px) {
   aside {
     width: 25%;
   }
 
   section {
+    width: 75%;
+  }
+
+  .secondary {
     width: 50%;
   }
 
-  aside, section {
+  aside, section, .secondary {
     float: left;
+  }
+}
+
+@media screen and (min-width:800px) {
+  .secondary {
+    width: 33%;
   }
 }
 </code>
