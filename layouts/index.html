@@ -52,6 +52,7 @@
 				<li><a href="#mostly-fluid">Mostly Fluid</a></li>
 				<li><a href="#column-drop">Column Drop</a></li>
 				<li><a href="#layout-shift">Layout Shift</a></li>
+				<li><a href="#off-canvas">Off Canvas</a></li>
 			</ul>
 			<p>Section description.</p>
 
@@ -420,6 +421,107 @@ aside, section, header {
 </pre>
 			</div><!--end pattern-->
 
+			<!-- Off Canvas -->
+			<div id="off-canvas" class="pattern">
+				<h3>Off Canvas<span class="btn"><a href="pat-05-offcanvas.html">View Pattern</a></span></h3>
+
+				<p><span class="difficulty">Hard</span> Instead of only have one media queries, layout shifter pattern tend to have more. This pattern becomes more complicated but also allows greater control over how the design looks at different sizes.</p>
+
+				<ul class="list-compare">
+					<li><h4>Pros:</h4></li>
+					<li>Increased control of appearance on different screen sizes</li>
+					<li>Creates more scalable designs</li>
+				</ul>
+
+				<ul class="list-compare">
+					<li><h4>Cons:</h4></li>
+					<li>More complicated styles needed</li>
+				</ul>
+
+				<h4>Example</h4>
+				<iframe src="pat-05-offcanvas.html" frameborder="0" height="600"></iframe>
+
+				<h4>HTML</h4>
+<pre>
+<code class="language-markup">
+&lt;header>
+  &lt;h1>Page Heading (h1)&lt;/h1>
+&lt;/header>
+
+&lt;aside>
+  &lt;h3>Secondary Nav (h3)&lt;/h3>
+  &lt;ul>
+    &lt;li>&lt;a href="#">List Item 1&lt;/a>&lt;/li>
+    &lt;li>&lt;a href="#">List Item 2&lt;/a>&lt;/li>
+    &lt;li>&lt;a href="#">List Item 3&lt;/a>&lt;/li>
+  &lt;/ul>
+&lt;/aside>
+&lt;section>
+  &lt;h2>Heading 2 (h2)&lt;/h2>
+  &lt;p>Paragraph (p) - Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.&lt;/p>
+  &lt;p>Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.&lt;/p>
+  &lt;p>Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service..&lt;/p>
+&lt;/section>
+&lt;article class="secondary">
+  &lt;h3>Secondary Article (h3)&lt;/h3>
+  &lt;p>Paragraph (p) - Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.&lt;/p>
+&lt;/article>
+&lt;article class="secondary">
+  &lt;h3>Secondary Article (h3)&lt;/h3>
+  &lt;p>Paragraph (p) - Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.&lt;/p>
+&lt;/article>
+&lt;article class="secondary">
+  &lt;h3>Secondary Article (h3)&lt;/h3>
+  &lt;p>Paragraph (p) - Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.&lt;/p>
+&lt;/article>
+&lt;article class="secondary">
+  &lt;h3>Secondary Article (h3)&lt;/h3>
+  &lt;p>Paragraph (p) - Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.&lt;/p>
+&lt;/article>
+&lt;article class="secondary">
+  &lt;h3>Secondary Article (h3)&lt;/h3>
+  &lt;p>Paragraph (p) - Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.&lt;/p>
+&lt;/article>
+&lt;article class="secondary">
+  &lt;h3>Secondary Article (h3)&lt;/h3>
+  &lt;p>Paragraph (p) - Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.&lt;/p>
+&lt;/article>
+</code>
+</pre>
+
+<h4>CSS</h4>
+<pre>
+<code class="language-css">
+.secondary h3 {
+  border-bottom: 1px solid darkgray;
+}
+
+@media screen and (min-width:600px) {
+  aside {
+    width: 25%;
+  }
+
+  section {
+    width: 75%;
+  }
+
+  .secondary {
+    width: 50%;
+  }
+
+  aside, section, .secondary {
+    float: left;
+  }
+}
+
+@media screen and (min-width:800px) {
+  .secondary {
+    width: 33%;
+  }
+}
+</code>
+</pre>
+			</div><!--end pattern-->
 		
 		</section>
 
