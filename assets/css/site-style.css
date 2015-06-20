@@ -218,7 +218,7 @@ body {
   font-size: 1em;
 }
 
-header, section {
+header, section, aside, article {
   padding:0.75em;
 }
 
