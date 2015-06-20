@@ -20,13 +20,21 @@
   	/*Pattern 05 - Off Canvas*/
 	/*Insert styles here*/
   aside {
-    display: none;
+    display: none; 
+    width: 30%;
   }
 
-  .open {
+  section, aside {
+    float: left;
+  }
+
+  .open aside{
     display: block;
   }
 
+  .open section {
+    width: 70%;
+  }
 
   @media screen and (min-width: 600px) {
     #menu-toggle {
@@ -36,28 +44,18 @@
     aside {
       display: block;
     }
-
-    aside {
-      width: 25%;
-    }
-    section {
-      width: 75%;
-    }
-
-    section, aside {
-      float: left;
-    }
+    
   }
   </style>
 </head>
 
-<body class="index">
+<body id="page">
 	<!-- Insert pattern mark-up here -->
   <header>
     <h1>Page Heading (h1)</h1>
   </header>
 
-  <aside id="nav">
+  <aside>
     <h3>Secondary Nav (h3)</h3>
     <ul>
       <li><a href="#">List Item 1</a></li>
@@ -77,9 +75,9 @@
   <script>
 
   var menuTog = document.getElementById("menu-toggle");
-  var nav = document.getElementById("nav");
+  var page = document.getElementById("page");
   menuTog.onclick = function() {
-   toggleClass(nav, "open");
+   toggleClass(page, "open");
   }
 
   function toggleClass(el, classWanted) {
