@@ -17,81 +17,82 @@
   <![endif]-->
 
   <style>
-  	/*Pattern 04 - Off Canvas Navigation*/
-	/*Insert styles here*/
-   header {
-      padding:0;
-      width: 100%;
+  /*Pattern 04 - Off Canvas Navigation*/
+  h1 {
+    display: inline;
+  }
+
+  nav {
+    padding: 0.75em;
+  }
+
+    nav li {
+      padding: 0.25em 0 0 0.5em;
     }
 
-    nav {
-      padding: 0.75em;
-    }
-
-      nav li {
-        padding: 0.25em 0 0 0.5em;
-      }
-
-      nav a {
-        display: block;
-      }
-
-
-    #oncanvas {
-      width: 100%;
-    }
-
-      #oncanvas nav {
-        display: none;
-      }
-
-    #offcanvas {
-      display: none;
-      width: 200px;
-      position: absolute;
-      right:0;
-      top:0;
-      bottom:0;
-      background: lightgray;
-    }
-
-    .open #offcanvas {
+    nav a {
       display: block;
     }
 
-    .open #oncanvas {
-      position: absolute;
-      left: -200px;
-    }
+  #menuBtn {
+    float: right;
+    text-decoration: none;
+    padding: 0.5em;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+  }
 
+  #menuBtn:hover {
+    background-color: lightgray;
+  }
+
+  #oncanvas nav {
+    display: none;
+  }
+
+  #offcanvas {
+    display: none;
+    width: 200px;
+    position: absolute;
+    right:0;
+    top:0;
+    bottom:0;
+    background: lightgray;
+  }
+
+  .open #offcanvas {
+    display: block;
+  }
+
+  .open #oncanvas {
+    width: 100%;
+    position: absolute;
+    left: -200px;
+  }
+
+  
+  @media screen and (min-width: 750px) {
     #menuBtn {
-      float: right;
-      text-decoration: none;
-      padding: 0.5em;
-      border: 1px solid lightgray;
-      border-radius: 3px;
+      display: none;
     }
 
-    #menuBtn:hover {
-      background-color: lightgray;
+    .open #oncanvas {
+      position: static;
+    }
+    #oncanvas nav {
+      display: inline-block;
+      float:right;
     }
 
-    @media screen and (min-width: 750px) {
-      #menuBtn {
-        display: none;
-      }
-
-      #oncanvas nav {
-        display: inline-block;
-        float:right;
-      }
-
-      nav li {
-        display: inline-block;
-      }
-
+    nav li {
+      display: inline-block;
     }
-  </style>
+
+    .open #offcanvas, #offcanvas {
+      display: none;
+    }
+  }
+</style>
 </head>
 
 <body id="page">
@@ -100,7 +101,7 @@
   <div id="oncanvas">
     <header>
       <div class="header-inner">
-        <img src="http://placehold.it/100x50&=logo" alt="Logo">
+        <h1>Logo</h1>
         <a href="#" id="menuBtn">Menu</a>
         <nav>
           <ul>
@@ -110,7 +111,7 @@
             <li><a href="#">Our Services</a></li>
             <li><a href="#">Contact Us</a></li>
           </ul>
-      </nav>
+        </nav>
       </div>
     </header>
   </div>
@@ -124,7 +125,7 @@
       <li><a href="#">Contact Us</a></li>
     </ul>
   </nav>
-<script>
+  <script>
     var menuBtn = document.getElementById("menuBtn");
     var page = document.getElementById("page");
 
@@ -136,20 +137,20 @@
         if (classes[i] === classWanted) {
           classes.splice(i, 1);
           var found = true;      }
-      }
+        }
 
-      if (found != true) {
+        if (found != true) {
           classes.push(classWanted);
+        }
+
+        el.className = classes.join(' ');
       }
 
-      el.className = classes.join(' ');
-    }
-
-    menuBtn.onclick = function() {
-     toggleClass(page, "open");
-    }
+      menuBtn.onclick = function() {
+       toggleClass(page, "open");
+     }
 
 
-  </script>
-</body>
-</html>
+   </script>
+ </body>
+ </html>

@@ -49,7 +49,7 @@
 				<li>Patterns:</li>
 				<li><a href="#simply-stacked">Simple Stack</a></li>
 				<li><a href="#anchor">Anchor &amp; Footer</a></li>
-				<li><a href="#toggled">Toggled</a></li>
+				<li><a href="#toggled">The Toggle</a></li>
 				<li><a href="#offcanvas">Off Canvas</a></li>
 			</ul>
 			<p>A website's navigation is the most important tool to the user.  It should provide quick access to all the website has to offer. It should also not get in the way. Below are examples of popular responsive patterns that make navigation websites easy on both small and large screens.</p>
@@ -135,7 +135,7 @@ nav li {
 
 
 			<div class="pattern" id="anchor">
-				<h3>Anchor &amp; Anchor <span class="btn"><a href="pat-02-anchor.html">View Pattern</a></span></h3>
+				<h3>Anchor &amp; Footer <span class="btn"><a href="pat-02-anchor.html">View Pattern</a></span></h3>
 				<p><span class="difficulty">Easy</span> This pattern consists of a jump link in the header that links to a menu in the Anchor. It is easy to create but the jump to the bottom of the page can be jarring.</p>
 				
 				<ul class="list-compare">
@@ -158,11 +158,9 @@ nav li {
 				<h4>HTML</h4>
 <pre>
 <code class="language-markup">
-&lt;header>
-		&lt;div class="header-inner">
-			&lt;img src="http://placehold.it/100x50&=logo" alt="Logo">
-			&lt;p class="menu-btn">&lt;a href="#menu">Menu&lt;/a>&lt;/p>
-		&lt;/div>
+&lt;header>	
+		&lt;img src="http://placehold.it/100x50&=logo" alt="Logo">
+		&lt;p class="menu-btn">&lt;a href="#menu">Menu&lt;/a>&lt;/p>
 	&lt;/header>
 	&lt;div class="content">
 		&lt;p>Content goes here.&lt;/p>
@@ -170,7 +168,7 @@ nav li {
 	&lt;Anchor>
 		&lt;div class="Anchor-inner">
 			&lt;h3>Anchor&lt;/h3>
-			&lt;nav>
+			&lt;nav id="menu">
 				&lt;ul>
 					&lt;li>&lt;a href="#">Home&lt;/a>&lt;/li>
 					&lt;li>&lt;a href="#">About&lt;/a>&lt;/li>
@@ -187,26 +185,11 @@ nav li {
 <pre>
 <code class="language-css">
 header {
-	width: 100%;
 	overflow: auto;
-}
-	header h1 {
-		display: inline-block;
-	}
-
-.header-inner, .Anchor-inner{
-	overflow: auto;
-	padding: 1em;
-	margin:0;
 }
 
 .menu-btn {
 	float:right;
-}
-
-nav, nav ul {
-	margin:0;
-	padding:0;
 }
 
 nav li {
@@ -216,6 +199,10 @@ nav li {
 	nav li a {
 		text-decoration: none;
 	}
+
+footer {
+	padding: 0.75em;
+}
 
 @media screen and (min-width: 750px) {
 	.menu-btn {
@@ -239,7 +226,7 @@ nav li {
 			</div><!--end pattern-->
 
 			<div class="pattern" id="toggled">
-				<h3>Toggled<span class="btn"><a href="pat-03-toggled.html">View Pattern</a></span></h3>
+				<h3>The Toggle<span class="btn"><a href="pat-03-toggled.html">View Pattern</a></span></h3>
 
 				<p><span class="difficulty">Level</span> Pattern description.</p>
 
@@ -288,18 +275,11 @@ header {
   padding:0;
 }
 
-h1 {
-  float: left;
-}
-
 nav {
   padding: 0.75em;
   background: lightgray;
   display: none;
 }
-  nav ul {
-    margin: 0;
-  }
 
   nav li {
     padding: 0.25em 0 0 0.5em;
@@ -308,10 +288,6 @@ nav {
   nav a {
     display: block;
   }
-
-.open nav {
-  display: block;
-}
 
 #menuBtn {
   float: right;
@@ -325,6 +301,9 @@ nav {
   background-color: lightgray;
 }
 
+.open nav {
+  display: block;
+}
 @media screen and (min-width: 750px) {
   #menuBtn {
     display: none;
@@ -343,7 +322,6 @@ nav {
   }
 
 }
-
 
 </code>
 </pre>
