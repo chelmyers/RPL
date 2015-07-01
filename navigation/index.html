@@ -47,15 +47,15 @@
 			<h2 class="page-title">Navigation</h2>
 			<ul class="subnav">
 				<li>Patterns:</li>
-				<li><a href="#simply-stacked">Simply Stacked</a></li>
-				<li><a href="#anchor">Footer &amp; Anchor</a></li>
+				<li><a href="#simply-stacked">Simple Stack</a></li>
+				<li><a href="#anchor">Anchor &amp; Footer</a></li>
 				<li><a href="#toggled">Toggled</a></li>
 				<li><a href="#offcanvas">Off Canvas</a></li>
 			</ul>
 			<p>A website's navigation is the most important tool to the user.  It should provide quick access to all the website has to offer. It should also not get in the way. Below are examples of popular responsive patterns that make navigation websites easy on both small and large screens.</p>
 
 			<div class="pattern" id="simply-stacked">
-				<h3>Simply Stacked<span class="btn"><a href="pat-01-simplystacked.html">View Pattern</a></span></h3>
+				<h3>Simple Stack<span class="btn"><a href="pat-01-simplystacked.html">View Pattern</a></span></h3>
 
 				<p><span class="difficulty">Easy</span> This pattern is very simple and easy to implement. The navigation does not change much from small to large screen. All pages can be seen as once and sometimes shift under the page title on smaller screens.</p>
 
@@ -81,26 +81,23 @@
 <pre>
 <code class="language-markup">
 &lt;header>
-		&lt;div class="header-inner">
-			&lt;h1>Page Heading (h1)&lt;/h1>
-			&lt;nav>
-				&lt;ul>
-					&lt;li>&lt;a href="#">Home&lt;/a>&lt;/li>
-					&lt;li>&lt;a href="#">About&lt;/a>&lt;/li>
-					&lt;li>&lt;a href="#">Our Portfolio&lt;/a>&lt;/li>
-					&lt;li>&lt;a href="#">Our Services&lt;/a>&lt;/li>
-					&lt;li>&lt;a href="#">Contact Us&lt;/a>&lt;/li>
-				&lt;/ul>
-			&lt;/nav>
-		&lt;/div>
-	&lt;/header>
+	&lt;h1>Page Heading (h1)&lt;/h1>
+	&lt;nav>
+		&lt;ul>
+			&lt;li>&lt;a href="#">Home&lt;/a>&lt;/li>
+			&lt;li>&lt;a href="#">About&lt;/a>&lt;/li>
+			&lt;li>&lt;a href="#">Our Portfolio&lt;/a>&lt;/li>
+			&lt;li>&lt;a href="#">Our Services&lt;/a>&lt;/li>
+			&lt;li>&lt;a href="#">Contact Us&lt;/a>&lt;/li>
+		&lt;/ul>
+	&lt;/nav>
+&lt;/header>
 </code>
 </pre>
 				<h4>CSS</h4>
 <pre>
 <code class="language-css">
 header {
-	width: 100%;
 	overflow: auto;
 }
 
@@ -109,13 +106,8 @@ header h1 {
 
 }
 
-nav ul {
-	margin-bottom:0;
-}
-
 nav li {
 	list-style: none;
-	display: block;
 	padding: 0.25em 0.5em 0 0;
 }
 	nav li a {
@@ -127,11 +119,10 @@ nav li {
 	header h1 {
 		float: left;
 		margin:0;
-
 	}
+
 	nav {
 		float: right;
-		text-align: right;
 	}
 		nav li {
 			display: inline-block;
@@ -144,8 +135,8 @@ nav li {
 
 
 			<div class="pattern" id="anchor">
-				<h3>Anchor &amp; Footer <span class="btn"><a href="pat-02-anchor.html">View Pattern</a></span></h3>
-				<p><span class="difficulty">Easy</span> This pattern consists of a jump link in the header that links to a menu in the footer. It is easy to create but the jump to the bottom of the page can be jarring.</p>
+				<h3>Anchor &amp; Anchor <span class="btn"><a href="pat-02-anchor.html">View Pattern</a></span></h3>
+				<p><span class="difficulty">Easy</span> This pattern consists of a jump link in the header that links to a menu in the Anchor. It is easy to create but the jump to the bottom of the page can be jarring.</p>
 				
 				<ul class="list-compare">
 					<li><h4>Pros:</h4></li>
@@ -157,7 +148,7 @@ nav li {
 				
 				<ul class="list-compare">
 					<li><h4>Cons:</h4></li>
-					<li>User won't think to look for the menu in the footer</li>
+					<li>User won't think to look for the menu in the Anchor</li>
 					<li>Jumping to the bottom of the page can be jarring</li>
 				</ul>
 
@@ -176,9 +167,9 @@ nav li {
 	&lt;div class="content">
 		&lt;p>Content goes here.&lt;/p>
 	&lt;/div>
-	&lt;footer>
-		&lt;div class="footer-inner">
-			&lt;h3>Footer&lt;/h3>
+	&lt;Anchor>
+		&lt;div class="Anchor-inner">
+			&lt;h3>Anchor&lt;/h3>
 			&lt;nav>
 				&lt;ul>
 					&lt;li>&lt;a href="#">Home&lt;/a>&lt;/li>
@@ -189,7 +180,7 @@ nav li {
 				&lt;/ul>
 			&lt;/nav>
 		&lt;/div>
-	&lt;/footer>
+	&lt;/Anchor>
 </code>
 </pre>
 				<h4>CSS</h4>
@@ -203,7 +194,7 @@ header {
 		display: inline-block;
 	}
 
-.header-inner, .footer-inner{
+.header-inner, .Anchor-inner{
 	overflow: auto;
 	padding: 1em;
 	margin:0;
