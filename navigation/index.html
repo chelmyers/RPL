@@ -48,7 +48,7 @@
 			<p>A website's navigation is the most important tool to the user.  It should provide quick access to all the website has to offer. It should also not get in the way. Below are examples of popular responsive patterns that make navigation websites easy on both small and large screens.</p>
 
 			<div class="pattern">
-				<h3>Top Navigation or "Do Nothing" Pattern<span class="btn"><a href="pat-01-header.html">View Pattern</a></span></h3>
+				<h3>Simply Stacked<span class="btn"><a href="pat-01-simplystacked.html">View Pattern</a></span></h3>
 
 				<p><span class="difficulty">Easy</span> This pattern is very simple and easy to implement. The navigation does not change much from small to large screen. All pages can be seen as once and sometimes shift under the page title on smaller screens.</p>
 
@@ -68,23 +68,25 @@
 				</ul>
 
 				<h4>Example</h4>
-				<iframe src="pat-01-header.html" frameborder="0" height="100"></iframe>
+				<iframe src="pat-01-simplystacked.html" frameborder="0" height="200"></iframe>
 
 				<h4>HTML</h4>
 <pre>
 <code class="language-markup">
-&lt;header&gt;
-	&lt;div class="header-inner"&gt;
-		&lt;h1&gt;Company Name&lt;/h1&gt;
-		&lt;nav&gt;
-			&lt;ul&gt;
-				&lt;li&gt;&lt;a href="#"&gt;Item 1&lt;/a&gt;&lt;/li&gt;
-				&lt;li&gt;&lt;a href="#"&gt;Item 2&lt;/a&gt;&lt;/li&gt;
-				&lt;li&gt;&lt;a href="#"&gt;Item 3&lt;/a&gt;&lt;/li&gt;
-			&lt;/ul&gt;
-		&lt;/nav&gt;
-	&lt;/div&gt;
-&lt;/header&gt;
+&lt;header>
+		&lt;div class="header-inner">
+			&lt;h1>Page Heading (h1)&lt;/h1>
+			&lt;nav>
+				&lt;ul>
+					&lt;li>&lt;a href="#">Home&lt;/a>&lt;/li>
+					&lt;li>&lt;a href="#">About&lt;/a>&lt;/li>
+					&lt;li>&lt;a href="#">Our Portfolio&lt;/a>&lt;/li>
+					&lt;li>&lt;a href="#">Our Services&lt;/a>&lt;/li>
+					&lt;li>&lt;a href="#">Contact Us&lt;/a>&lt;/li>
+				&lt;/ul>
+			&lt;/nav>
+		&lt;/div>
+	&lt;/header>
 </code>
 </pre>
 				<h4>CSS</h4>
@@ -95,36 +97,38 @@ header {
 	overflow: auto;
 }
 
-.header-inner {
-	max-width: 1330px;
-	overflow: auto;
-	margin:0 auto;
+header h1 {
+	margin-bottom: 0.25em;
+
 }
 
-nav, nav ul {
-	margin:0;
-	padding:0;
+nav ul {
+	margin-bottom:0;
 }
 
 nav li {
 	list-style: none;
-	display: inline-block;
-	padding: 0.25em;
+	display: block;
+	padding: 0.25em 0.5em 0 0;
 }
 	nav li a {
 		text-decoration: none;
 	}
 
 
-@media only screen and (min-width: 500px){
+@media only screen and (min-width: 750px){
 	header h1 {
 		float: left;
-		display: inline-block;
+		margin:0;
+
 	}
 	nav {
 		float: right;
 		text-align: right;
 	}
+		nav li {
+			display: inline-block;
+		}
 }
 
 </code>
@@ -133,7 +137,7 @@ nav li {
 
 
 			<div class="pattern">
-				<h3>Anchor to Footer Pattern <span class="btn"><a href="pat-02-anchor.html">View Pattern</a></span></h3>
+				<h3>Anchor &amp; Footer <span class="btn"><a href="pat-02-anchor.html">View Pattern</a></span></h3>
 				<p><span class="difficulty">Easy</span> This pattern consists of a jump link in the header that links to a menu in the footer. It is easy to create but the jump to the bottom of the page can be jarring.</p>
 				
 				<ul class="list-compare">
@@ -157,26 +161,28 @@ nav li {
 <pre>
 <code class="language-markup">
 &lt;header>
-	&lt;div class="header-inner">
-		&lt;h1>Header&lt;/h1>
-		&lt;p class="menu-btn">&lt;a href="#menu">Menu&lt;/a>&lt;/p>
+		&lt;div class="header-inner">
+			&lt;img src="http://placehold.it/100x50&=logo" alt="Logo">
+			&lt;p class="menu-btn">&lt;a href="#menu">Menu&lt;/a>&lt;/p>
+		&lt;/div>
+	&lt;/header>
+	&lt;div class="content">
+		&lt;p>Content goes here.&lt;/p>
 	&lt;/div>
-&lt;/header>
-&lt;div class="content">
-	&lt;p>Content goes here.&lt;/p>
-&lt;/div>
-&lt;footer>
-	&lt;div class="footer-inner">
-		&lt;h3>Footer Menu&lt;/h3>
-		&lt;nav id="menu">
-			&lt;ul>
-				&lt;li>&lt;a href="#">Item 1&lt;/a>&lt;/li>
-				&lt;li>&lt;a href="#">Item 2&lt;/a>&lt;/li>
-				&lt;li>&lt;a href="#">Item 3&lt;/a>&lt;/li>
-			&lt;/ul>
-		&lt;/nav>
-	&lt;/div>
-&lt;/footer>
+	&lt;footer>
+		&lt;div class="footer-inner">
+			&lt;h3>Footer&lt;/h3>
+			&lt;nav>
+				&lt;ul>
+					&lt;li>&lt;a href="#">Home&lt;/a>&lt;/li>
+					&lt;li>&lt;a href="#">About&lt;/a>&lt;/li>
+					&lt;li>&lt;a href="#">Our Portfolio&lt;/a>&lt;/li>
+					&lt;li>&lt;a href="#">Our Services&lt;/a>&lt;/li>
+					&lt;li>&lt;a href="#">Contact Us&lt;/a>&lt;/li>
+				&lt;/ul>
+			&lt;/nav>
+		&lt;/div>
+	&lt;/footer>
 </code>
 </pre>
 				<h4>CSS</h4>
@@ -191,10 +197,9 @@ header {
 	}
 
 .header-inner, .footer-inner{
-	max-width: 1330px;
 	overflow: auto;
-	margin:0 auto;
 	padding: 1em;
+	margin:0;
 }
 
 .menu-btn {
@@ -214,10 +219,299 @@ nav li {
 		text-decoration: none;
 	}
 
+@media screen and (min-width: 750px) {
+	.menu-btn {
+		display: none;
+	}
+
+	nav {
+		position: absolute;
+		top:0.75em;
+		right:0.75em;
+	}
+	nav li {
+		display: inline-block;
+	}
+}
+
 
 </code>
 </pre>
 
+			</div><!--end pattern-->
+
+			<div class="pattern">
+				<h3>Toggled<span class="btn"><a href="pat-03-toggled.html">View Pattern</a></span></h3>
+
+				<p><span class="difficulty">Level</span> Pattern description.</p>
+
+				<ul class="list-compare">
+					<li><h4>Pros:</h4></li>
+					<li>Item 1</li>
+					<li>Item 2</li>
+				</ul>
+
+				<ul class="list-compare">
+					<li><h4>Cons:</h4></li>
+					<li>Item 1</li>
+					<li>Item 2</li>
+				</ul>
+
+				<h4>Example</h4>
+				<iframe src="pat-03-toggled.html" frameborder="0" height="300"></iframe>
+
+				<h4>HTML</h4>
+<pre>
+<code class="language-markup">
+&lt;body id="page">
+  &lt;header>
+    &lt;div class="header-inner">   
+      &lt;img src="http://placehold.it/100x50&=logo" alt="Logo">
+      &lt;a href="#" id="menuBtn">Menu&lt;/a>
+    &lt;/div>
+
+    &lt;nav>
+      &lt;ul>
+        &lt;li>&lt;a href="#">Home&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#">About&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#">Our Portfolio&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#">Our Services&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#">Contact Us&lt;/a>&lt;/li>
+      &lt;/ul>
+    &lt;/nav>
+  &lt;/header>
+</body>
+</code>
+</pre>
+				<h4>CSS</h4>
+<pre>
+<code class="language-css">
+header {
+  padding:0;
+}
+
+h1 {
+  float: left;
+}
+
+nav {
+  padding: 0.75em;
+  background: lightgray;
+  display: none;
+}
+  nav ul {
+    margin: 0;
+  }
+
+  nav li {
+    padding: 0.25em 0 0 0.5em;
+  }
+
+  nav a {
+    display: block;
+  }
+
+.open nav {
+  display: block;
+}
+
+#menuBtn {
+  float: right;
+  text-decoration: none;
+  padding: 0.5em;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+}
+
+#menuBtn:hover {
+  background-color: lightgray;
+}
+
+@media screen and (min-width: 750px) {
+  #menuBtn {
+    display: none;
+  }
+
+  nav {
+    overflow: auto;
+    display: block;
+  }
+
+  nav ul {
+    float: right;
+  }
+  nav li {
+    display: inline-block;
+  }
+
+}
+
+
+</code>
+</pre>
+
+				<h4>JavaScript</h4>
+<pre>
+<code class="language-javascript">
+ var menuBtn = document.getElementById("menuBtn");
+    var page = document.getElementById("page");
+
+    function toggleClass(el, classWanted) {
+      var classes = el.className.split(/\s+/);
+      var found;
+
+      for(i = 0; i < classes.length; i++) {
+        if (classes[i] === classWanted) {
+          classes.splice(i, 1);
+          var found = true;      }
+      }
+
+      if (found != true) {
+          classes.push(classWanted);
+      }
+
+      el.className = classes.join(' ');
+    }
+
+    menuBtn.onclick = function() {
+     toggleClass(page, "open");
+    }
+</code>
+</pre>
+			</div><!--end pattern-->
+
+			<div class="pattern">
+				<h3>Off Canvas<span class="btn"><a href="pat-04-offcanvas.html">View Pattern</a></span></h3>
+
+				<p><span class="difficulty">Level</span> Pattern description.</p>
+
+				<ul class="list-compare">
+					<li><h4>Pros:</h4></li>
+					<li>Item 1</li>
+					<li>Item 2</li>
+				</ul>
+
+				<ul class="list-compare">
+					<li><h4>Cons:</h4></li>
+					<li>Item 1</li>
+					<li>Item 2</li>
+				</ul>
+
+				<h4>Example</h4>
+				<iframe src="pat-04-offcanvas.html" frameborder="0" height="300"></iframe>
+
+				<h4>HTML</h4>
+<pre>
+<code class="language-markup">
+&lt;body id="page">
+  &lt;div id="oncanvas">
+    &lt;header>
+      &lt;div class="header-inner">
+        &lt;img src="http://placehold.it/100x50&=logo" alt="Logo">
+        &lt;a href="#" id="menuBtn">Menu&lt;/a>
+        &lt;nav>
+          &lt;ul>
+            &lt;li>&lt;a href="#">Home&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#">About&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#">Our Portfolio&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#">Our Services&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#">Contact Us&lt;/a>&lt;/li>
+          &lt;/ul>
+      &lt;/nav>
+      &lt;/div>
+    &lt;/header>
+  &lt;/div>
+
+  &lt;nav id="offcanvas">
+    &lt;ul>
+      &lt;li>&lt;a href="#">Home&lt;/a>&lt;/li>
+      &lt;li>&lt;a href="#">About&lt;/a>&lt;/li>
+      &lt;li>&lt;a href="#">Our Portfolio&lt;/a>&lt;/li>
+      &lt;li>&lt;a href="#">Our Services&lt;/a>&lt;/li>
+      &lt;li>&lt;a href="#">Contact Us&lt;/a>&lt;/li>
+    &lt;/ul>
+  &lt;/nav>
+&lt;/body>
+</code>
+</pre>
+				<h4>CSS</h4>
+<pre>
+<code class="language-css">
+header {
+  padding:0;
+  width: 100%;
+}
+
+nav {
+  padding: 0.75em;
+}
+
+  nav li {
+    padding: 0.25em 0 0 0.5em;
+  }
+
+  nav a {
+    display: block;
+  }
+
+
+#oncanvas {
+  width: 100%;
+}
+
+  #oncanvas nav {
+    display: none;
+  }
+
+#offcanvas {
+  display: none;
+  width: 200px;
+  position: absolute;
+  right:0;
+  top:0;
+  bottom:0;
+  background: lightgray;
+}
+
+.open #offcanvas {
+  display: block;
+}
+
+.open #oncanvas {
+  position: absolute;
+  left: -200px;
+}
+
+#menuBtn {
+  float: right;
+  text-decoration: none;
+  padding: 0.5em;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+}
+
+#menuBtn:hover {
+  background-color: lightgray;
+}
+
+@media screen and (min-width: 750px) {
+  #menuBtn {
+    display: none;
+  }
+
+  #oncanvas nav {
+    display: inline-block;
+    float:right;
+  }
+
+  nav li {
+    display: inline-block;
+  }
+
+}
+
+</code>
+</pre>
 			</div><!--end pattern-->
 		</section>
 	</div>

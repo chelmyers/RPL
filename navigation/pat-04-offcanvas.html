@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Responsive Pattern Library</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Load in template styles -->
+  <link rel="stylesheet" href="../assets/css/site-style.css">
+
+  <!-- Load in Google Font: Lato -->
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <style>
+  	/*Pattern 04 - Off Canvas Navigation*/
+	/*Insert styles here*/
+   header {
+      padding:0;
+      width: 100%;
+    }
+
+    nav {
+      padding: 0.75em;
+    }
+
+      nav li {
+        padding: 0.25em 0 0 0.5em;
+      }
+
+      nav a {
+        display: block;
+      }
+
+
+    #oncanvas {
+      width: 100%;
+    }
+
+      #oncanvas nav {
+        display: none;
+      }
+
+    #offcanvas {
+      display: none;
+      width: 200px;
+      position: absolute;
+      right:0;
+      top:0;
+      bottom:0;
+      background: lightgray;
+    }
+
+    .open #offcanvas {
+      display: block;
+    }
+
+    .open #oncanvas {
+      position: absolute;
+      left: -200px;
+    }
+
+    #menuBtn {
+      float: right;
+      text-decoration: none;
+      padding: 0.5em;
+      border: 1px solid lightgray;
+      border-radius: 3px;
+    }
+
+    #menuBtn:hover {
+      background-color: lightgray;
+    }
+
+    @media screen and (min-width: 750px) {
+      #menuBtn {
+        display: none;
+      }
+
+      #oncanvas nav {
+        display: inline-block;
+        float:right;
+      }
+
+      nav li {
+        display: inline-block;
+      }
+
+    }
+  </style>
+</head>
+
+<body id="page">
+	<!-- Insert pattern mark-up here -->
+
+  <div id="oncanvas">
+    <header>
+      <div class="header-inner">
+        <img src="http://placehold.it/100x50&=logo" alt="Logo">
+        <a href="#" id="menuBtn">Menu</a>
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Our Portfolio</a></li>
+            <li><a href="#">Our Services</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+      </nav>
+      </div>
+    </header>
+  </div>
+
+  <nav id="offcanvas">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Our Portfolio</a></li>
+      <li><a href="#">Our Services</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+  </nav>
+<script>
+    var menuBtn = document.getElementById("menuBtn");
+    var page = document.getElementById("page");
+
+    function toggleClass(el, classWanted) {
+      var classes = el.className.split(/\s+/);
+      var found;
+
+      for(i = 0; i < classes.length; i++) {
+        if (classes[i] === classWanted) {
+          classes.splice(i, 1);
+          var found = true;      }
+      }
+
+      if (found != true) {
+          classes.push(classWanted);
+      }
+
+      el.className = classes.join(' ');
+    }
+
+    menuBtn.onclick = function() {
+     toggleClass(page, "open");
+    }
+
+
+  </script>
+</body>
+</html>

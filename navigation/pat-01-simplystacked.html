@@ -25,49 +25,54 @@
 		overflow: auto;
 	}
 
-	.header-inner {
-		max-width: 1330px;
-		overflow: auto;
-		margin:0 auto;
+	header h1 {
+		margin-bottom: 0.25em;
+
 	}
 
-	nav, nav ul {
-		margin:0;
-		padding:0;
+	nav ul {
+		margin-bottom:0;
 	}
 
 	nav li {
 		list-style: none;
-		display: inline-block;
-		padding: 0.25em;
+		display: block;
+		padding: 0.25em 0.5em 0 0;
 	}
 		nav li a {
 			text-decoration: none;
 		}
 
 
-	@media only screen and (min-width: 500px){
+	@media only screen and (min-width: 750px){
 		header h1 {
 			float: left;
-			display: inline-block;
+			margin:0;
+
 		}
 		nav {
 			float: right;
 			text-align: right;
 		}
+			nav li {
+				display: inline-block;
+			}
 	}
+
   </style>
 </head>
 
-<body class="index">
+<body>
 	<header>
 		<div class="header-inner">
-			<h1>Header</h1>
+			<h1>Page Heading (h1)</h1>
 			<nav>
 				<ul>
-					<li><a href="#">Item 1</a></li>
-					<li><a href="#">Item 2</a></li>
-					<li><a href="#">Item 3</a></li>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Our Portfolio</a></li>
+					<li><a href="#">Our Services</a></li>
+					<li><a href="#">Contact Us</a></li>
 				</ul>
 			</nav>
 		</div>

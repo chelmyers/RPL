@@ -19,38 +19,52 @@
   <![endif]-->
 
   <style>
-  	  	/*Pattern 2 - Anchor*/
-		header {
-			width: 100%;
-			overflow: auto;
-		}
-			header h1 {
-				display: inline-block;
-			}
-
-		.header-inner, .footer-inner{
-			max-width: 1330px;
-			overflow: auto;
-			margin:0 auto;
-			padding: 1em;
+	/*Pattern 2 - Anchor*/
+	header {
+		width: 100%;
+		overflow: auto;
+	}
+		header h1 {
+			display: inline-block;
 		}
 
+	.header-inner, .footer-inner{
+		overflow: auto;
+		padding: 1em;
+		margin:0;
+	}
+
+	.menu-btn {
+		float:right;
+	}
+
+	nav, nav ul {
+		margin:0;
+		padding:0;
+	}
+
+	nav li {
+		list-style: none;
+		padding: 0.50em;
+	}
+		nav li a {
+			text-decoration: none;
+		}
+
+	@media screen and (min-width: 750px) {
 		.menu-btn {
-			float:right;
+			display: none;
 		}
 
-		nav, nav ul {
-			margin:0;
-			padding:0;
+		nav {
+			position: absolute;
+			top:0.75em;
+			right:0.75em;
 		}
-
 		nav li {
-			list-style: none;
-			padding: 0.50em;
+			display: inline-block;
 		}
-			nav li a {
-				text-decoration: none;
-			}
+	}
 
   </style>
 </head>
@@ -58,7 +72,7 @@
 <body class="index">
 	<header>
 		<div class="header-inner">
-			<h1>Header</h1>
+			<img src="http://placehold.it/100x50&=logo" alt="Logo">
 			<p class="menu-btn"><a href="#menu">Menu</a></p>
 		</div>
 	</header>
@@ -67,12 +81,14 @@
 	</div>
 	<footer>
 		<div class="footer-inner">
-			<h3>Footer Menu</h3>
-			<nav id="menu">
+			<h3>Footer</h3>
+			<nav>
 				<ul>
-					<li><a href="#">Item 1</a></li>
-					<li><a href="#">Item 2</a></li>
-					<li><a href="#">Item 3</a></li>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Our Portfolio</a></li>
+					<li><a href="#">Our Services</a></li>
+					<li><a href="#">Contact Us</a></li>
 				</ul>
 			</nav>
 		</div>

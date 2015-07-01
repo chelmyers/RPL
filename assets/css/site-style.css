@@ -222,6 +222,12 @@ header, section, aside, article {
   padding:0.75em;
 }
 
+.header-inner {
+	max-width: 1330px;
+	overflow: auto;
+	margin:0 auto;
+}
+
 section h2, aside h3{
 	margin-top: 0;
 }
@@ -239,5 +245,20 @@ aside ul {
     margin-bottom:1em;
   }
 }
+
+nav ul {
+	padding:0;
+	margin:0;
+}
+
+
+
+
+
+
+
+
+
+
 
 
