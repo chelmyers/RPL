@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Responsive Pattern Library</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Load in template styles -->
+  <link rel="stylesheet" href="../assets/css/site-style.css">
+
+  <!-- Load in Google Font: Lato -->
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <style>
+  	/*Pattern ## - Picture*/
+	img {
+    max-width: 100%;
+  }
+  </style>
+</head>
+
+<body class="index">
+	<picture>
+    <source 
+      media="(min-width: 1000px)"
+      srcset="i/1920.png">
+    <source 
+      media="(min-width: 500px)"
+      srcset="i/1000.png">
+    <img 
+     src="i/500.png" 
+     alt="Featured Image">
+  </picture>
+</body>
+</html>
