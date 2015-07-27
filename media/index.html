@@ -50,6 +50,8 @@
 				<li>Patterns &amp; Examples:</li>
 				<li><a href="#basic">Basic Scaling Images</a></li>
 				<li><a href="#picture">Picture Element</a></li>
+				<li><a href="#srcset">SRCSET Attribute</a></li>
+				<li><a href="#full-span">Full-Span image</a></li>
 			</ul>
 			<p>Section description.</p>
 
@@ -128,6 +130,65 @@ img {
 <code class="language-css">
 img {
   max-width: 100%;
+}
+</code>
+</pre>
+			</div><!--end pattern-->
+
+
+
+
+			<div class="pattern" id="full-span">
+				<h3>Full-Span Image<span class="btn"><a href="pat-04-fullspan.html">View Pattern</a></span></h3>
+
+				<p><span class="difficulty">Easy</span> </p>
+
+
+				
+				<ul class="list-compare">
+					<li><h4>Pros:</h4></li>
+					<li>Easy to implement</li>
+					<li>Clear and accessible</li>
+				</ul>
+
+				
+				<ul class="list-compare">
+					<li><h4>Cons:</h4></li>
+					<li>Long navigations can take up too much screen realestate on smaller screens</li>
+					<li>Not scalable</li>
+				</ul>
+
+				<h4>Example</h4>
+				<iframe src="pat-04-fullspan.html" frameborder="0" height="500"></iframe>
+
+				<h4>HTML</h4>
+<pre>
+<code class="language-markup">
+&lt;header>
+   &lt;img id="banner-img" src="i/banner-1400.png" srcset="i/banner-2000.png 2x"  sizes="100vw" alt="Banner Image">
+   &lt;div id="banner-overlay">
+     &lt;h1>Company Name&lt;/h1>
+     &lt;p>A very catchy and cool tagline.&lt;/p>
+   &lt;/div>
+&lt;/header>
+</code>
+</pre>
+				<h4>CSS</h4>
+<pre>
+<code class="language-css">
+header {
+  position: relative;
+}
+
+  #banner-img {
+  width: 100%;
+}
+
+#banner-overlay {
+  position: absolute;
+  text-align: center;
+  top:50%; left:50%;
+  transform: translate(-50%, -50%);
 }
 </code>
 </pre>
