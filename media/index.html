@@ -51,7 +51,10 @@
 				<li><a href="#basic">Basic Scaling Images</a></li>
 				<li><a href="#picture">Picture Element</a></li>
 				<li><a href="#srcset">SRCSET Attribute</a></li>
-				<li><a href="#full-span">Full-Span image</a></li>
+				<li><a href="#full-span">Full-Span Image</a></li>
+				<li><a href="#grid">Image Grid</a></li>
+				<li><a href="#video">Responsive HTML5 Video</a></li>
+				<li><a href="#iframe">Responsive Iframe</a></li>
 			</ul>
 			<p>Section description.</p>
 
@@ -141,21 +144,21 @@ img {
 			<div class="pattern" id="full-span">
 				<h3>Full-Span Image<span class="btn"><a href="pat-04-fullspan.html">View Pattern</a></span></h3>
 
-				<p><span class="difficulty">Easy</span> </p>
+				<p><span class="difficulty">Easy</span> Add large beautiful images to websites with text overlaid on top. A very popular pattern for company website's homepage today.</p>
 
 
 				
 				<ul class="list-compare">
 					<li><h4>Pros:</h4></li>
-					<li>Easy to implement</li>
-					<li>Clear and accessible</li>
+					<li>Can make really beautiful and stunning websites</li>
+					<li>Can have a great first impression</li>
 				</ul>
 
 				
 				<ul class="list-compare">
 					<li><h4>Cons:</h4></li>
-					<li>Long navigations can take up too much screen realestate on smaller screens</li>
-					<li>Not scalable</li>
+					<li>Large images can take long to load (which temporarily ruins the design)</li>
+					<li>Taking up the whole screen means more scrolling/clicking for the user to get to where they need to be (not great pattern for content driven websites)</li>
 				</ul>
 
 				<h4>Example</h4>
@@ -189,6 +192,163 @@ header {
   text-align: center;
   top:50%; left:50%;
   transform: translate(-50%, -50%);
+}
+</code>
+</pre>
+			</div><!--end pattern-->
+
+
+			<div class="pattern" id="grid">
+				<h3>Image Grid<span class="btn"><a href="pat-05-grid.html">View Pattern</a></span></h3>
+
+				<p><span class="difficulty">Easy</span> Showoff thumbnails or galleries in a grid system which the amount of items per row changing with the browser's size.</p>
+
+
+				
+				<ul class="list-compare">
+					<li><h4>Pros:</h4></li>
+					<li>Can make really beautiful and stunning websites</li>
+					<li>Can have a great first impression</li>
+				</ul>
+
+				
+				<ul class="list-compare">
+					<li><h4>Cons:</h4></li>
+					<li>Large images can take long to load (which temporarily ruins the design)</li>
+					<li>Taking up the whole screen means more scrolling/clicking for the user to get to where they need to be (not great pattern for content driven websites)</li>
+				</ul>
+
+				<h4>Example</h4>
+				<iframe src="pat-05-grid.html" frameborder="0" height="500"></iframe>
+
+				<h4>HTML</h4>
+<pre>
+<code class="language-markup">
+&lt;ul id="img-grid">
+ &lt;li>&lt;img src="http://placehold.it/400" alt="Thumbnail">&lt;/li>
+ &lt;li>&lt;img src="http://placehold.it/400" alt="Thumbnail">&lt;/li>
+ &lt;li>&lt;img src="http://placehold.it/400" alt="Thumbnail">&lt;/li>
+ &lt;li>&lt;img src="http://placehold.it/400" alt="Thumbnail">&lt;/li>
+ &lt;li>&lt;img src="http://placehold.it/400" alt="Thumbnail">&lt;/li>
+ &lt;li>&lt;img src="http://placehold.it/400" alt="Thumbnail">&lt;/li>
+ &lt;li>&lt;img src="http://placehold.it/400" alt="Thumbnail">&lt;/li>
+ &lt;li>&lt;img src="http://placehold.it/400" alt="Thumbnail">&lt;/li>
+ &lt;li>&lt;img src="http://placehold.it/400" alt="Thumbnail">&lt;/li>
+ &lt;li>&lt;img src="http://placehold.it/400" alt="Thumbnail">&lt;/li>
+ &lt;li>&lt;img src="http://placehold.it/400" alt="Thumbnail">&lt;/li>
+ &lt;li>&lt;img src="http://placehold.it/400" alt="Thumbnail">&lt;/li>
+&lt;/ul>
+</code>
+</pre>
+				<h4>CSS</h4>
+<pre>
+<code class="language-css">
+#img-grid {
+  overflow:auto;
+  padding:0.15em;
+  margin:0;
+}
+
+  #img-grid li{
+    list-style: none;
+    padding: 0.30em;
+  }
+
+  #img-grid img {
+    max-width: 100%;
+    display:block; /* weird gap w/out this*/
+  }
+
+/*2 in a row*/
+@media screen and (min-width: 600px) {
+  #img-grid li {
+    float: left;
+    width: 50%;
+  }
+}
+
+/*4 in a row*/
+@media screen and (min-width: 800px) {
+  #img-grid li {
+    float: left;
+    width: 25%;
+  }
+}
+
+/*6 in a row*/
+@media screen and (min-width: 1200px) {
+  #img-grid li {
+    float: left;
+    width: 16.667%;
+  }
+}
+</code>
+</pre>
+			</div><!--end pattern-->
+
+
+
+
+			<div class="pattern" id="video">
+				<h3>Responsive HTML5 Video<span class="btn"><a href="pat-06-video.html">View Example</a></span></h3>
+
+				<h4>Example</h4>
+				<iframe src="pat-06-video.html" frameborder="0" height="500"></iframe>
+
+				<h4>HTML</h4>
+<pre>
+<code class="language-markup">
+&lt;video controls>
+   &lt;source src="v/cbmd.mp4" type="video/mp4">
+   &lt;source src="v/cbmd.webm" type="video/webm">
+   &lt;source src="v/cbmd.ogv" type="video/ogv">
+   Your browser does not support the video tag.
+&lt;/video>
+</code>
+</pre>
+				<h4>CSS</h4>
+<pre>
+<code class="language-css">
+video {
+  max-width: 100%;
+}
+</code>
+</pre>
+			</div><!--end pattern-->
+
+
+
+
+			<div class="pattern" id="iframe">
+				<h3>Responsive Iframe<span class="btn"><a href="pat-07-iframe.html">View Example</a></span></h3>
+
+				<h4>Example</h4>
+				<iframe src="pat-07-iframe.html" frameborder="0" height="500"></iframe>
+
+				<h4>HTML</h4>
+<pre>
+<code class="language-markup">
+&lt;div class="video-wrap">
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/l9uqeTHrD9U" frameborder="0" allowfullscreen>&lt;/iframe>
+&lt;/div>
+</code>
+</pre>
+				<h4>CSS</h4>
+<pre>
+<code class="language-css">
+.video-wrap {
+  position: relative;
+  height: 0;
+  padding-top: 32px; /*height of controls*/
+  padding-bottom: 56.25%; /* % of resolution. Ex. 9/16 = 0.5624 */
+}
+
+.video-wrap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 </code>
 </pre>
