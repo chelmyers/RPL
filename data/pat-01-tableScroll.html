@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Responsive Pattern Library</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Load in template styles -->
+  <link rel="stylesheet" href="../assets/css/site-style.css">
+
+  <!-- Load in Google Font: Lato -->
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <style>
+  	/*Pattern 01 - Table Scroll*/
+    body {
+      padding: 10px;
+    }
+
+	  td, th {
+      padding: 10px;
+    }
+    table {
+      /*styles*/
+      border: 2px solid #eee;
+      border-collapse: collapse;
+      border-spacing: 0; 
+    }
+
+    @media screen and (max-width: 600px) {
+      .table-overflow {
+        /*used http://www.cssmatic.com/box-shadow*/
+        -webkit-box-shadow: inset -28px 0px 40px -30px #ddd;
+        -moz-box-shadow: inset -28px 0px 40px -30px #ddd;
+        box-shadow: inset -28px 0px 40px -30px #ddd;
+
+        display:block;
+        overflow-x: scroll;
+      }
+    }
+
+  
+
+  </style>
+</head>
+
+<body>
+	<!-- Insert pattern mark-up here -->
+  <h3>Weekly Workout in Minutes</h3>
+  <table class="table-overflow">
+  <tr>
+    <th></th>
+    <th>Monday</th>
+    <th>Tuesday</th>
+    <th>Wednesday</th>
+    <th>Thursday</th>
+    <th>Friday</th>
+    <th>Saturday</th>
+    <th>Sunday</th>
+  </tr>
+  <tr>
+    <td>Yoga</td>
+    <td>60</td>
+    <td>15</td>
+    <td>-</td>
+    <td>90</td>
+    <td>60</td>
+    <td>90</td>
+    <td>30</td>
+  </tr>
+  <tr>
+    <td>Cardio</td>
+    <td>30</td>
+    <td>30</td>
+    <td>60</td>
+    <td>30</td>
+    <td>30</td>
+    <td>-</td>
+    <td>60</td>
+  </tr>
+  <tr>
+    <td>Weights</td>
+    <td>-</td>
+    <td>90</td>
+    <td>60</td>
+    <td>-</td>
+    <td>60</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+</table>
+
+
+
+</body>
+</html>

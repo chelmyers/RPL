@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Responsive Pattern Library</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Load in template styles -->
+  <link rel="stylesheet" href="../assets/css/site-style.css">
+
+  <!-- Load in Google Font: Lato -->
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <style>
+  	/*Pattern 03 - Form*/
+    body {
+       padding: 10px;
+    }
+
+
+    input[type="text"], 
+    input[type="email"],
+    input[type="password"],
+    input[type="search"],
+    textarea, 
+    select {
+      /*font-size: 1em;
+      padding:5px;*/
+      display: block;
+     /* min-height: 2.75em;*/
+      margin-bottom: 10px;
+      /*min-width: 200px;
+      max-width: 300px;
+      width: 100%;*/
+    }
+
+    input[type="submit"] {
+     /* min-height: 3em;
+      padding: 0 2.75em;
+      margin-bottom: 0;
+      background: mediumseagreen;
+      border: none;
+      color: white;
+      font-size: 1em;*/
+    }
+
+    .form-title {
+      display:block;
+      font-weight: bold;
+    }
+
+    label input {
+      /*display: inline-block;
+      margin: 0 10px 0 0;*/
+
+    }
+
+    label + label {
+      /*margin-right: 15px;
+      display: block;
+      padding: 5px 0;*/
+    }
+
+    @media screen and (min-width: 600px) {
+     /* label + label {
+        display: inline-block;
+        padding: 10px 0;
+      }*/
+    }
+
+  </style>
+</head>
+
+<body>
+	<form action="#" method="post">
+
+    <label class="form-title" for="name">Name:</label>
+    <input type="text" name="name" id="name" />
+
+    <label class="form-title" for="email">Email:</label>
+    <input type="email" name="email" id="email" />
+
+    <label class="form-title">Favorite Color</label>
+    <input type="radio" name="radio" id="red" value="Red" /><label for="red">Red</label>
+    <input type="radio" name="radio" id="blue" value="Blue" /><label for="blue">Blue</label>
+    <input type="radio" name="radio" id="green" value="Green" /><label for="green">Green</label>
+
+    <label class="form-title" for="checkbox">Favorite Animal</label>
+    <input type="checkbox" name="checkbox" id="dog" value="Dog" /><label for="dog">Dog</label>
+    <input type="checkbox" name="checkbox" id="cat" value="Cat" /><label for="cat">Cat</label>
+    <input type="checkbox" name="checkbox" id="other" value="Other" /><label for="other">Other</label>
+
+    <label class="form-title" for="select">Age:</label>
+    <select name="select" id="select">
+      <option value="age-group-1">1-17</option>
+      <option value="age-group-2">18-50</option>
+      <option value="age-group-3">&gt;50</option>
+    </select>
+
+    <label class="form-title" for="textarea">Tell us more:</label>
+    <textarea  cols="50" rows="8" name="textarea" id="textarea"></textarea>
+
+    <input type="submit" value="Submit" />
+
+  </form>
+</body>
+</html>
