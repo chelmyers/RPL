@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Responsive Pattern Library</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Load in template styles -->
+  <link rel="stylesheet" href="../assets/css/site-style.css">
+
+  <!-- Load in Google Font: Lato -->
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <style>
+  	/*Pattern 08 - Full Span Video*/
+	  video {
+      width: 100%;
+    } 
+
+    header {
+      position: relative;
+    }
+
+    h1 {
+      background: rgba(255, 255, 255, 0.3);
+      padding: 20px;
+      display: inline-block;
+      position: absolute;
+      top:50%;left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+
+<body >
+  <header>
+    <video autoplay loop>
+      <source src="v/kaleidoscope.mp4" type="video/mp4">
+      <source src="v/kaleidoscope.webm" type="video/webm">
+      <source src="v/kaleidoscope.ogv" type="video/ogv">
+      <img src="i/kaleidoscope-fallback.png" alt="kaleidoscope"/>
+    </video>
+    <h1>Company Name</h1>
+  </header>
+</body>
+</html>

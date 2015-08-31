@@ -46,9 +46,15 @@
 
 		<section class="main">
 			<h2 class="page-title">Data &amp; Forms</h2>
+			<ul class="subnav">
+				<li>Patterns &amp; Examples:</li>
+				<li><a href="#form">Form Styles</a></li>
+				<li><a href="#tableFade">Table with Fade</a></li>
+				<li><a href="#tableStacked">Table Stacked</a></li>
+			</ul>
 			<p>Section description.</p>
 
-			<div class="pattern">
+			<div id="form" class="pattern">
 				<h3>Form Styles<span class="btn"><a href="pat-03-form.html">View Example</a></span></h3>
 
 				<p><span class="difficulty">Level</span> Pattern description.</p>
@@ -60,14 +66,281 @@
 				<h4>HTML</h4>
 <pre>
 <code class="language-markup">
-&lt;!-- Markup goes here. -->
+&lt;form>
+  &lt;label class="form-title" for="name">Name:&lt;/label>
+  &lt;input type="text" name="name" id="name" />
+
+  &lt;label class="form-title" for="email">Email:&lt;/label>
+  &lt;input type="email" name="email" id="email" />
+
+  &lt;label class="form-title">Favorite Color&lt;/label>
+  &lt;label class="choice" for="red">&lt;input type="radio" name="radio" id="red" value="Red" />Red&lt;/label>
+  &lt;label class="choice" for="blue">&lt;input type="radio" name="radio" id="blue" value="Blue" />Blue&lt;/label>
+  &lt;label class="choice" for="green">&lt;input type="radio" name="radio" id="green" value="Green" />Green&lt;/label>
+
+  &lt;label class="form-title" for="checkbox">Favorite Animal&lt;/label>
+  &lt;label class="choice" for="dog">&lt;input type="checkbox" name="checkbox" id="dog" value="Dog" />Dog&lt;/label>
+  &lt;label class="choice" for="cat">&lt;input type="checkbox" name="checkbox" id="cat" value="Cat" />Cat&lt;/label>
+  &lt;label class="choice" for="other">&lt;input type="checkbox" name="checkbox" id="other" value="Other" />Other&lt;/label>
+
+  &lt;label class="form-title" for="select">Age:&lt;/label>
+  &lt;select name="select" id="select">
+    &lt;option value="age-group-1">1-17&lt;/option>
+    &lt;option value="age-group-2">18-50&lt;/option>
+    &lt;option value="age-group-3">&gt;50&lt;/option>
+  &lt;/select>
+
+  &lt;label class="form-title" for="textarea">Tell us more:&lt;/label>
+  &lt;textarea  cols="50" rows="8" name="textarea" id="textarea">&lt;/textarea>
+
+  &lt;input type="submit" value="Submit" />
+
+&lt;/form>
 </code>
 </pre>
 				<h4>CSS</h4>
 <pre>
 <code class="language-css">
-/*Styles go here*/
+input[type="text"], 
+input[type="email"],
+input[type="password"],
+input[type="search"],
+textarea, 
+select {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1em;
+  padding:5px;
+  min-height: 2.75em;
+  min-width: 200px;
+  max-width: 300px;
+  width: 100%;
+}
 
+input[type="submit"] {
+  min-height: 3em;
+  padding: 0 2.75em;
+  font-size: 1em;
+  border: none;
+  background: mediumseagreen;
+  color: white;
+}
+
+.form-title {
+  display:block;
+  font-weight: bold;
+}
+
+label input {
+  margin-right: 10px;
+}
+
+.choice {
+  margin-right: 15px;
+  padding: 5px 0;
+  display: block;
+}
+
+.choice + .form-title {
+  margin-top: 10px;
+}
+
+</code>
+</pre>
+			</div><!--end pattern-->
+
+			<div class="pattern" id="tableScroll">
+				<h3>Table with Fade<span class="btn"><a href="pat-01-tableFade.html">View Pattern</a></span></h3>
+
+				<p><span class="difficulty">Easy</span> When the table is too wide, columns appear off stage and the user can scroll to the right to see them. The right fade is present to tell the user that there is more data to be seen.</p>
+				
+				<ul class="list-compare">
+					<li><h4>Pros:</h4></li>
+					<li>Accommodates small to medium sized tables</li>
+					<li>The fade is neat touch</li>
+
+				</ul>
+
+				
+				<ul class="list-compare">
+					<li><h4>Cons:</h4></li>
+					<li>Any row headers to the left of the table can be forgotten about when the user finally scrolls to the right end of the table</li>
+					<li>The fade never goes away when the end of the table is reached</li>
+				</ul>
+
+				<h4>Example</h4>
+				<iframe src="pat-01-tableFade.html" frameborder="0" height="250"></iframe>
+
+				<h4>HTML</h4>
+<pre>
+<code class="language-markup">
+&lt;h3>Weekly Workout in Minutes&lt;/h3>
+&lt;table class="table-overflow">
+&lt;tr>
+  &lt;th>&lt;/th>
+  &lt;th>Monday&lt;/th>
+  &lt;th>Tuesday&lt;/th>
+  &lt;th>Wednesday&lt;/th>
+  &lt;th>Thursday&lt;/th>
+  &lt;th>Friday&lt;/th>
+  &lt;th>Saturday&lt;/th>
+  &lt;th>Sunday&lt;/th>
+&lt;/tr>
+&lt;tr>
+  &lt;td>Yoga&lt;/td>
+  &lt;td>60&lt;/td>
+  &lt;td>15&lt;/td>
+  &lt;td>-&lt;/td>
+  &lt;td>90&lt;/td>
+  &lt;td>60&lt;/td>
+  &lt;td>90&lt;/td>
+  &lt;td>30&lt;/td>
+&lt;/tr>
+&lt;tr>
+  &lt;td>Cardio&lt;/td>
+  &lt;td>30&lt;/td>
+  &lt;td>30&lt;/td>
+  &lt;td>60&lt;/td>
+  &lt;td>30&lt;/td>
+  &lt;td>30&lt;/td>
+  &lt;td>-&lt;/td>
+  &lt;td>60&lt;/td>
+&lt;/tr>
+&lt;tr>
+  &lt;td>Weights&lt;/td>
+  &lt;td>-&lt;/td>
+  &lt;td>90&lt;/td>
+  &lt;td>60&lt;/td>
+  &lt;td>-&lt;/td>
+  &lt;td>60&lt;/td>
+  &lt;td>-&lt;/td>
+  &lt;td>-&lt;/td>
+&lt;/tr>
+&lt;/table>
+</code>
+</pre>
+				<h4>CSS</h4>
+<pre>
+<code class="language-css">
+td, th {
+  padding: 10px;
+}
+table {
+  border: 2px solid #eee;
+  border-collapse: collapse;
+  border-spacing: 0; 
+}
+
+@media screen and (max-width: 600px) {
+  .table-overflow {
+    display:block;
+    overflow-x: scroll;
+
+    /*used http://www.cssmatic.com/box-shadow*/
+    -webkit-box-shadow: inset -28px 0px 40px -30px #ddd;
+    -moz-box-shadow: inset -28px 0px 40px -30px #ddd;
+    box-shadow: inset -28px 0px 40px -30px #ddd;
+  }
+}
+</code>
+</pre>
+			</div><!--end pattern-->
+
+
+
+			<div class="pattern" id="tableStacked">
+				<h3>Table Stacked<span class="btn"><a href="pat-02-tableStacked.html">View Pattern</a></span></h3>
+
+				<p><span class="difficulty">Easy</span> When the table is too wide, columns appear off stage and the user can scroll to the right to see them. The right fade is present to tell the user that there is more data to be seen.</p>
+				
+				<ul class="list-compare">
+					<li><h4>Pros:</h4></li>
+					<li>Accommodates small to medium sized tables</li>
+					<li>The fade is neat touch</li>
+
+				</ul>
+
+				
+				<ul class="list-compare">
+					<li><h4>Cons:</h4></li>
+					<li>Any row headers to the left of the table can be forgotten about when the user finally scrolls to the right end of the table</li>
+					<li>The fade never goes away when the end of the table is reached</li>
+				</ul>
+
+				<h4>Example</h4>
+				<iframe src="pat-02-tableStacked.html" frameborder="0" height="250"></iframe>
+
+				<h4>HTML</h4>
+<pre>
+<code class="language-markup">
+&lt;h3>Weekly Workout in Minutes&lt;/h3>
+&lt;table class="table-overflow">
+&lt;tr>
+  &lt;th>&lt;/th>
+  &lt;th>Monday&lt;/th>
+  &lt;th>Tuesday&lt;/th>
+  &lt;th>Wednesday&lt;/th>
+  &lt;th>Thursday&lt;/th>
+  &lt;th>Friday&lt;/th>
+  &lt;th>Saturday&lt;/th>
+  &lt;th>Sunday&lt;/th>
+&lt;/tr>
+&lt;tr>
+  &lt;td>Yoga&lt;/td>
+  &lt;td>60&lt;/td>
+  &lt;td>15&lt;/td>
+  &lt;td>-&lt;/td>
+  &lt;td>90&lt;/td>
+  &lt;td>60&lt;/td>
+  &lt;td>90&lt;/td>
+  &lt;td>30&lt;/td>
+&lt;/tr>
+&lt;tr>
+  &lt;td>Cardio&lt;/td>
+  &lt;td>30&lt;/td>
+  &lt;td>30&lt;/td>
+  &lt;td>60&lt;/td>
+  &lt;td>30&lt;/td>
+  &lt;td>30&lt;/td>
+  &lt;td>-&lt;/td>
+  &lt;td>60&lt;/td>
+&lt;/tr>
+&lt;tr>
+  &lt;td>Weights&lt;/td>
+  &lt;td>-&lt;/td>
+  &lt;td>90&lt;/td>
+  &lt;td>60&lt;/td>
+  &lt;td>-&lt;/td>
+  &lt;td>60&lt;/td>
+  &lt;td>-&lt;/td>
+  &lt;td>-&lt;/td>
+&lt;/tr>
+&lt;/table>
+</code>
+</pre>
+				<h4>CSS</h4>
+<pre>
+<code class="language-css">
+td, th {
+  padding: 10px;
+}
+table {
+  border: 2px solid #eee;
+  border-collapse: collapse;
+  border-spacing: 0; 
+}
+
+@media screen and (max-width: 600px) {
+  .table-overflow {
+    display:block;
+    overflow-x: scroll;
+
+    /*used http://www.cssmatic.com/box-shadow*/
+    -webkit-box-shadow: inset -28px 0px 40px -30px #ddd;
+    -moz-box-shadow: inset -28px 0px 40px -30px #ddd;
+    box-shadow: inset -28px 0px 40px -30px #ddd;
+  }
+}
 </code>
 </pre>
 			</div><!--end pattern-->

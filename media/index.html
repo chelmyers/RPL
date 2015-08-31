@@ -55,6 +55,7 @@
 				<li><a href="#grid">Image Grid</a></li>
 				<li><a href="#video">Responsive HTML5 Video</a></li>
 				<li><a href="#iframe">Responsive Iframe</a></li>
+				<li><a href="#fullSpanVideo">Full Span Video</a></li>
 			</ul>
 			<p>Section description.</p>
 
@@ -352,7 +353,47 @@ video {
 }
 </code>
 </pre>
+	</div><!--end pattern-->
+
+
+	<div class="pattern" id="fullSpanVideo">
+				<h3>Full Span Video<span class="btn"><a href="pat-08-fullSpanVideo.html">View Example</a></span></h3>
+
+				<h4>Example</h4>
+				<iframe src="pat-08-fullSpanVideo.html" frameborder="0" height="600"></iframe>
+
+				<h4>HTML</h4>
+<pre>
+<code class="language-markup">
+&lt;div class="video-wrap">
+  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/l9uqeTHrD9U" frameborder="0" allowfullscreen>&lt;/iframe>
+&lt;/div>
+</code>
+</pre>
+				<h4>CSS</h4>
+<pre>
+<code class="language-css">
+.video-wrap {
+  position: relative;
+  height: 0;
+  padding-top: 32px; /*height of controls*/
+  padding-bottom: 56.25%; /* % of resolution. Ex. 9/16 = 0.5624 */
+}
+
+.video-wrap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+</code>
+</pre>
 			</div><!--end pattern-->
+
+
+
+
 		</section>
 	</div>
 	<script src="../assets/plugins/prism.js"></script>

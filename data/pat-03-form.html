@@ -29,24 +29,23 @@
     input[type="search"],
     textarea, 
     select {
-      /*font-size: 1em;
-      padding:5px;*/
       display: block;
-     /* min-height: 2.75em;*/
       margin-bottom: 10px;
-      /*min-width: 200px;
+      font-size: 1em;
+      padding:5px;
+      min-height: 2.75em;
+      min-width: 200px;
       max-width: 300px;
-      width: 100%;*/
+      width: 100%;
     }
 
     input[type="submit"] {
-     /* min-height: 3em;
+      min-height: 3em;
       padding: 0 2.75em;
-      margin-bottom: 0;
-      background: mediumseagreen;
+      font-size: 1em;
       border: none;
+      background: mediumseagreen;
       color: white;
-      font-size: 1em;*/
     }
 
     .form-title {
@@ -55,30 +54,25 @@
     }
 
     label input {
-      /*display: inline-block;
-      margin: 0 10px 0 0;*/
-
+      margin-right: 10px;
     }
 
-    label + label {
-      /*margin-right: 15px;
+    .choice {
+      margin-right: 15px;
+      padding: 5px 0;
       display: block;
-      padding: 5px 0;*/
     }
 
-    @media screen and (min-width: 600px) {
-     /* label + label {
-        display: inline-block;
-        padding: 10px 0;
-      }*/
+    .choice + .form-title {
+      margin-top: 10px;
     }
+
 
   </style>
 </head>
 
 <body>
-	<form>
-
+  <form>
     <label class="form-title" for="name">Name:</label>
     <input type="text" name="name" id="name" />
 
@@ -86,14 +80,14 @@
     <input type="email" name="email" id="email" />
 
     <label class="form-title">Favorite Color</label>
-    <input type="radio" name="radio" id="red" value="Red" /><label for="red">Red</label>
-    <input type="radio" name="radio" id="blue" value="Blue" /><label for="blue">Blue</label>
-    <input type="radio" name="radio" id="green" value="Green" /><label for="green">Green</label>
+    <label class="choice" for="red"><input type="radio" name="radio" id="red" value="Red" />Red</label>
+    <label class="choice" for="blue"><input type="radio" name="radio" id="blue" value="Blue" />Blue</label>
+    <label class="choice" for="green"><input type="radio" name="radio" id="green" value="Green" />Green</label>
 
     <label class="form-title" for="checkbox">Favorite Animal</label>
-    <input type="checkbox" name="checkbox" id="dog" value="Dog" /><label for="dog">Dog</label>
-    <input type="checkbox" name="checkbox" id="cat" value="Cat" /><label for="cat">Cat</label>
-    <input type="checkbox" name="checkbox" id="other" value="Other" /><label for="other">Other</label>
+    <label class="choice" for="dog"><input type="checkbox" name="checkbox" id="dog" value="Dog" />Dog</label>
+    <label class="choice" for="cat"><input type="checkbox" name="checkbox" id="cat" value="Cat" />Cat</label>
+    <label class="choice" for="other"><input type="checkbox" name="checkbox" id="other" value="Other" />Other</label>
 
     <label class="form-title" for="select">Age:</label>
     <select name="select" id="select">

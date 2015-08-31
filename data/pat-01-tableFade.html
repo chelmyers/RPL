@@ -17,16 +17,15 @@
   <![endif]-->
 
   <style>
-  	/*Pattern 01 - Table Scroll*/
+  	/*Pattern 01 - Table Fade*/
     body {
       padding: 10px;
     }
 
-	  td, th {
+    td, th {
       padding: 10px;
     }
     table {
-      /*styles*/
       border: 2px solid #eee;
       border-collapse: collapse;
       border-spacing: 0; 
@@ -34,13 +33,13 @@
 
     @media screen and (max-width: 600px) {
       .table-overflow {
+        display:block;
+        overflow-x: scroll;
+
         /*used http://www.cssmatic.com/box-shadow*/
         -webkit-box-shadow: inset -28px 0px 40px -30px #ddd;
         -moz-box-shadow: inset -28px 0px 40px -30px #ddd;
         box-shadow: inset -28px 0px 40px -30px #ddd;
-
-        display:block;
-        overflow-x: scroll;
       }
     }
 
@@ -93,7 +92,7 @@
     <td>-</td>
     <td>-</td>
   </tr>
-</table>
+  </table>
 
 
 
