@@ -22,7 +22,9 @@
       padding:0;
     }
 
-	  video, img {
+
+
+    video, img {
       width: 100%;
     } 
 
@@ -34,14 +36,14 @@
       position: relative;
     }
 
-    h1 {
+    #banner-overlay {
       background: rgba(0, 0, 0, 0.3);
-      padding: 20px;
-      display: inline-block;
-      position: absolute;
       color: white;
+      text-align: center;
+      padding: 20px;
+      position: absolute;
       top:50%;left: 50%;
-              transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
       -webkit-transform: translate(-50%, -50%);
     }
 
@@ -62,13 +64,15 @@
 <body >
   <header>
     <img class="fallback" src="i/kaleidoscope-fallback.png" alt="kaleidoscope"/>
-    <video autoplay loop poster="i/kaleidoscope-fallback.png">
-      <source src="v/kaleidoscope.mp4" type="video/mp4">
-      <source src="v/kaleidoscope.webm" type="video/webm">
-      <source src="v/kaleidoscope.ogv" type="video/ogv">
+    <video autoplay loop>
+      <source src="v/kaleidoscope.mp4" type="video/mp4"/>
+      <source src="v/kaleidoscope.webm" type="video/webm"/>
+      <source src="v/kaleidoscope.ogv" type="video/ogv"/>
       <img src="i/kaleidoscope-fallback.png" alt="kaleidoscope"/>
     </video>
-    <h1>Company Name</h1>
+    <div id="banner-overlay">
+      <h1>Company Name</h1>
+    </div>
   </header>
 
 </body>
