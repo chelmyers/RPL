@@ -29,15 +29,15 @@
 		</div>
 	</header>
 
-	<div class="container">		
+	<div class="container">
 		<nav>
-			<ul id="menu">
+			<ul class="menu">
 				<li><a href="../index.html">Welcome</a></li>
 				<li><a href="../navigation/index.html">Navigation</a></li>
 				<li><a href="../layouts/index.html">Layouts</a></li>
 				<li class="active"><a href="index.html">Media</a></li>
 				<li><a href="../data/index.html">Data &amp; Forms</a></li>
-				
+
 				<!-- Include new section page -->
 			</ul>
 			<p class="copyright">&copy; Chelsea Myers</p>
@@ -50,7 +50,7 @@
 				<li><a href="#basic">Basic Scaling Images</a></li>
 				<li><a href="#picture">Picture Element</a></li>
 				<li><a href="#srcset">SRCSET Attribute</a></li>
-				<li><a href="#full-span">Full-Span Image</a></li>
+				<li><a href="#full-span">Big Hero Image</a></li>
 				<li><a href="#grid">Image Grid</a></li>
 				<li><a href="#video">Responsive HTML5 Video</a></li>
 				<li><a href="#iframe">Responsive Iframe</a></li>
@@ -67,7 +67,7 @@
 				<h4>HTML</h4>
 <pre>
 <code class="language-markup">
-&lt;img src="http://placehold.it/800x400" alt="A basic scaling image">
+&lt;img src="http://placehold.it/800x400" alt="A basic scaling image"/>
 </code>
 </pre>
 				<h4>CSS</h4>
@@ -75,6 +75,7 @@
 <code class="language-css">
 img {
   max-width: 100%;
+  height: auto;
 }
 
 </code>
@@ -93,15 +94,15 @@ img {
 <pre>
 <code class="language-markup">
 &lt;picture>
-	&lt;source 
+	&lt;source
 	  media="(min-width: 1000px)"
-	  srcset="i/1920.png">
-	&lt;source 
+	  srcset="i/1920.png"/>
+	&lt;source
 	  media="(min-width: 500px)"
-	  srcset="i/1000.png">
-	&lt;img 
-	 src="i/500.png" 
-	 alt="Featured Image">
+	  srcset="i/1000.png"/>
+	&lt;img
+	 src="i/500.png"
+	 alt="Featured Image"/>
 &lt;/picture>
 </code>
 </pre>
@@ -110,6 +111,7 @@ img {
 <code class="language-css">
 img {
   max-width: 100%;
+  height: auto;
 }
 </code>
 </pre>
@@ -117,7 +119,7 @@ img {
 
 			<div id="srcset" class="pattern">
 				<h3>SRCSET Attribute<span class="btn"><a href="pat-03-srcset.html">View Example</a></span></h3>
-				<p>A responsive image solution the img element and the srcset attribute.</p>
+				<p>A responsive image solution using the img element and the srcset attribute.</p>
 
 				<h4>Example</h4>
 				<iframe src="pat-03-srcset.html" frameborder="0" height="500"></iframe>
@@ -125,7 +127,7 @@ img {
 				<h4>HTML</h4>
 <pre>
 <code class="language-markup">
-&lt;img src="i/1000.png" srcset="i/1920.png 2x" alt="Featured Image">
+&lt;img src="i/1000.png" srcset="i/1920.png 2x" alt="Featured Image"/>
 </code>
 </pre>
 				<h4>CSS</h4>
@@ -133,32 +135,29 @@ img {
 <code class="language-css">
 img {
   max-width: 100%;
+  height: auto;
 }
 </code>
 </pre>
 			</div><!--end pattern-->
 
 
-
-
+			<!-- Full-Span Image -->
 			<div class="pattern" id="full-span">
-				<h3>Full-Span Image<span class="btn"><a href="pat-04-fullspan.html">View Pattern</a></span></h3>
+				<h3>Big Hero Image<span class="btn"><a href="pat-04-fullspan.html">View Pattern</a></span></h3>
 
 				<p><span class="difficulty">Easy</span> Add large beautiful images to websites with text overlaid on top. A very popular pattern for company website's homepage today.</p>
 
-
-				
 				<ul class="list-compare">
 					<li><h4>Pros:</h4></li>
-					<li>Can make really beautiful and stunning websites</li>
-					<li>Can have a great first impression</li>
+					<li>This pattern can make really stunning websites when the right media is used</li>
+					<li>This pattern is easy to implement</li>
 				</ul>
 
-				
 				<ul class="list-compare">
 					<li><h4>Cons:</h4></li>
-					<li>Large images can take long to load (which temporarily ruins the design)</li>
-					<li>Taking up the whole screen means more scrolling/clicking for the user to get to where they need to be (not great pattern for content driven websites)</li>
+					<li>Large images can take long to load (which temporarily ruins the user experience of the site)</li>
+					<li>Taking up the whole screen means more scrolling/clicking for the user to get to where they need to be (not a great pattern for content-driven websites)</li>
 				</ul>
 
 				<h4>Example</h4>
@@ -168,11 +167,13 @@ img {
 <pre>
 <code class="language-markup">
 &lt;header>
-   &lt;img id="banner-img" src="i/banner-1400.png" srcset="i/banner-2000.png 2x"  sizes="100vw" alt="Banner Image">
-   &lt;div id="banner-overlay">
-     &lt;h1>Company Name&lt;/h1>
-     &lt;p>A very catchy and cool tagline.&lt;/p>
-   &lt;/div>
+	&lt;img class="banner-img" src="i/banner-1400.png"
+	srcset="i/banner-2000.png 2x" sizes="100vw" alt="Banner Image"/>
+
+	&lt;div class="banner-overlay">
+		&lt;h1>Company Name&lt;/h1>
+		&lt;p>A very catchy and cool tagline.&lt;/p>
+	&lt;/div>
 &lt;/header>
 </code>
 </pre>
@@ -180,42 +181,41 @@ img {
 <pre>
 <code class="language-css">
 header {
-  position: relative;
+	padding:0;
+	margin:0;
+	position: relative;
 }
 
-  #banner-img {
-  width: 100%;
+.banner-img {
+	width: 100%;
 }
 
-#banner-overlay {
-  position: absolute;
-  text-align: center;
-  top:50%; left:50%;
-  transform: translate(-50%, -50%);
+.banner-overlay {
+	position: absolute;
+	text-align: center;
+	top:50%; left:50%;
+	transform: translate(-50%, -50%);
 }
 </code>
 </pre>
 			</div><!--end pattern-->
 
-
+			<!-- Image Grid Pattern -->
 			<div class="pattern" id="grid">
 				<h3>Image Grid<span class="btn"><a href="pat-05-grid.html">View Pattern</a></span></h3>
 
-				<p><span class="difficulty">Easy</span> Showoff thumbnails or galleries in a grid system which the amount of items per row changing with the browser's size.</p>
+				<p><span class="difficulty">Easy</span> Showoff thumbnails or galleries in a grid system where the amount of items per row change with the browser's size.</p>
 
-
-				
 				<ul class="list-compare">
 					<li><h4>Pros:</h4></li>
-					<li>Can make really beautiful and stunning websites</li>
-					<li>Can have a great first impression</li>
+					<li>Great way to show off a collection</li>
+					<li>Easy to create</li>
 				</ul>
 
-				
+
 				<ul class="list-compare">
 					<li><h4>Cons:</h4></li>
-					<li>Large images can take long to load (which temporarily ruins the design)</li>
-					<li>Taking up the whole screen means more scrolling/clicking for the user to get to where they need to be (not great pattern for content driven websites)</li>
+					<li>This pattern needs more media queries to ensure image quality across screen sizes (to avoid images scaling too big or too small)</li>
 				</ul>
 
 				<h4>Example</h4>
@@ -224,71 +224,127 @@ header {
 				<h4>HTML</h4>
 <pre>
 <code class="language-markup">
-&lt;ul id="img-grid">
- &lt;li>&lt;img src="http://placehold.it/400" alt="Thumbnail">&lt;/li>
- &lt;li>&lt;img src="http://placehold.it/400" alt="Thumbnail">&lt;/li>
- &lt;li>&lt;img src="http://placehold.it/400" alt="Thumbnail">&lt;/li>
- &lt;li>&lt;img src="http://placehold.it/400" alt="Thumbnail">&lt;/li>
- &lt;li>&lt;img src="http://placehold.it/400" alt="Thumbnail">&lt;/li>
- &lt;li>&lt;img src="http://placehold.it/400" alt="Thumbnail">&lt;/li>
- &lt;li>&lt;img src="http://placehold.it/400" alt="Thumbnail">&lt;/li>
- &lt;li>&lt;img src="http://placehold.it/400" alt="Thumbnail">&lt;/li>
- &lt;li>&lt;img src="http://placehold.it/400" alt="Thumbnail">&lt;/li>
- &lt;li>&lt;img src="http://placehold.it/400" alt="Thumbnail">&lt;/li>
- &lt;li>&lt;img src="http://placehold.it/400" alt="Thumbnail">&lt;/li>
- &lt;li>&lt;img src="http://placehold.it/400" alt="Thumbnail">&lt;/li>
+&lt;ul class="img-grid">
+	&lt;li>&lt;img src="http://placehold.it/400" alt="Thumbnail" />&lt;/li>
+	&lt;li>&lt;img src="http://placehold.it/400" alt="Thumbnail" />&lt;/li>
+	&lt;li>&lt;img src="http://placehold.it/400" alt="Thumbnail" />&lt;/li>
+	&lt;li>&lt;img src="http://placehold.it/400" alt="Thumbnail" />&lt;/li>
+	&lt;li>&lt;img src="http://placehold.it/400" alt="Thumbnail" />&lt;/li>
+	&lt;li>&lt;img src="http://placehold.it/400" alt="Thumbnail" />&lt;/li>
+	&lt;li>&lt;img src="http://placehold.it/400" alt="Thumbnail" />&lt;/li>
+	&lt;li>&lt;img src="http://placehold.it/400" alt="Thumbnail" />&lt;/li>
+	&lt;li>&lt;img src="http://placehold.it/400" alt="Thumbnail" />&lt;/li>
+	&lt;li>&lt;img src="http://placehold.it/400" alt="Thumbnail" />&lt;/li>
+	&lt;li>&lt;img src="http://placehold.it/400" alt="Thumbnail" />&lt;/li>
+	&lt;li>&lt;img src="http://placehold.it/400" alt="Thumbnail" />&lt;/li>
 &lt;/ul>
 </code>
 </pre>
 				<h4>CSS</h4>
 <pre>
 <code class="language-css">
-#img-grid {
-  overflow:auto;
-  padding:0.15em;
-  margin:0;
+section {
+	padding:0;
 }
 
-  #img-grid li{
-    list-style: none;
-    padding: 0.30em;
-  }
+.img-grid {
+	padding:0.15em;
+	margin:0;
+}
 
-  #img-grid img {
-    max-width: 100%;
-    display:block; /* weird gap w/out this*/
-  }
+	.img-grid li{
+		list-style: none;
+		padding: 0.30em;
+
+	}
+
+	.img-grid img {
+		max-width: 100%;
+		height: auto;
+		vertical-align: bottom;
+	}
 
 /*2 in a row*/
 @media screen and (min-width: 600px) {
-  #img-grid li {
-    float: left;
-    width: 50%;
-  }
+	.img-grid {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	.img-grid li {
+		width: 50%;
+	}
 }
 
 /*4 in a row*/
 @media screen and (min-width: 800px) {
-  #img-grid li {
-    float: left;
-    width: 25%;
-  }
+	.img-grid li {
+		width: 25%;
+	}
 }
 
 /*6 in a row*/
 @media screen and (min-width: 1200px) {
-  #img-grid li {
-    float: left;
-    width: 16.667%;
-  }
+	.img-grid li {
+		width: 16.66%;
+	}
 }
+
+
+
+/*Float Solution*/
+section {
+	padding:0;
+}
+
+.img-grid {
+	padding:0.15em;
+	margin:0;
+}
+
+	.img-grid li{
+		list-style: none;
+		padding: 0.30em;
+	}
+
+	.img-grid img {
+		max-width: 100%;
+		vertical-align: bottom;
+	}
+
+/*2 in a row*/
+@media screen and (min-width: 600px) {
+	.img-grid li {
+		float: left;
+		width: 50%;
+	}
+}
+
+/*4 in a row*/
+@media screen and (min-width: 800px) {
+	.img-grid li {
+		width: 25%;
+	}
+}
+
+/*6 in a row*/
+@media screen and (min-width: 1200px) {
+	.img-grid li {
+		width: 16.66%;
+	}
+	.img-grid li:nth-child(5n+1) {
+		clear:right;
+	}
+}
+
 </code>
 </pre>
 			</div><!--end pattern-->
 
 
 
-
+			<!-- Responsive HTML5 Video -->
 			<div class="pattern" id="video">
 				<h3>Responsive HTML5 Video<span class="btn"><a href="pat-06-video.html">View Example</a></span></h3>
 
@@ -299,10 +355,13 @@ header {
 <pre>
 <code class="language-markup">
 &lt;video controls>
-   &lt;source src="v/cbmd.mp4" type="video/mp4">
-   &lt;source src="v/cbmd.webm" type="video/webm">
-   &lt;source src="v/cbmd.ogv" type="video/ogv">
-   Your browser does not support the video tag.
+	&lt;source src="http://chelmyers.github.io/RPL/media/v/cbmd.mp4"
+	type="video/mp4"/>
+	&lt;source src="http://chelmyers.github.io/RPL/media/v/cbmd.webm"
+	type="video/webm"/>
+	&lt;source src="http://chelmyers.github.io/RPL/media/v/cbmd.ogv"
+	type="video/ogv"/>
+	Your browser does not support the HTML5 video tag.
 &lt;/video>
 </code>
 </pre>
@@ -311,14 +370,14 @@ header {
 <code class="language-css">
 video {
   max-width: 100%;
+  height: auto;
 }
 </code>
 </pre>
 			</div><!--end pattern-->
 
 
-
-
+			<!-- Responsive Iframe -->
 			<div class="pattern" id="iframe">
 				<h3>Responsive Iframe<span class="btn"><a href="pat-07-iframe.html">View Example</a></span></h3>
 
@@ -329,7 +388,9 @@ video {
 <pre>
 <code class="language-markup">
 &lt;div class="video-wrap">
-  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/l9uqeTHrD9U" frameborder="0" allowfullscreen>&lt;/iframe>
+	&lt;iframe width="560" height="315"
+	src="https://www.youtube.com/embed/l9uqeTHrD9U"
+	frameborder="0" allowfullscreen>&lt;/iframe>
 &lt;/div>
 </code>
 </pre>
@@ -337,18 +398,18 @@ video {
 <pre>
 <code class="language-css">
 .video-wrap {
-  position: relative;
-  height: 0;
-  padding-top: 32px; /*height of controls*/
-  padding-bottom: 56.25%; /* % of resolution. Ex. 9/16 = 0.5624 */
+	position: relative;
+	height: 0;
+	padding-top: 32px; /*height of controls*/
+	padding-bottom: 56.25%; /* % of resolution. Ex. 9/16 = 0.5624 */
 }
 
 .video-wrap iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 </code>
 </pre>
@@ -358,33 +419,77 @@ video {
 	<div class="pattern" id="fullSpanVideo">
 				<h3>Full Span Video<span class="btn"><a href="pat-08-fullSpanVideo.html">View Example</a></span></h3>
 
+				<p><span class="difficulty">Easy</span> A full span ambient video background that automatically plays and loops with text overlaid.</p>
+
+				<ul class="list-compare">
+					<li><h4>Pros:</h4></li>
+					<li>Ambient background videos are trendy right now and highly demanded by clients</li>
+					<li>An elegant pattern that can show off visually since it is a video</li>
+				</ul>
+
+
+				<ul class="list-compare">
+					<li><h4>Cons:</h4></li>
+					<li>Users have to load a whole video to get the effect</li>
+					<li>Video does not autoplay on smartphones</li>
+				</ul>
+
 				<h4>Example</h4>
 				<iframe src="pat-08-fullSpanVideo.html" frameborder="0" height="600"></iframe>
 
 				<h4>HTML</h4>
 <pre>
 <code class="language-markup">
-&lt;div class="video-wrap">
-  &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/l9uqeTHrD9U" frameborder="0" allowfullscreen>&lt;/iframe>
-&lt;/div>
+&lt;header>
+  &lt;img class="fallback" src="i/kaleidoscope-fallback.png" alt="kaleidoscope"/>
+
+  &lt;video autoplay loop>
+    &lt;source src="v/kaleidoscope.mp4" type="video/mp4"/>
+    &lt;source src="v/kaleidoscope.webm" type="video/webm"/>
+    &lt;source src="v/kaleidoscope.ogv" type="video/ogv"/>
+    &lt;img src="i/kaleidoscope-fallback.png" alt="kaleidoscope"/>
+  &lt;/video>
+
+  &lt;div class="banner-overlay">
+    &lt;h1>Company Name&lt;/h1>
+  &lt;/div>
+&lt;/header>
 </code>
 </pre>
 				<h4>CSS</h4>
 <pre>
 <code class="language-css">
-.video-wrap {
-  position: relative;
-  height: 0;
-  padding-top: 32px; /*height of controls*/
-  padding-bottom: 56.25%; /* % of resolution. Ex. 9/16 = 0.5624 */
+video, img {
+	width: 100%;
 }
 
-.video-wrap iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+video {
+	display: none;
+}
+
+header {
+	position: relative;
+}
+
+.banner-overlay {
+	background: rgba(0, 0, 0, 0.3);
+	color: white;
+	text-align: center;
+	padding: 20px;
+	position: absolute;
+	top:50%;left: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+}
+
+@media screen and (min-width: 600px) {
+	.fallback {
+		display: none;
+	}
+
+	video {
+		display: block;
+	}
 }
 </code>
 </pre>

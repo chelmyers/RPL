@@ -29,15 +29,15 @@
 		</div>
 	</header>
 
-	<div class="container">		
+	<div class="container">
 		<nav>
-			<ul id="menu">
+			<ul class="menu">
 				<li><a href="../index.html">Welcome</a></li>
 				<li class="active"><a href="index.html">Navigation</a></li>
 				<li><a href="../layouts/index.html">Layouts</a></li>
 				<li><a href="../media/index.html">Media</a></li>
 				<li><a href="../data/index.html">Data &amp; Forms</a></li>
-				
+
 			</ul>
 			<p class="copyright">&copy; Chelsea Myers</p>
 		</nav>
@@ -47,30 +47,27 @@
 			<ul class="subnav">
 				<li>Patterns:</li>
 				<li><a href="#simply-stacked">Simple Stack</a></li>
-				<li><a href="#anchor">Anchor &amp; Footer</a></li>
+				<li><a href="#anchor">Anchor and Footer</a></li>
 				<li><a href="#toggled">The Toggle</a></li>
 				<li><a href="#offcanvas">Off Canvas</a></li>
+				<li><a href="#overlay">The Overlay</a></li>
 			</ul>
 			<p>A website's navigation is the most important tool to the user.  It should provide quick access to all the website has to offer. It should also not get in the way. Below are examples of popular responsive patterns that make navigation websites easy on both small and large screens.</p>
 
 			<div class="pattern" id="simply-stacked">
 				<h3>Simple Stack<span class="btn"><a href="pat-01-simplystacked.html">View Pattern</a></span></h3>
 
-				<p><span class="difficulty">Easy</span> This pattern is very simple and easy to implement. The navigation does not change much from small to large screen. All pages can be seen as once and sometimes shift under the page title on smaller screens.</p>
+				<p><span class="difficulty">Easy</span> This pattern is very simple and easy to implement. The navigation does not change much from small to large screen. All pages can be seen at once and sometimes shift under the page title on smaller screens.</p>
 
-
-				
 				<ul class="list-compare">
 					<li><h4>Pros:</h4></li>
-					<li>Easy to implement</li>
-					<li>Clear and accessible</li>
+					<li>This requires very little code</li>
+					<li>This is great for smaller websites with fewer navigation items</li>
 				</ul>
 
-				
 				<ul class="list-compare">
 					<li><h4>Cons:</h4></li>
-					<li>Long navigations can take up too much screen realestate on smaller screens</li>
-					<li>Not scalable</li>
+					<li>Harder to scale up for larger website with more information/content and navigation items</li>
 				</ul>
 
 				<h4>Example</h4>
@@ -79,8 +76,8 @@
 				<h4>HTML</h4>
 <pre>
 <code class="language-markup">
-&lt;header>
-	&lt;h1>Page Heading (h1)&lt;/h1>
+&lt;header class="clearfix">
+	&lt;h1>Logo&lt;/h1>
 	&lt;nav>
 		&lt;ul>
 			&lt;li>&lt;a href="#">Home&lt;/a>&lt;/li>
@@ -96,13 +93,8 @@
 				<h4>CSS</h4>
 <pre>
 <code class="language-css">
-header {
-	overflow: auto;
-}
-
 header h1 {
 	margin-bottom: 0.25em;
-
 }
 
 nav li {
@@ -134,21 +126,22 @@ nav li {
 
 
 			<div class="pattern" id="anchor">
-				<h3>Anchor &amp; Footer <span class="btn"><a href="pat-02-anchor.html">View Pattern</a></span></h3>
+				<h3>Anchor and Footer <span class="btn"><a href="pat-02-anchor.html">View Pattern</a></span></h3>
 				<p><span class="difficulty">Easy</span> This pattern consists of a jump link in the header that links to a menu in the Anchor. It is easy to create but the jump to the bottom of the page can be jarring.</p>
-				
+
 				<ul class="list-compare">
 					<li><h4>Pros:</h4></li>
-					<li>Easy to implement</li>
-					<li>Can fit large menus</li>
-					<li>Saves screen realesta</li>
+					<li>Content is not pushed down even further by longer navigations</li>
+					<li>Can accommodate for medium navigations (+-8 links) since it is only taking up space at the bottom of the page</li>
+					<li>Very easy to implement</li>
 				</ul>
 
-				
+
 				<ul class="list-compare">
 					<li><h4>Cons:</h4></li>
-					<li>User won't think to look for the menu in the Anchor</li>
-					<li>Jumping to the bottom of the page can be jarring</li>
+					<li>The jump from the top of the page to the bottom can be jarring</li>
+					<li>Long navigations can still get unruly</li>
+					<li>Navigation can be missed</li>
 				</ul>
 
 				<h4>Example</h4>
@@ -157,38 +150,40 @@ nav li {
 				<h4>HTML</h4>
 <pre>
 <code class="language-markup">
-&lt;header>	
-		&lt;img src="http://placehold.it/100x50&=logo" alt="Logo">
-		&lt;p class="menu-btn">&lt;a href="#menu">Menu&lt;/a>&lt;/p>
-	&lt;/header>
-	&lt;div class="content">
-		&lt;p>Content goes here.&lt;/p>
+&lt;header class="clearfix">
+	&lt;h1>Logo&lt;/h1>
+	&lt;a class="menu-btn" href="#menu">Menu&lt;/a>
+&lt;/header>
+
+&lt;div class="content">
+	&lt;p>Content goes here.&lt;/p>
+&lt;/div>
+
+&lt;footer>
+	&lt;div class="footer-inner">
+		&lt;h3>Footer&lt;/h3>
+		&lt;nav id="menu">
+			&lt;ul>
+				&lt;li>&lt;a href="#">Home&lt;/a>&lt;/li>
+				&lt;li>&lt;a href="#">About&lt;/a>&lt;/li>
+				&lt;li>&lt;a href="#">Our Portfolio&lt;/a>&lt;/li>
+				&lt;li>&lt;a href="#">Our Services&lt;/a>&lt;/li>
+				&lt;li>&lt;a href="#">Contact Us&lt;/a>&lt;/li>
+			&lt;/ul>
+		&lt;/nav>
 	&lt;/div>
-	&lt;Anchor>
-		&lt;div class="Anchor-inner">
-			&lt;h3>Anchor&lt;/h3>
-			&lt;nav id="menu">
-				&lt;ul>
-					&lt;li>&lt;a href="#">Home&lt;/a>&lt;/li>
-					&lt;li>&lt;a href="#">About&lt;/a>&lt;/li>
-					&lt;li>&lt;a href="#">Our Portfolio&lt;/a>&lt;/li>
-					&lt;li>&lt;a href="#">Our Services&lt;/a>&lt;/li>
-					&lt;li>&lt;a href="#">Contact Us&lt;/a>&lt;/li>
-				&lt;/ul>
-			&lt;/nav>
-		&lt;/div>
-	&lt;/Anchor>
+&lt;/footer>
 </code>
 </pre>
 				<h4>CSS</h4>
 <pre>
 <code class="language-css">
-header {
-	overflow: auto;
-}
-
 .menu-btn {
 	float:right;
+}
+
+header h1 {
+	float: left;
 }
 
 nav li {
@@ -213,9 +208,9 @@ footer {
 		top:0.75em;
 		right:0.75em;
 	}
-	nav li {
-		display: inline-block;
-	}
+		nav li {
+			display: inline-block;
+		}
 }
 
 
@@ -227,18 +222,17 @@ footer {
 			<div class="pattern" id="toggled">
 				<h3>The Toggle<span class="btn"><a href="pat-03-toggled.html">View Pattern</a></span></h3>
 
-				<p><span class="difficulty">Level</span> Pattern description.</p>
+				<p><span class="difficulty">Medium</span> The next two patterns are the most common RWD navigational patterns and will need JS. The toggle is a navigation that is hidden in a drawer on small devices. The drawer can then be toggled open and shut using JS.</p>
 
 				<ul class="list-compare">
 					<li><h4>Pros:</h4></li>
-					<li>Item 1</li>
-					<li>Item 2</li>
+					<li>This pattern can hold larger navigation systems</li>
+					<li>This takes up zero pixels when closed</li>
 				</ul>
 
 				<ul class="list-compare">
 					<li><h4>Cons:</h4></li>
-					<li>Item 1</li>
-					<li>Item 2</li>
+					<li>This still cannot hold huge navigation systems</li>
 				</ul>
 
 				<h4>Example</h4>
@@ -247,129 +241,110 @@ footer {
 				<h4>HTML</h4>
 <pre>
 <code class="language-markup">
-&lt;body id="page">
-  &lt;header>
-    &lt;div class="header-inner">   
-      &lt;img src="http://placehold.it/100x50&=logo" alt="Logo">
-      &lt;a href="#" id="menuBtn">Menu&lt;/a>
-    &lt;/div>
-
-    &lt;nav>
-      &lt;ul>
-        &lt;li>&lt;a href="#">Home&lt;/a>&lt;/li>
-        &lt;li>&lt;a href="#">About&lt;/a>&lt;/li>
-        &lt;li>&lt;a href="#">Our Portfolio&lt;/a>&lt;/li>
-        &lt;li>&lt;a href="#">Our Services&lt;/a>&lt;/li>
-        &lt;li>&lt;a href="#">Contact Us&lt;/a>&lt;/li>
-      &lt;/ul>
-    &lt;/nav>
-  &lt;/header>
-</body>
+&lt;body>
+	&lt;header>
+		&lt;div class="header-inner">
+			&lt;h1>Logo&lt;/h1>
+			&lt;button class="menu-toggle">Menu&lt;/button>
+		&lt;/div>
+		&lt;nav>
+			&lt;ul>
+				&lt;li>&lt;a href="#">Home&lt;/a>&lt;/li>
+				&lt;li>&lt;a href="#">About&lt;/a>&lt;/li>
+				&lt;li>&lt;a href="#">Our Portfolio&lt;/a>&lt;/li>
+				&lt;li>&lt;a href="#">Our Services&lt;/a>&lt;/li>
+				&lt;li>&lt;a href="#">Contact Us&lt;/a>&lt;/li>
+			&lt;/ul>
+		&lt;/nav>
+	&lt;/header>
+&lt;/body>
 </code>
 </pre>
 				<h4>CSS</h4>
 <pre>
 <code class="language-css">
 header {
-  padding:0;
+	padding:0;
 }
+	header h1 {
+		float: left;
+	}
 
 nav {
-  padding: 0.75em;
-  background: lightgray;
-  display: none;
+	padding: 0.75em;
+	background: lightgray;
+	display: none;
+}
+	nav li {
+		padding: 0.25em 0 0 0.5em;
+	}
+		nav a {
+			display: block;
+		}
+
+.menu-toggle {
+	float: right;
+	text-decoration: none;
+	padding: 0.5em;
+	border: 1px solid lightgray;
+	border-radius: 3px;
 }
 
-  nav li {
-    padding: 0.25em 0 0 0.5em;
-  }
-
-  nav a {
-    display: block;
-  }
-
-#menuBtn {
-  float: right;
-  text-decoration: none;
-  padding: 0.5em;
-  border: 1px solid lightgray;
-  border-radius: 3px;
-}
-
-#menuBtn:hover {
-  background-color: lightgray;
+.menu-toggle:hover {
+	background-color: lightgray;
 }
 
 .open nav {
-  display: block;
+	display: block;
 }
+
+
 @media screen and (min-width: 750px) {
-  #menuBtn {
-    display: none;
-  }
+	.menu-toggle {
+		display: none;
+	}
 
-  nav {
-    overflow: auto;
-    display: block;
-  }
-
-  nav ul {
-    float: right;
-  }
-  nav li {
-    display: inline-block;
-  }
-
+	nav {
+		overflow: auto;
+		display: block;
+	}
+		nav ul {
+			float: right;
+		}
+			nav li {
+				display: inline-block;
+			}
 }
-
 </code>
 </pre>
 
 				<h4>JavaScript</h4>
 <pre>
 <code class="language-javascript">
- var menuBtn = document.getElementById("menuBtn");
-    var page = document.getElementById("page");
+var menuTog = document.getElementsByClassName("menu-toggle")[0];
 
-    function toggleClass(el, classWanted) {
-      var classes = el.className.split(/\s+/);
-      var found;
-
-      for(i = 0; i < classes.length; i++) {
-        if (classes[i] === classWanted) {
-          classes.splice(i, 1);
-          var found = true;      }
-      }
-
-      if (found != true) {
-          classes.push(classWanted);
-      }
-
-      el.className = classes.join(' ');
-    }
-
-    menuBtn.onclick = function() {
-     toggleClass(page, "open");
-    }
+menuTog.onclick = function() {
+	document.getElementsByTagName('body')[0].classList.toggle('open');
+}
 </code>
 </pre>
 			</div><!--end pattern-->
 
 			<div class="pattern" id="offcanvas">
-				<h3>Off Canvas<span class="btn"><a href="pat-04-offcanvas.html">View Pattern</a></span></h3>
+				<h3>Off Canvas (Navigation)<span class="btn"><a href="pat-04-offcanvas.html">View Pattern</a></span></h3>
 
-				<p><span class="difficulty">Level</span> Pattern description.</p>
+				<p><span class="difficulty">Medium</span> This navigation is hidden off screen on smaller resolutions until the menu button is clicked. The page then moves to the side, making the off canvas navigation appear to be shifted back on stage.</p>
 
 				<ul class="list-compare">
 					<li><h4>Pros:</h4></li>
-					<li>Item 1</li>
-					<li>Item 2</li>
+					<li>This pattern can accommodate larger navigations</li>
+					<li>This navigation does does not take up screen real estate when closed</li>
+					<li>This is an elegant solution</li>
 				</ul>
 
 				<ul class="list-compare">
 					<li><h4>Cons:</h4></li>
-					<li>Item 1</li>
-					<li>Item 2</li>
+					<li>This may not play well with more complex layouts that are also positioning elements relative to the viewport</li>
 				</ul>
 
 				<h4>Example</h4>
@@ -378,116 +353,276 @@ nav {
 				<h4>HTML</h4>
 <pre>
 <code class="language-markup">
-&lt;body id="page">
-  &lt;div id="oncanvas">
-    &lt;header>
-      &lt;div class="header-inner">
-        &lt;img src="http://placehold.it/100x50&=logo" alt="Logo">
-        &lt;a href="#" id="menuBtn">Menu&lt;/a>
-        &lt;nav>
-          &lt;ul>
-            &lt;li>&lt;a href="#">Home&lt;/a>&lt;/li>
-            &lt;li>&lt;a href="#">About&lt;/a>&lt;/li>
-            &lt;li>&lt;a href="#">Our Portfolio&lt;/a>&lt;/li>
-            &lt;li>&lt;a href="#">Our Services&lt;/a>&lt;/li>
-            &lt;li>&lt;a href="#">Contact Us&lt;/a>&lt;/li>
-          &lt;/ul>
-      &lt;/nav>
-      &lt;/div>
-    &lt;/header>
-  &lt;/div>
+&lt;body>
+	&lt;div class="on-canvas">
+		&lt;header>
+			&lt;div class="header-inner">
+				&lt;h1>Logo&lt;/h1>
 
-  &lt;nav id="offcanvas">
-    &lt;ul>
-      &lt;li>&lt;a href="#">Home&lt;/a>&lt;/li>
-      &lt;li>&lt;a href="#">About&lt;/a>&lt;/li>
-      &lt;li>&lt;a href="#">Our Portfolio&lt;/a>&lt;/li>
-      &lt;li>&lt;a href="#">Our Services&lt;/a>&lt;/li>
-      &lt;li>&lt;a href="#">Contact Us&lt;/a>&lt;/li>
-    &lt;/ul>
-  &lt;/nav>
+				&lt;button href="#" class="menu-toggle">Menu&lt;/button>
+
+				&lt;nav>
+					&lt;ul>
+						&lt;li>&lt;a href="#">Home&lt;/a>&lt;/li>
+						&lt;li>&lt;a href="#">About&lt;/a>&lt;/li>
+						&lt;li>&lt;a href="#">Our Portfolio&lt;/a>&lt;/li>
+						&lt;li>&lt;a href="#">Our Services&lt;/a>&lt;/li>
+						&lt;li>&lt;a href="#">Contact Us&lt;/a>&lt;/li>
+					&lt;/ul>
+				&lt;/nav>
+			&lt;/div>
+		&lt;/header>
+	&lt;/div>
+
+	&lt;nav class="off-canvas">
+		&lt;ul>
+			&lt;li>&lt;a href="#">Home&lt;/a>&lt;/li>
+			&lt;li>&lt;a href="#">About&lt;/a>&lt;/li>
+			&lt;li>&lt;a href="#">Our Portfolio&lt;/a>&lt;/li>
+			&lt;li>&lt;a href="#">Our Services&lt;/a>&lt;/li>
+			&lt;li>&lt;a href="#">Contact Us&lt;/a>&lt;/li>
+		&lt;/ul>
+	&lt;/nav>
 &lt;/body>
 </code>
 </pre>
 				<h4>CSS</h4>
 <pre>
 <code class="language-css">
-header {
-  padding:0;
-  width: 100%;
+h1 {
+	display: inline;
 }
 
 nav {
-  padding: 0.75em;
+	padding: 0.75em;
 }
 
-  nav li {
-    padding: 0.25em 0 0 0.5em;
-  }
+	nav li {
+		padding: 0.25em 0 0 0.5em;
+	}
 
-  nav a {
-    display: block;
-  }
+	nav a {
+		display: block;
+	}
 
-
-#oncanvas {
-  width: 100%;
+.menu-toggle {
+	float: right;
+	text-decoration: none;
+	padding: 0.5em;
+	border: 1px solid lightgray;
+	border-radius: 3px;
 }
 
-  #oncanvas nav {
-    display: none;
-  }
+	.menu-toggle:hover {
+		background-color: lightgray;
+	}
 
-#offcanvas {
-  display: none;
-  width: 200px;
-  position: absolute;
-  right:0;
-  top:0;
-  bottom:0;
-  background: lightgray;
+.on-canvas nav {
+	display: none;
 }
 
-.open #offcanvas {
-  display: block;
+.off-canvas {
+	display: none;
+	width: 200px;
+	position: absolute;
+	right:0;
+	top:0;
+	bottom:0;
+	background: lightgray;
 }
 
-.open #oncanvas {
-  position: absolute;
-  left: -200px;
+.open .off-canvas {
+	display: block;
 }
 
-#menuBtn {
-  float: right;
-  text-decoration: none;
-  padding: 0.5em;
-  border: 1px solid lightgray;
-  border-radius: 3px;
+.open .on-canvas {
+	width: 100%;
+	position: absolute;
+	left: -200px;
 }
 
-#menuBtn:hover {
-  background-color: lightgray;
-}
 
 @media screen and (min-width: 750px) {
-  #menuBtn {
-    display: none;
-  }
+	nav li {
+		display: inline-block;
+	}
 
-  #oncanvas nav {
-    display: inline-block;
-    float:right;
-  }
+	.menu-toggle {
+		display: none;
+	}
 
-  nav li {
-    display: inline-block;
-  }
+	.open .on-canvas {
+		position: static;
+	}
 
+	.on-canvas nav {
+		display: inline-block;
+		float:right;
+	}
+
+	.open .off-canvas {
+		display: none;
+	}
 }
-
 </code>
 </pre>
 			</div><!--end pattern-->
+
+
+
+
+			<div class="pattern" id="overlay">
+				<h3>The Overlay <span class="btn"><a href="pat-05-overlay.html">View Pattern</a></span></h3>
+				<p><span class="difficulty">Medium</span> When this navigation is open on smaller screens it takes up the whole screen and covers the page. The menu is then centered on top of a usually slightly transparent background. The whole navigation is an overlay on top of the page; hence the name.</p>
+
+				<ul class="list-compare">
+					<li><h4>Pros:</h4></li>
+					<li>This pattern allows the user to focus on the navigation since it is taking up the whole screen</li>
+				</ul>
+
+
+				<ul class="list-compare">
+					<li><h4>Cons:</h4></li>
+					<li>This pattern still cannot hold complex navigation systems</li>
+				</ul>
+
+				<h4>Example</h4>
+				<iframe src="pat-05-overlay.html" frameborder="0" height="300"></iframe>
+
+				<h4>HTML</h4>
+<pre>
+<code class="language-markup">
+&lt;header>
+	&lt;div class="header-inner">
+		&lt;h1>Logo&lt;/h1>
+		&lt;button href="#" class="menu-toggle">Menu&lt;/button>
+		&lt;nav>
+			&lt;button class="close">&#215;&lt;/button>
+			&lt;ul>
+				&lt;li>&lt;a href="#">Home&lt;/a>&lt;/li>
+				&lt;li>&lt;a href="#">About&lt;/a>&lt;/li>
+				&lt;li>&lt;a href="#">Our Portfolio&lt;/a>&lt;/li>
+				&lt;li>&lt;a href="#">Our Services&lt;/a>&lt;/li>
+				&lt;li>&lt;a href="#">Contact Us&lt;/a>&lt;/li>
+			&lt;/ul>
+		&lt;/nav>
+	&lt;/div>
+&lt;/header>
+</code>
+</pre>
+				<h4>CSS</h4>
+<pre>
+<code class="language-css">
+h1 {
+	display: inline;
+}
+
+nav {
+	padding: 0.75em;
+}
+	nav li {
+		padding: 0.25em 0 0 0.5em;
+	}
+	nav a {
+		display: block;
+	}
+
+.menu-toggle {
+	float: right;
+	text-decoration: none;
+	padding: 0.5em;
+	border: 1px solid lightgray;
+	border-radius: 3px;
+}
+	.menu-toggle:hover {
+		background-color: lightgray;
+	}
+
+nav {
+	display: none;
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+	background: rgba(255,255,255, 0.8);
+	text-align: center;
+}
+
+	nav ul {
+		position: absolute;
+		top:  50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	nav a {
+		font-size: 2em;
+		margin: 0.5em 0;
+		line-height: 1;
+	}
+
+.close {
+	border:0;
+	background: transparent;
+	font-size: 2em;
+	color: black;
+	position: absolute;
+	right:0;
+}
+
+.open nav {
+	display: block;
+}
+
+.open .menu-toggle {
+	display: none;
+}
+
+
+@media screen and (min-width: 750px) {
+		nav {
+			display: block;
+			position: static;
+			background: transparent;
+			text-align: left;
+			float: right;
+		}
+			nav ul {
+				position: static;
+				transform: translate(0,0);
+			}
+			nav li {
+				display: inline-block;
+			}
+			nav a {
+				font-size: 1em;
+			}
+
+	.menu-toggle, .close {
+		display: none;
+	}
+}
+</code>
+</pre>
+
+<h4>JavaScript</h4>
+<pre>
+<code class="language-javascript">
+var menuTog = document.getElementsByClassName("menu-toggle")[0];
+var closeTog = document.getElementsByClassName("close")[0];
+var body = document.getElementsByTagName("body")[0];
+
+menuTog.onclick = function() {
+	body.classList.toggle('open');
+}
+
+closeTog.onclick = function() {
+	body.classList.toggle('open');
+}
+</code>
+</pre>
+
+			</div><!--end pattern-->
+
+
 		</section>
 	</div>
 	<script src="../assets/plugins/prism.js"></script>

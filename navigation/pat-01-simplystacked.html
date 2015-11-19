@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Load in template styles -->
-  <link rel="stylesheet" href="../assets/css/site-style.css">
+  <link rel="stylesheet" href="../assets/css/pattern-style.css">
 
   <!-- Load in Google Font: Lato -->
   <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
@@ -19,44 +19,39 @@
   <![endif]-->
 
   <style>
-  	/*Pattern 1 - Top Nav*/
-	header {
-		overflow: auto;
-	}
+  	/*Pattern 1 - Simply Stacked*/
+  	header h1 {
+  		margin-bottom: 0.25em;
+  	}
 
-	header h1 {
-		margin-bottom: 0.25em;
-
-	}
-
-	nav li {
-		list-style: none;
-		padding: 0.25em 0.5em 0 0;
-	}
-		nav li a {
-			text-decoration: none;
-		}
+  	nav li {
+  		list-style: none;
+  		padding: 0.25em 0.5em 0 0;
+  	}
+  		nav li a {
+  			text-decoration: none;
+  		}
 
 
-	@media only screen and (min-width: 750px){
-		header h1 {
-			float: left;
-			margin:0;
-		}
+  	@media only screen and (min-width: 750px){
+  		header h1 {
+  			float: left;
+  			margin:0;
+  		}
 
-		nav {
-			float: right;
-		}
-			nav li {
-				display: inline-block;
-			}
-	}
+  		nav {
+  			float: right;
+  		}
+  			nav li {
+  				display: inline-block;
+  			}
+  	}
 
   </style>
 </head>
 
 <body>
-	<header>
+	<header class="clearfix">
 		<h1>Logo</h1>
 		<nav>
 			<ul>

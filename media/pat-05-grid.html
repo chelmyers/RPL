@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Load in template styles -->
-  <link rel="stylesheet" href="../assets/css/site-style.css">
+  <link rel="stylesheet" href="../assets/css/pattern-style.css">
 
   <!-- Load in Google Font: Lato -->
   <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
@@ -22,53 +22,101 @@
       padding:0;
     }
 
-
-    #img-grid {
-      overflow:auto;
+    .img-grid {
       padding:0.15em;
       margin:0;
     }
 
-  	  #img-grid li{
+      .img-grid li{
         list-style: none;
         padding: 0.30em;
+
       }
 
-      #img-grid img {
+      .img-grid img {
         max-width: 100%;
-        display:block; /* weird gap w/out this*/
+        height: auto;
+        vertical-align: bottom;
       }
 
     /*2 in a row*/
     @media screen and (min-width: 600px) {
-      #img-grid li {
-        float: left;
+      .img-grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .img-grid li {
         width: 50%;
       }
     }
 
     /*4 in a row*/
     @media screen and (min-width: 800px) {
-      #img-grid li {
+      .img-grid li {
         width: 25%;
       }
     }
-    
+
     /*6 in a row*/
     @media screen and (min-width: 1200px) {
-      #img-grid li {
+      .img-grid li {
         width: 16.66%;
       }
-      #img-grid li:nth-child(5n+1) {
-        clear:right;
+    }
+
+
+    /*Float Solution*/
+   /* section {
+      padding:0;
+    }
+
+    .img-grid {
+      padding:0.15em;
+      margin:0;
+    }
+
+      .img-grid li{
+        list-style: none;
+        padding: 0.30em;
+      }
+
+      .img-grid img {
+        max-width: 100%;
+        vertical-align: bottom;
+      }*/
+
+    /*2 in a row*/
+    /*@media screen and (min-width: 600px) {
+      .img-grid li {
+        float: left;
+        width: 50%;
+     }
+    }*/
+
+    /*4 in a row*/
+    /*@media screen and (min-width: 800px) {
+      .img-grid li {
+        width: 25%;
       }
     }
+    */
+    /*6 in a row*/
+    /*@media screen and (min-width: 1200px) {
+      .img-grid li {
+        width: 16.66%;
+      }
+      .img-grid li:nth-child(5n+1) {
+        clear:right;
+      }
+    }*/
 
   </style>
 </head>
 
 <body>
-  <ul id="img-grid">
+  <ul class="img-grid">
    <li><img src="http://placehold.it/400" alt="Thumbnail"></li>
    <li><img src="http://placehold.it/400" alt="Thumbnail"></li>
    <li><img src="http://placehold.it/400" alt="Thumbnail"></li>

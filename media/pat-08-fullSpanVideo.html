@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Load in template styles -->
-  <link rel="stylesheet" href="../assets/css/site-style.css">
+  <link rel="stylesheet" href="../assets/css/pattern-style.css">
 
   <!-- Load in Google Font: Lato -->
   <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
@@ -23,10 +23,9 @@
     }
 
 
-
     video, img {
       width: 100%;
-    } 
+    }
 
     video {
       display: none;
@@ -36,7 +35,7 @@
       position: relative;
     }
 
-    #banner-overlay {
+    .banner-overlay {
       background: rgba(0, 0, 0, 0.3);
       color: white;
       text-align: center;
@@ -64,13 +63,15 @@
 <body >
   <header>
     <img class="fallback" src="i/kaleidoscope-fallback.png" alt="kaleidoscope"/>
+
     <video autoplay loop>
       <source src="v/kaleidoscope.mp4" type="video/mp4"/>
       <source src="v/kaleidoscope.webm" type="video/webm"/>
       <source src="v/kaleidoscope.ogv" type="video/ogv"/>
       <img src="i/kaleidoscope-fallback.png" alt="kaleidoscope"/>
     </video>
-    <div id="banner-overlay">
+
+    <div class="banner-overlay">
       <h1>Company Name</h1>
     </div>
   </header>

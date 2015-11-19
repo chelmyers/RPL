@@ -1,7 +1,7 @@
-/* 
+/*
 Title:    Responsive Pattern Library
 Version:  1.0
-Author:   Chelsea Myers  
+Author:   Chelsea Myers
 
 COLORS
 Light Gray: #EFEFEF
@@ -22,9 +22,9 @@ INDEX
    CSS RESET
    =============== */
 html, body, div, span, iframe,
-h1, h2, h3, h4, h5, h6, p, a, code, 
+h1, h2, h3, h4, h5, h6, p, a, code,
 em, img, small, b, u, i, center, ol, ul, li,
-fieldset, form, label, table, tbody, tfoot, 
+fieldset, form, label, table, tbody, tfoot,
 thead, tr, th, td, article, aside, canvas,
 footer, header, menu, nav, section, video {
 	margin: 0;
@@ -36,7 +36,7 @@ footer, header, menu, nav, section, video {
 }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -202,7 +202,7 @@ nav h2 {
 	font-weight:900;
 }
 	.active a:before {
-		content: '\276F';
+		content: '>';
 		margin-right: 5px;
 	}
 
@@ -247,14 +247,14 @@ nav h2 {
 @media only screen and (min-width: 750px) {
 	nav {
 		float: left;
-		width: 33%;
+		width: 33.33%;
 		padding-right: 2em;
 		max-width: 300px;
 	}
 
 	.main {
 		float: left;
-		width: 67%;
+		width: 66.66%;
 	}
 }
 
@@ -293,4 +293,3 @@ h3 .btn {
 	.difficulty:after {
 		content: ' - ';
 	}
-

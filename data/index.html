@@ -29,15 +29,15 @@
 		</div>
 	</header>
 
-	<div class="container">		
+	<div class="container">
 		<nav>
-			<ul id="menu">
+			<ul class="menu">
 				<li><a href="../index.html">Welcome</a></li>
 				<li><a href="../navigation/index.html">Navigation</a></li>
 				<li><a href="../layouts/index.html">Layouts</a></li>
 				<li><a href="../media/index.html">Media</a></li>
 				<li class="active"><a href="index.html">Data &amp; Forms</a></li>
-				
+
 				<!-- Include new section page -->
 			</ul>
 			<p class="copyright">&copy; Chelsea Myers</p>
@@ -54,13 +54,13 @@
 			<p>Section description.</p>
 
 			<div id="form" class="pattern">
-				<h3>Form Styles<span class="btn"><a href="pat-03-form.html">View Example</a></span></h3>
+				<h3>Form Styles<span class="btn"><a href="pat-01-form.html">View Example</a></span></h3>
 
 				<p><span class="difficulty">Level</span> Pattern description.</p>
 
 
 				<h4>Example</h4>
-				<iframe src="pat-03-form.html" frameborder="0" height="600"></iframe>
+				<iframe src="pat-01-form.html" frameborder="0" height="600"></iframe>
 
 				<h4>HTML</h4>
 <pre>
@@ -73,14 +73,14 @@
   &lt;input type="email" name="email" id="email" />
 
   &lt;label class="form-title">Favorite Color&lt;/label>
-  &lt;label class="choice" for="red">&lt;input type="radio" name="radio" id="red" value="Red" />Red&lt;/label>
-  &lt;label class="choice" for="blue">&lt;input type="radio" name="radio" id="blue" value="Blue" />Blue&lt;/label>
-  &lt;label class="choice" for="green">&lt;input type="radio" name="radio" id="green" value="Green" />Green&lt;/label>
+  &lt;label class="choice">&lt;input type="radio" name="radio" value="Red" />Red&lt;/label>
+  &lt;label class="choice">&lt;input type="radio" name="radio" value="Blue" />Blue&lt;/label>
+  &lt;label class="choice">&lt;input type="radio" name="radio" value="Green" />Green&lt;/label>
 
   &lt;label class="form-title" for="checkbox">Favorite Animal&lt;/label>
-  &lt;label class="choice" for="dog">&lt;input type="checkbox" name="checkbox" id="dog" value="Dog" />Dog&lt;/label>
-  &lt;label class="choice" for="cat">&lt;input type="checkbox" name="checkbox" id="cat" value="Cat" />Cat&lt;/label>
-  &lt;label class="choice" for="other">&lt;input type="checkbox" name="checkbox" id="other" value="Other" />Other&lt;/label>
+  &lt;label class="choice">&lt;input type="checkbox" name="checkbox" value="Dog" />Dog&lt;/label>
+  &lt;label class="choice">&lt;input type="checkbox" name="checkbox" value="Cat" />Cat&lt;/label>
+  &lt;label class="choice">&lt;input type="checkbox" name="checkbox" value="Other" />Other&lt;/label>
 
   &lt;label class="form-title" for="select">Age:&lt;/label>
   &lt;select name="select" id="select">
@@ -100,59 +100,64 @@
 				<h4>CSS</h4>
 <pre>
 <code class="language-css">
-input[type="text"], 
+input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="search"],
-textarea, 
+textarea,
 select {
-  display: block;
-  margin-bottom: 10px;
-  font-size: 1em;
-  padding:5px;
-  min-height: 2.75em;
-  min-width: 200px;
-  max-width: 300px;
-  width: 100%;
+	display: block;
+	margin-bottom: 10px;
+	font-size: 1em;
+	padding:5px;
+	min-height: 2.75em;
+	min-width: 200px;
+	max-width: 300px;
+	width: 100%;
 }
 
 input[type="submit"] {
-  min-height: 3em;
-  padding: 0 2.75em;
-  font-size: 1em;
-  border: none;
-  background: mediumseagreen;
-  color: white;
+	min-height: 3em;
+	padding: 0 2.75em;
+	font-size: 1em;
+	border: none;
+	background: mediumseagreen;
+	color: white;
 }
 
 .form-title {
-  display:block;
-  font-weight: bold;
+	display:block;
+	font-weight: bold;
 }
 
 label input {
-  margin-right: 10px;
+	margin-right: 10px;
 }
 
 .choice {
-  margin-right: 15px;
-  padding: 5px 0;
-  display: block;
+	margin-right: 15px;
+	padding: 5px 0;
+	display: block;
 }
 
 .choice + .form-title {
-  margin-top: 10px;
+	margin-top: 10px;
 }
 
+@media screen and (min-width: 600px){
+	.choice {
+		display: inline;
+	}
+}
 </code>
 </pre>
 			</div><!--end pattern-->
 
 			<div class="pattern" id="tableScroll">
-				<h3>Table with Fade<span class="btn"><a href="pat-01-tableFade.html">View Pattern</a></span></h3>
+				<h3>Fading Table<span class="btn"><a href="pat-02-tableFade.html">View Pattern</a></span></h3>
 
 				<p><span class="difficulty">Easy</span> When the table is too wide, columns appear off stage and the user can scroll to the right to see them. The right fade is present to tell the user that there is more data to be seen.</p>
-				
+
 				<ul class="list-compare">
 					<li><h4>Pros:</h4></li>
 					<li>Accommodates small to medium sized tables</li>
@@ -160,61 +165,64 @@ label input {
 
 				</ul>
 
-				
+
 				<ul class="list-compare">
 					<li><h4>Cons:</h4></li>
 					<li>Any row headers to the left of the table can be forgotten about when the user finally scrolls to the right end of the table</li>
-					<li>The fade never goes away when the end of the table is reached</li>
+					<li>The fade never goes away when the end of the table is reached (but this can be done with JS)</li>
 				</ul>
 
 				<h4>Example</h4>
-				<iframe src="pat-01-tableFade.html" frameborder="0" height="250"></iframe>
+				<iframe src="pat-02-tableFade.html" frameborder="0" height="250"></iframe>
 
 				<h4>HTML</h4>
 <pre>
 <code class="language-markup">
 &lt;h3>Weekly Workout in Minutes&lt;/h3>
 &lt;table class="table-overflow">
-&lt;tr>
-  &lt;th>&lt;/th>
-  &lt;th>Monday&lt;/th>
-  &lt;th>Tuesday&lt;/th>
-  &lt;th>Wednesday&lt;/th>
-  &lt;th>Thursday&lt;/th>
-  &lt;th>Friday&lt;/th>
-  &lt;th>Saturday&lt;/th>
-  &lt;th>Sunday&lt;/th>
-&lt;/tr>
-&lt;tr>
-  &lt;td>Yoga&lt;/td>
-  &lt;td>60&lt;/td>
-  &lt;td>15&lt;/td>
-  &lt;td>-&lt;/td>
-  &lt;td>90&lt;/td>
-  &lt;td>60&lt;/td>
-  &lt;td>90&lt;/td>
-  &lt;td>30&lt;/td>
-&lt;/tr>
-&lt;tr>
-  &lt;td>Cardio&lt;/td>
-  &lt;td>30&lt;/td>
-  &lt;td>30&lt;/td>
-  &lt;td>60&lt;/td>
-  &lt;td>30&lt;/td>
-  &lt;td>30&lt;/td>
-  &lt;td>-&lt;/td>
-  &lt;td>60&lt;/td>
-&lt;/tr>
-&lt;tr>
-  &lt;td>Weights&lt;/td>
-  &lt;td>-&lt;/td>
-  &lt;td>90&lt;/td>
-  &lt;td>60&lt;/td>
-  &lt;td>-&lt;/td>
-  &lt;td>60&lt;/td>
-  &lt;td>-&lt;/td>
-  &lt;td>-&lt;/td>
-&lt;/tr>
+	&lt;thead>
+		&lt;th>&lt;/th>
+		&lt;th>Monday&lt;/th>
+		&lt;th>Tuesday&lt;/th>
+		&lt;th>Wednesday&lt;/th>
+		&lt;th>Thursday&lt;/th>
+		&lt;th>Friday&lt;/th>
+		&lt;th>Saturday&lt;/th>
+		&lt;th>Sunday&lt;/th>
+	&lt;/thead>
+
+	&lt;tbody>
+		&lt;tr>
+			&lt;td>Yoga&lt;/td>
+			&lt;td>60&lt;/td>
+			&lt;td>15&lt;/td>
+			&lt;td>-&lt;/td>
+			&lt;td>90&lt;/td>
+			&lt;td>60&lt;/td>
+			&lt;td>90&lt;/td>
+			&lt;td>30&lt;/td>
+		&lt;/tr>
+		&lt;tr>
+			&lt;td>Cardio&lt;/td>
+			&lt;td>30&lt;/td>
+			&lt;td>30&lt;/td>
+			&lt;td>60&lt;/td>
+			&lt;td>30&lt;/td>
+			&lt;td>30&lt;/td>
+			&lt;td>-&lt;/td>
+			&lt;td>60&lt;/td>
+		&lt;/tr>
+		&lt;tr>
+			&lt;td>Weights&lt;/td>
+			&lt;td>-&lt;/td>
+			&lt;td>90&lt;/td>
+			&lt;td>60&lt;/td>
+			&lt;td>-&lt;/td>
+			&lt;td>60&lt;/td>
+			&lt;td>-&lt;/td>
+			&lt;td>-&lt;/td>
+		&lt;/tr>
+	&lt;/tbody>
 &lt;/table>
 </code>
 </pre>
@@ -222,98 +230,99 @@ label input {
 <pre>
 <code class="language-css">
 td, th {
-  padding: 10px;
+	padding: 10px;
 }
 table {
-  border: 2px solid #eee;
-  border-collapse: collapse;
-  border-spacing: 0; 
+	border: 2px solid #eee;
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
 @media screen and (max-width: 600px) {
-  .table-overflow {
-    display:block;
-    overflow-x: scroll;
+	.table-overflow {
+		display:block;
+		overflow-x: scroll;
 
-    /*used http://www.cssmatic.com/box-shadow*/
-    -webkit-box-shadow: inset -28px 0px 40px -30px #ddd;
-    -moz-box-shadow: inset -28px 0px 40px -30px #ddd;
-    box-shadow: inset -28px 0px 40px -30px #ddd;
-  }
+		/*used http://www.cssmatic.com/box-shadow*/
+		-webkit-box-shadow: inset -28px 0px 40px -30px #ddd;
+		-moz-box-shadow: inset -28px 0px 40px -30px #ddd;
+		box-shadow: inset -28px 0px 40px -30px #ddd;
+	}
 }
 </code>
 </pre>
 			</div><!--end pattern-->
 
 
-
+			<!-- Stacked Table -->
 			<div class="pattern" id="tableStacked">
-				<h3>Table Stacked<span class="btn"><a href="pat-02-tableStacked.html">View Pattern</a></span></h3>
+				<h3>Stacked Table<span class="btn"><a href="pat-03-tableStacked.html">View Pattern</a></span></h3>
 
-				<p><span class="difficulty">Easy</span> When the table is too wide, columns appear off stage and the user can scroll to the right to see them. The right fade is present to tell the user that there is more data to be seen.</p>
-				
+				<p><span class="difficulty">Easy</span> On smaller resolutions, each row has its own section with the column headings being repeated for each. This pattern takes up more vertical space, but we have more of that on smaller portrait-oriented screens.</p>
+
 				<ul class="list-compare">
 					<li><h4>Pros:</h4></li>
-					<li>Accommodates small to medium sized tables</li>
-					<li>The fade is neat touch</li>
-
+					<li>This pattern accommodates very wide tables</li>
+					<li>This works well on mobile devices</li>
 				</ul>
 
-				
 				<ul class="list-compare">
 					<li><h4>Cons:</h4></li>
-					<li>Any row headers to the left of the table can be forgotten about when the user finally scrolls to the right end of the table</li>
-					<li>The fade never goes away when the end of the table is reached</li>
+					<li>It is harder to compare data</li>
+					<li>This pattern relies on adding a data-label attribute to every td element</li>
 				</ul>
 
 				<h4>Example</h4>
-				<iframe src="pat-02-tableStacked.html" frameborder="0" height="250"></iframe>
+				<iframe src="pat-03-tableStacked.html" frameborder="0" height="250"></iframe>
 
 				<h4>HTML</h4>
 <pre>
 <code class="language-markup">
 &lt;h3>Weekly Workout in Minutes&lt;/h3>
 &lt;table class="table-overflow">
-&lt;tr>
-  &lt;th>&lt;/th>
-  &lt;th>Monday&lt;/th>
-  &lt;th>Tuesday&lt;/th>
-  &lt;th>Wednesday&lt;/th>
-  &lt;th>Thursday&lt;/th>
-  &lt;th>Friday&lt;/th>
-  &lt;th>Saturday&lt;/th>
-  &lt;th>Sunday&lt;/th>
-&lt;/tr>
-&lt;tr>
-  &lt;td>Yoga&lt;/td>
-  &lt;td>60&lt;/td>
-  &lt;td>15&lt;/td>
-  &lt;td>-&lt;/td>
-  &lt;td>90&lt;/td>
-  &lt;td>60&lt;/td>
-  &lt;td>90&lt;/td>
-  &lt;td>30&lt;/td>
-&lt;/tr>
-&lt;tr>
-  &lt;td>Cardio&lt;/td>
-  &lt;td>30&lt;/td>
-  &lt;td>30&lt;/td>
-  &lt;td>60&lt;/td>
-  &lt;td>30&lt;/td>
-  &lt;td>30&lt;/td>
-  &lt;td>-&lt;/td>
-  &lt;td>60&lt;/td>
-&lt;/tr>
-&lt;tr>
-  &lt;td>Weights&lt;/td>
-  &lt;td>-&lt;/td>
-  &lt;td>90&lt;/td>
-  &lt;td>60&lt;/td>
-  &lt;td>-&lt;/td>
-  &lt;td>60&lt;/td>
-  &lt;td>-&lt;/td>
-  &lt;td>-&lt;/td>
-&lt;/tr>
+	&lt;thead>
+		&lt;th>&lt;/th>
+		&lt;th>Monday&lt;/th>
+		&lt;th>Tuesday&lt;/th>
+		&lt;th>Wednesday&lt;/th>
+		&lt;th>Thursday&lt;/th>
+		&lt;th>Friday&lt;/th>
+		&lt;th>Saturday&lt;/th>
+		&lt;th>Sunday&lt;/th>
+	&lt;/thead>
+
+	&lt;tbody>
+		&lt;tr>
+			&lt;td>Yoga&lt;/td>
+			&lt;td data-label="Monday">60&lt;/td>
+			&lt;td data-label="Tuesday">15&lt;/td>
+			&lt;td data-label="Wednesday">-&lt;/td>
+			&lt;td data-label="Thursday">90&lt;/td>
+			&lt;td data-label="Friday">60&lt;/td>
+			&lt;td data-label="Saturday">90&lt;/td>
+			&lt;td data-label="Sunday">30&lt;/td>
+		&lt;/tr>
+		&lt;tr>
+			&lt;td>Cardio&lt;/td>
+			&lt;td data-label="Monday">30&lt;/td>
+			&lt;td data-label="Tuesday">30&lt;/td>
+			&lt;td data-label="Wednesday">60&lt;/td>
+			&lt;td data-label="Thursday">30&lt;/td>
+			&lt;td data-label="Friday">30&lt;/td>
+			&lt;td data-label="Saturday">-&lt;/td>
+			&lt;td data-label="Sunday">60&lt;/td>
+		&lt;/tr>
+		&lt;tr>
+			&lt;td>Weights&lt;/td>
+			&lt;td data-label="Monday">-&lt;/td>
+			&lt;td data-label="Tuesday">90&lt;/td>
+			&lt;td data-label="Wednesday">60&lt;/td>
+			&lt;td data-label="Thursday">-&lt;/td>
+			&lt;td data-label="Friday">60&lt;/td>
+			&lt;td data-label="Saturday">-&lt;/td>
+			&lt;td data-label="Sunday">-&lt;/td>
+		&lt;/tr>
+	&lt;/tbody>
 &lt;/table>
 </code>
 </pre>
@@ -321,24 +330,41 @@ table {
 <pre>
 <code class="language-css">
 td, th {
-  padding: 10px;
+	padding: 10px;
 }
+
 table {
-  border: 2px solid #eee;
-  border-collapse: collapse;
-  border-spacing: 0; 
+	border: 2px solid #eee;
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
 @media screen and (max-width: 600px) {
-  .table-overflow {
-    display:block;
-    overflow-x: scroll;
+	table, th, td, tr {
+		display: inline-block;
+	}
 
-    /*used http://www.cssmatic.com/box-shadow*/
-    -webkit-box-shadow: inset -28px 0px 40px -30px #ddd;
-    -moz-box-shadow: inset -28px 0px 40px -30px #ddd;
-    box-shadow: inset -28px 0px 40px -30px #ddd;
-  }
+	thead {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+	td {
+		text-align: center;
+		width: 100%;
+	}
+
+	td[data-label] {
+		text-align: right;
+		border-bottom: 1px solid #eee;
+	}
+
+	td:before {
+		content: attr(data-label);
+		float: left;
+		font-weight: bold;
+	}
 }
 </code>
 </pre>

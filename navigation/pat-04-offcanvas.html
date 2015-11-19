@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Load in template styles -->
-  <link rel="stylesheet" href="../assets/css/site-style.css">
+  <link rel="stylesheet" href="../assets/css/pattern-style.css">
 
   <!-- Load in Google Font: Lato -->
   <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
@@ -17,92 +17,92 @@
   <![endif]-->
 
   <style>
-  /*Pattern 04 - Off Canvas Navigation*/
-  h1 {
-    display: inline;
-  }
-
-  nav {
-    padding: 0.75em;
-  }
-
-    nav li {
-      padding: 0.25em 0 0 0.5em;
+    /*Pattern 04 - Off Canvas Navigation*/
+    h1 {
+      display: inline;
     }
 
-    nav a {
+    nav {
+      padding: 0.75em;
+    }
+
+      nav li {
+        padding: 0.25em 0 0 0.5em;
+      }
+
+      nav a {
+        display: block;
+      }
+
+    .menu-toggle {
+      float: right;
+      text-decoration: none;
+      padding: 0.5em;
+      border: 1px solid lightgray;
+      border-radius: 3px;
+    }
+
+      .menu-toggle:hover {
+        background-color: lightgray;
+      }
+
+    .on-canvas nav {
+      display: none;
+    }
+
+    .off-canvas {
+      display: none;
+      width: 200px;
+      position: absolute;
+      right:0;
+      top:0;
+      bottom:0;
+      background: lightgray;
+    }
+
+    .open .off-canvas {
       display: block;
     }
 
-  #menuBtn {
-    float: right;
-    text-decoration: none;
-    padding: 0.5em;
-    border: 1px solid lightgray;
-    border-radius: 3px;
-  }
-
-  #menuBtn:hover {
-    background-color: lightgray;
-  }
-
-  #oncanvas nav {
-    display: none;
-  }
-
-  #offcanvas {
-    display: none;
-    width: 200px;
-    position: absolute;
-    right:0;
-    top:0;
-    bottom:0;
-    background: lightgray;
-  }
-
-  .open #offcanvas {
-    display: block;
-  }
-
-  .open #oncanvas {
-    width: 100%;
-    position: absolute;
-    left: -200px;
-  }
-
-  
-  @media screen and (min-width: 750px) {
-    #menuBtn {
-      display: none;
+    .open .on-canvas {
+      width: 100%;
+      position: absolute;
+      left: -200px;
     }
 
-    .open #oncanvas {
-      position: static;
-    }
-    #oncanvas nav {
-      display: inline-block;
-      float:right;
-    }
 
-    nav li {
-      display: inline-block;
-    }
+    @media screen and (min-width: 750px) {
+      nav li {
+        display: inline-block;
+      }
 
-    .open #offcanvas, #offcanvas {
-      display: none;
+      .menu-toggle {
+        display: none;
+      }
+
+      .open .on-canvas {
+        position: static;
+      }
+      .on-canvas nav {
+        display: inline-block;
+        float:right;
+      }
+
+      .open .off-canvas {
+        display: none;
+      }
     }
-  }
-</style>
+  </style>
 </head>
 
-<body id="page">
+<body>
 	<!-- Insert pattern mark-up here -->
 
-  <div id="oncanvas">
+  <div class="on-canvas">
     <header>
       <div class="header-inner">
         <h1>Logo</h1>
-        <a href="#" id="menuBtn">Menu</a>
+        <button href="#" class="menu-toggle">Menu</button>
         <nav>
           <ul>
             <li><a href="#">Home</a></li>
@@ -116,7 +116,7 @@
     </header>
   </div>
 
-  <nav id="offcanvas">
+  <nav class="off-canvas">
     <ul>
       <li><a href="#">Home</a></li>
       <li><a href="#">About</a></li>
@@ -126,29 +126,11 @@
     </ul>
   </nav>
   <script>
-    var menuBtn = document.getElementById("menuBtn");
-    var page = document.getElementById("page");
+    var menuTog = document.getElementsByClassName("menu-toggle")[0];
 
-    function toggleClass(el, classWanted) {
-      var classes = el.className.split(/\s+/);
-      var found;
-
-      for(i = 0; i < classes.length; i++) {
-        if (classes[i] === classWanted) {
-          classes.splice(i, 1);
-          var found = true;      }
-        }
-
-        if (found != true) {
-          classes.push(classWanted);
-        }
-
-        el.className = classes.join(' ');
-      }
-
-      menuBtn.onclick = function() {
-       toggleClass(page, "open");
-     }
+    menuTog.onclick = function() {
+      document.getElementsByTagName('body')[0].classList.toggle('open');
+    }
 
 
    </script>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Responsive Pattern Library</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Load in template styles -->
+  <link rel="stylesheet" href="../assets/css/pattern-style.css">
+
+  <!-- Load in Google Font: Lato -->
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <style>
+  	/*Pattern 03 - Table Stacked*/
+    body {
+      padding: 10px;
+    }
+
+	  td, th {
+      padding: 10px;
+    }
+
+    table {
+      border: 2px solid #eee;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    @media screen and (max-width: 600px) {
+      table, th, td, tr {
+        display: inline-block;
+      }
+
+      thead {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+
+      td {
+        text-align: center;
+        width: 100%;
+      }
+
+      td[data-label] {
+        text-align: right;
+        border-bottom: 1px solid #eee;
+      }
+
+      td:before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+      }
+    }
+
+
+
+  </style>
+</head>
+
+<body>
+  <h3>Weekly Workout in Minutes</h3>
+  <table class="table-overflow">
+    <thead>
+      <th></th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+      <th>Saturday</th>
+      <th>Sunday</th>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>Yoga</td>
+        <td data-label="Monday">60</td>
+        <td data-label="Tuesday">15</td>
+        <td data-label="Wednesday">-</td>
+        <td data-label="Thursday">90</td>
+        <td data-label="Friday">60</td>
+        <td data-label="Saturday">90</td>
+        <td data-label="Sunday">30</td>
+      </tr>
+      <tr>
+        <td>Cardio</td>
+        <td data-label="Monday">30</td>
+        <td data-label="Tuesday">30</td>
+        <td data-label="Wednesday">60</td>
+        <td data-label="Thursday">30</td>
+        <td data-label="Friday">30</td>
+        <td data-label="Saturday">-</td>
+        <td data-label="Sunday">60</td>
+      </tr>
+      <tr>
+        <td>Weights</td>
+        <td data-label="Monday">-</td>
+        <td data-label="Tuesday">90</td>
+        <td data-label="Wednesday">60</td>
+        <td data-label="Thursday">-</td>
+        <td data-label="Friday">60</td>
+        <td data-label="Saturday">-</td>
+        <td data-label="Sunday">-</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Responsive Pattern Library</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Load in template styles -->
+  <link rel="stylesheet" href="../assets/css/pattern-style.css">
+
+  <!-- Load in Google Font: Lato -->
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <style>
+    /*Pattern 05 - The Overlay*/
+    h1 {
+      display: inline;
+    }
+
+    nav {
+      padding: 0.75em;
+    }
+
+      nav li {
+        padding: 0.25em 0 0 0.5em;
+      }
+
+      nav a {
+        display: block;
+      }
+
+    .menu-toggle {
+      float: right;
+      text-decoration: none;
+      padding: 0.5em;
+      border: 1px solid lightgray;
+      border-radius: 3px;
+    }
+
+      .menu-toggle:hover {
+        background-color: lightgray;
+      }
+
+    nav {
+      display: none;
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      background: rgba(255,255,255, 0.8);
+      text-align: center;
+    }
+
+    nav ul {
+      position: absolute;
+      top:  50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+      nav a {
+        font-size: 2em;
+        margin: 0.5em 0;
+        line-height: 1;
+      }
+
+    .close {
+      border:0;
+      background: transparent;
+      font-size: 2em;
+      color: black;
+      position: absolute;
+      right:0;
+    }
+
+    .open nav {
+      display: block;
+    }
+
+    .open .menu-toggle {
+      display: none;
+    }
+
+
+
+    @media screen and (min-width: 750px) {
+        nav {
+          display: block;
+          position: static;
+          background: transparent;
+          text-align: left;
+          float: right;
+        }
+
+        nav ul {
+          position: static;
+          transform: translate(0,0);
+        }
+
+        nav li {
+          display: inline-block;
+        }
+
+        nav a {
+          font-size: 1em;
+        }
+
+      .menu-toggle, .close {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="header-inner">
+      <h1>Logo</h1>
+      <button href="#" class="menu-toggle">Menu</button>
+      <nav>
+        <button class="close">&#215;</button>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Our Portfolio</a></li>
+          <li><a href="#">Our Services</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <script>
+    var menuTog = document.getElementsByClassName("menu-toggle")[0];
+    var closeTog = document.getElementsByClassName("close")[0];
+    var body = document.getElementsByTagName("body")[0];
+
+    menuTog.onclick = function() {
+      body.classList.toggle('open');
+    }
+
+    closeTog.onclick = function() {
+      body.classList.toggle('open');
+    }
+
+
+   </script>
+ </body>
+ </html>

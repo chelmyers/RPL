@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Load in template styles -->
-  <link rel="stylesheet" href="../assets/css/site-style.css">
+  <link rel="stylesheet" href="../assets/css/pattern-style.css">
 
   <!-- Load in Google Font: Lato -->
   <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
@@ -17,18 +17,18 @@
   <![endif]-->
 
   <style>
-  	/*Pattern ## - Full-Span Image*/
+  	/*Pattern 04 - Big Hero Image*/
     header {
       padding:0;
       margin:0;
       position: relative;
     }
 
-	  #banner-img {
+	  .banner-img {
       width: 100%;
     }
 
-    #banner-overlay {
+    .banner-overlay {
       position: absolute;
       text-align: center;
       top:50%; left:50%;
@@ -41,8 +41,9 @@
 
 <body>
   <header>
-     <img id="banner-img" src="i/banner-1400.png" srcset="i/banner-2000.png 2x"  sizes="100vw" alt="Banner Image">
-     <div id="banner-overlay">
+     <img class="banner-img" src="i/banner-1400.png" srcset="i/banner-2000.png 2x"  sizes="100vw" alt="Banner Image">
+
+     <div class="banner-overlay">
        <h1>Company Name</h1>
        <p>A very catchy and cool tagline.</p>
      </div>

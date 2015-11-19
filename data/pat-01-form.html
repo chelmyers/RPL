@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Load in template styles -->
-  <link rel="stylesheet" href="../assets/css/site-style.css">
+  <link rel="stylesheet" href="../assets/css/pattern-style.css">
 
   <!-- Load in Google Font: Lato -->
   <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
@@ -17,17 +17,17 @@
   <![endif]-->
 
   <style>
-  	/*Pattern 03 - Form*/
+  	/*Pattern 01 - Form*/
     body {
        padding: 10px;
     }
 
 
-    input[type="text"], 
+    input[type="text"],
     input[type="email"],
     input[type="password"],
     input[type="search"],
-    textarea, 
+    textarea,
     select {
       display: block;
       margin-bottom: 10px;
@@ -67,6 +67,12 @@
       margin-top: 10px;
     }
 
+    @media screen and (min-width: 600px){
+      .choice {
+        display: inline;
+      }
+    }
+
 
   </style>
 </head>
@@ -80,14 +86,14 @@
     <input type="email" name="email" id="email" />
 
     <label class="form-title">Favorite Color</label>
-    <label class="choice" for="red"><input type="radio" name="radio" id="red" value="Red" />Red</label>
-    <label class="choice" for="blue"><input type="radio" name="radio" id="blue" value="Blue" />Blue</label>
-    <label class="choice" for="green"><input type="radio" name="radio" id="green" value="Green" />Green</label>
+    <label class="choice"><input type="radio" name="radio" value="Red" />Red</label>
+    <label class="choice"><input type="radio" name="radio" value="Blue" />Blue</label>
+    <label class="choice"><input type="radio" name="radio" value="Green" />Green</label>
 
     <label class="form-title" for="checkbox">Favorite Animal</label>
-    <label class="choice" for="dog"><input type="checkbox" name="checkbox" id="dog" value="Dog" />Dog</label>
-    <label class="choice" for="cat"><input type="checkbox" name="checkbox" id="cat" value="Cat" />Cat</label>
-    <label class="choice" for="other"><input type="checkbox" name="checkbox" id="other" value="Other" />Other</label>
+    <label class="choice"><input type="checkbox" name="checkbox" value="Dog" />Dog</label>
+    <label class="choice"><input type="checkbox" name="checkbox" value="Cat" />Cat</label>
+    <label class="choice"><input type="checkbox" name="checkbox" value="Other" />Other</label>
 
     <label class="form-title" for="select">Age:</label>
     <select name="select" id="select">

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Load in template styles -->
-  <link rel="stylesheet" href="../assets/css/site-style.css">
+  <link rel="stylesheet" href="../assets/css/pattern-style.css">
 
   <!-- Load in Google Font: Lato -->
   <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
@@ -18,43 +18,41 @@
 
   <style>
   	/*Pattern 05 - Off Canvas*/
-	/*Insert styles here*/
-  aside {
-    display: none; 
-    width: 30%;
-    max-width:200px;
-  }
-
-  section, aside {
-    float: left;
-  }
-
-  .open aside{
-    display: block;
-  }
-
-  .open section {
-    width: 70%;
-  }
-
-  @media screen and (min-width: 600px) {
-    #menu-toggle {
+    aside {
       display: none;
+      width: 30%;
+      max-width:200px;
     }
 
-    aside {
+    section, aside {
+      float: left;
+    }
+
+    .open aside{
       display: block;
     }
 
-    section {
+    .open section {
       width: 70%;
     }
-    
-  }
+
+    @media screen and (min-width: 600px) {
+      .menu-toggle {
+        display: none;
+      }
+
+      aside {
+        display: block;
+      }
+
+      section {
+        width: 70%;
+      }
+    }
   </style>
 </head>
 
-<body id="page">
+<body>
   <header>
     <h1>Page Heading (h1)</h1>
   </header>
@@ -69,7 +67,7 @@
   </aside>
 
   <section>
-    <a id="menu-toggle" href="#">Menu</a>
+    <button class="menu-toggle">Menu</button>
     <h2>Heading 2 (h2)</h2>
     <p>Paragraph (p) - Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.</p>
     <p>Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.</p>
@@ -78,30 +76,11 @@
 
   <script>
 
-  var menuTog = document.getElementById("menu-toggle");
-  var page = document.getElementById("page");
+    var menuTog = document.getElementsByClassName("menu-toggle")[0];
 
-
-  function toggleClass(el, classWanted) {
-    var classes = el.className.split(/\s+/);
-    var found;
-
-    for(i = 0; i < classes.length; i++) {
-      if (classes[i] === classWanted) {
-        classes.splice(i, 1);
-        var found = true;      }
+    menuTog.onclick = function() {
+      document.getElementsByTagName('body')[0].classList.toggle('open');
     }
-
-    if (found != true) {
-        classes.push(classWanted);
-    }
-
-    el.className = classes.join(' ');
-  }
-
-  menuTog.onclick = function() {
-   toggleClass(page, "open");
-  }
 
   </script>
 </body>

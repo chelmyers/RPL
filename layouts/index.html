@@ -29,15 +29,15 @@
 		</div>
 	</header>
 
-	<div class="container">		
+	<div class="container">
 		<nav>
-			<ul id="menu">
+			<ul class="menu">
 				<li><a href="../index.html">Welcome</a></li>
 				<li><a href="../navigation/index.html">Navigation</a></li>
 				<li class="active"><a href="index.html">Layouts</a></li>
 				<li><a href="../media/index.html">Media</a></li>
 				<li><a href="../data/index.html">Data &amp; Forms</a></li>
-				
+
 				<!-- Include new section page -->
 			</ul>
 			<p class="copyright">&copy; Chelsea Myers</p>
@@ -70,7 +70,7 @@
 
 				<ul class="list-compare">
 					<li><h4>Cons:</h4></li>
-					<li>Cannot hold a lot of content (not scalable)</li>
+					<li>Cannot hold a lot of content and limited to simple content</li>
 				</ul>
 
 				<h4>Example</h4>
@@ -85,9 +85,12 @@
 
 &lt;section>
   &lt;p>Paragraph (p) - Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.&lt;p>
+
   &lt;h2>Heading 2 (h2)&lt;/h2>
-  &lt;p>Paragraph (p) - Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.&lt;/p>
-  &lt;ul>
+
+	&lt;p>Paragraph (p) - Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.&lt;/p>
+
+	&lt;ul>
     &lt;li>List Item 1. Objectively innovate empowered manufactured products whereas parallel platforms.&lt;/li>
     &lt;li>List Item 2. Proactively envisioned multimedia based expertise and cross-media growth strategies.&lt;/li>
     &lt;li>List Item 3. Completely pursue scalable customer service through sustainable potentialities.&lt;/li>
@@ -102,6 +105,7 @@
 body {
   font-size: 1em;
 }
+
 header, section {
   padding:0.75em;
 }
@@ -133,7 +137,7 @@ header, section {
 
 				<ul class="list-compare">
 					<li><h4>Cons:</h4></li>
-					<li>All content gets stack in one column and the page can get long</li>
+					<li>On devices with less resolution, all content gets stacked in one column and the page can get long</li>
 				</ul>
 
 				<h4>Example</h4>
@@ -145,28 +149,33 @@ header, section {
 &lt;header>
 	&lt;h1>Page Heading (h1)&lt;/h1>
 &lt;/header>
-&lt;section>
+
+&lt;section class="clearfix">
 	&lt;!--Primary Article -->
 	&lt;article class="primary">
-	  &lt;h2>Primary Article (h2)&lt;/h2>
-	  &lt;img src="http://placehold.it/400x300" alt="">
-	  &lt;p>Paragraph (p) - Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.&lt;p>
-	  &lt;p>Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically.primarytain clicks-and-mortar solutions without functional solutions.&lt;/p>
-	  &lt;p>Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service.&lt;/p>
+		&lt;h2>Primary Article (h2)&lt;/h2>
+		&lt;img src="http://placehold.it/400x300" alt="">
+		&lt;p>Paragraph (p) - Collaboratively administrate...&lt;/p>
+		&lt;p>Efficiently unleash cross-media information without...&lt;/p>
+		&lt;p>Completely synergize resource sucking relationships via
+			premier niche markets. Professionally cultivate one-toone...&lt;/
+			p>
 	&lt;/article>
 
 	&lt;!-- Secondary Articles -->
 	&lt;article class="secondary">
-	  &lt;h3>Secondary Article (h3)&lt;/h3>
-	  &lt;p>Paragraph (p) - Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.&lt;/p>
+		&lt;h3>Secondary Article (h3)&lt;/h3>
+		&lt;p>Paragraph (p) - Objectively innovate empowered...&lt;/p>
 	&lt;/article>
+
 	&lt;article class="secondary">
-	  &lt;h3>Secondary Article (h3)&lt;/h3>
-	  &lt;p>Paragraph (p) - Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.&lt;/p>
+		&lt;h3>Secondary Article (h3)&lt;/h3>
+		&lt;p>Paragraph (p) - Objectively innovate empowered...&lt;/p>
 	&lt;/article>
+
 	&lt;article class="secondary">
-	  &lt;h3>Secondary Article (h3)&lt;/h3>
-	  &lt;p>Paragraph (p) - Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.&lt;/p>
+		&lt;h3>Secondary Article (h3)&lt;/h3>
+		&lt;p>Paragraph (p) - Objectively innovate empowered...&lt;/p>
 	&lt;/article>
 &lt;/section>
 </code>
@@ -183,7 +192,7 @@ header, section {
   padding:0.75em;
 }
 
-section {
+section, article {
   overflow: auto;
 }
 
@@ -192,6 +201,7 @@ article {
 }
   article img {
     width: 100%;
+    height: auto;
     max-width: 400px;
     display: block;
     margin: 0 auto;
@@ -209,25 +219,23 @@ h2, h3, h4 {
   border-bottom: 1px solid darkgray;
 }
 
-
 @media screen and (min-width: 600px) {
   body {
     font-size: 0.875em;
   }
+
   header, section {
     padding:1em;
     margin-bottom:1em;
   }
-  article {
-    float: left;
-    margin-bottom: 1em;
-  }
+
   .primary img {
     float:left;
     margin: 0 0.5em 0.5em 0;
   }
   .secondary {
-    width: 33%;
+    width: 33.33%;
+    float: left;
   }
 }
 </code>
@@ -237,25 +245,21 @@ h2, h3, h4 {
 
 
 
-
-
-
-
 			<!-- Column Drop -->
 			<div id="column-drop" class="pattern">
 				<h3>Column Drop<span class="btn"><a href="pat-03-columndrop.html">View Pattern</a></span></h3>
 
-				<p><span class="difficulty">Easy</span> A simple layout that does not change much from small to large screens. Common changes may include font sizes, padding values, and elements displayed on page.</p>
+				<p><span class="difficulty">Easy</span> A mulitple column layout that stacks to one column on smaller devices.</p>
 
 				<ul class="list-compare">
 					<li><h4>Pros:</h4></li>
-					<li>The easiest layout to create that you will come across</li>
-					<li>Less debugging needed across multiple devices</li>
+					<li>Very simple to set up</li>
+					<li>Organizes small and large amounts of content effectively</li>
 				</ul>
 
 				<ul class="list-compare">
 					<li><h4>Cons:</h4></li>
-					<li>Cannot hold a lot of content (not scalable)</li>
+					<li>On devices with less resolution, all content gets stacked in one column and the page can get long</li>
 				</ul>
 
 				<h4>Example</h4>
@@ -267,6 +271,7 @@ h2, h3, h4 {
 &lt;header>
   &lt;h1>Page Heading (h1)&lt;/h1>
 &lt;/header>
+
 &lt;aside>
   &lt;h3>Secondary Nav (h3)&lt;/h3>
   &lt;ul>
@@ -294,94 +299,95 @@ h2, h3, h4 {
 <pre>
 <code class="language-css">
 aside, section, header {
-  padding: 0.75em;
+	padding: 0.75em;
 }
 
 @media screen and (min-width: 600px) {
-  aside {
-    width: 25%;
-  }
+	aside {
+		width: 25%;
+	}
 
-  section {
-    width: 50%;
-  }
+	section {
+		width: 50%;
+	}
 
-  aside, section {
-    float: left;
-  }
+	aside, section {
+		float: left;
+	}
 }
 </code>
 </pre>
 		</div><!--end pattern-->
-		
 
 
 
 
 		<!-- Layout Shifter -->
-			<div id="layout-shift" class="pattern">
-				<h3>Layout Shifter<span class="btn"><a href="pat-04-layoutshift.html">View Pattern</a></span></h3>
+		<div id="layout-shift" class="pattern">
+			<h3>Layout Shifter<span class="btn"><a href="pat-04-layoutshift.html">View Pattern</a></span></h3>
 
-				<p><span class="difficulty">Medium</span> Instead of only have one media queries, layout shifter pattern tend to have more. This pattern becomes more complicated but also allows greater control over how the design looks at different sizes.</p>
+			<p><span class="difficulty">Medium</span> Instead of only having one media query, the layout shifter pattern tends to have more. This pattern becomes more complicated but also allows greater control over how the design looks at different sizes. Basically, the layout changes more dramatically at different breakpoints.</p>
 
-				<ul class="list-compare">
-					<li><h4>Pros:</h4></li>
-					<li>Increased control of appearance on different screen sizes</li>
-					<li>Creates more scalable designs</li>
-				</ul>
+			<ul class="list-compare">
+				<li><h4>Pros:</h4></li>
+				<li>Increased control of appearance on different screen sizes</li>
+				<li>Creates more scalable designs</li>
+			</ul>
 
-				<ul class="list-compare">
-					<li><h4>Cons:</h4></li>
-					<li>More complicated styles needed</li>
-				</ul>
+			<ul class="list-compare">
+				<li><h4>Cons:</h4></li>
+				<li>More complicated styles needed</li>
+			</ul>
 
-				<h4>Example</h4>
-				<iframe src="pat-04-layoutshift.html" frameborder="0" height="600"></iframe>
+			<h4>Example</h4>
+			<iframe src="pat-04-layoutshift.html" frameborder="0" height="600"></iframe>
 
-				<h4>HTML</h4>
+			<h4>HTML</h4>
 <pre>
 <code class="language-markup">
 &lt;header>
-  &lt;h1>Page Heading (h1)&lt;/h1>
+	&lt;h1>Page Heading (h1)&lt;/h1>
 &lt;/header>
 
 &lt;aside>
-  &lt;h3>Secondary Nav (h3)&lt;/h3>
-  &lt;ul>
-    &lt;li>&lt;a href="#">List Item 1&lt;/a>&lt;/li>
-    &lt;li>&lt;a href="#">List Item 2&lt;/a>&lt;/li>
-    &lt;li>&lt;a href="#">List Item 3&lt;/a>&lt;/li>
-  &lt;/ul>
+	&lt;h3>Secondary Nav (h3)&lt;/h3>
+	&lt;ul>
+		&lt;li>&lt;a href="#">List Item 1&lt;/a>&lt;/li>
+		&lt;li>&lt;a href="#">List Item 2&lt;/a>&lt;/li>
+		&lt;li>&lt;a href="#">List Item 3&lt;/a>&lt;/li>
+	&lt;/ul>
 &lt;/aside>
+
 &lt;section>
-  &lt;h2>Heading 2 (h2)&lt;/h2>
-  &lt;p>Paragraph (p) - Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.&lt;/p>
-  &lt;p>Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.&lt;/p>
-  &lt;p>Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service..&lt;/p>
+	&lt;h2>Heading 2 (h2)&lt;/h2>
+	&lt;p>Paragraph (p) - Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.&lt;/p>
+	&lt;p>Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.&lt;/p>
+	&lt;p>Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service..&lt;/p>
 &lt;/section>
+
 &lt;article class="secondary">
-  &lt;h3>Secondary Article (h3)&lt;/h3>
-  &lt;p>Paragraph (p) - Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.&lt;/p>
+	&lt;h3>Secondary Article (h3)&lt;/h3>
+	&lt;p>Paragraph (p) - Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.&lt;/p>
 &lt;/article>
 &lt;article class="secondary">
-  &lt;h3>Secondary Article (h3)&lt;/h3>
-  &lt;p>Paragraph (p) - Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.&lt;/p>
+	&lt;h3>Secondary Article (h3)&lt;/h3>
+	&lt;p>Paragraph (p) - Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.&lt;/p>
 &lt;/article>
 &lt;article class="secondary">
-  &lt;h3>Secondary Article (h3)&lt;/h3>
-  &lt;p>Paragraph (p) - Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.&lt;/p>
+	&lt;h3>Secondary Article (h3)&lt;/h3>
+	&lt;p>Paragraph (p) - Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.&lt;/p>
 &lt;/article>
 &lt;article class="secondary">
-  &lt;h3>Secondary Article (h3)&lt;/h3>
-  &lt;p>Paragraph (p) - Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.&lt;/p>
+	&lt;h3>Secondary Article (h3)&lt;/h3>
+	&lt;p>Paragraph (p) - Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.&lt;/p>
 &lt;/article>
 &lt;article class="secondary">
-  &lt;h3>Secondary Article (h3)&lt;/h3>
-  &lt;p>Paragraph (p) - Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.&lt;/p>
+	&lt;h3>Secondary Article (h3)&lt;/h3>
+	&lt;p>Paragraph (p) - Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.&lt;/p>
 &lt;/article>
 &lt;article class="secondary">
-  &lt;h3>Secondary Article (h3)&lt;/h3>
-  &lt;p>Paragraph (p) - Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.&lt;/p>
+	&lt;h3>Secondary Article (h3)&lt;/h3>
+	&lt;p>Paragraph (p) - Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.&lt;/p>
 &lt;/article>
 </code>
 </pre>
@@ -390,31 +396,31 @@ aside, section, header {
 <pre>
 <code class="language-css">
 .secondary h3 {
-  border-bottom: 1px solid darkgray;
+	border-bottom: 1px solid darkgray;
 }
 
 @media screen and (min-width:600px) {
-  aside {
-    width: 25%;
-  }
+	aside {
+		width: 25%;
+	}
 
-  section {
-    width: 75%;
-  }
+	section {
+		width: 75%;
+	}
 
-  .secondary {
-    width: 50%;
-  }
+	.secondary {
+		width: 50%;
+	}
 
-  aside, section, .secondary {
-    float: left;
-  }
+	aside, section, .secondary {
+		float: left;
+	}
 }
 
 @media screen and (min-width:800px) {
-  .secondary {
-    width: 33%;
-  }
+	.secondary {
+		width: 33.33%;
+	}
 }
 </code>
 </pre>
@@ -434,7 +440,7 @@ aside, section, header {
 
 				<ul class="list-compare">
 					<li><h4>Cons:</h4></li>
-					<li>More complex to implement</li>
+					<li>More complex to implement and harder to get right across all devices</li>
 				</ul>
 
 				<h4>Example</h4>
@@ -443,28 +449,28 @@ aside, section, header {
 				<h4>HTML</h4>
 <pre>
 <code class="language-markup">
-&lt;body id="page">
-  &lt;header>
-    &lt;h1>Page Heading (h1)&lt;/h1>
-  &lt;/header>
+&lt;body>
+	&lt;header>
+		&lt;h1>Page Heading (h1)&lt;/h1>
+	&lt;/header>
 
-  &lt;aside>
-    &lt;h3>Secondary Nav (h3)&lt;/h3>
-    &lt;ul>
-      &lt;li>&lt;a href="#">List Item 1&lt;/a>&lt;/li>
-      &lt;li>&lt;a href="#">List Item 2&lt;/a>&lt;/li>
-      &lt;li>&lt;a href="#">List Item 3&lt;/a>&lt;/li>
-    &lt;/ul>
-  &lt;/aside>
+	&lt;aside>
+		&lt;h3>Secondary Nav (h3)&lt;/h3>
+		&lt;ul>
+			&lt;li>&lt;a href="#">List Item 1&lt;/a>&lt;/li>
+			&lt;li>&lt;a href="#">List Item 2&lt;/a>&lt;/li>
+			&lt;li>&lt;a href="#">List Item 3&lt;/a>&lt;/li>
+		&lt;/ul>
+	&lt;/aside>
 
-  &lt;section>
-    &lt;a id="menu-toggle" href="#">Menu&lt;/a>
-    &lt;h2>Heading 2 (h2)&lt;/h2>
-    &lt;p>Paragraph (p) - Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.&lt;/p>
-    &lt;p>Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.&lt;/p>
-    &lt;p>Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service..&lt;/p>
-  &lt;/section>
- &lt;/body>
+	&lt;section>
+		&lt;button class="menu-toggle">Menu&lt;/button>
+		&lt;h2>Heading 2 (h2)&lt;/h2>
+		&lt;p>Paragraph (p) - Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.&lt;/p>
+		&lt;p>Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.&lt;/p>
+		&lt;p>Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service..&lt;/p>
+	&lt;/section>
+&lt;/body>
 </code>
 </pre>
 
@@ -472,7 +478,7 @@ aside, section, header {
 <pre>
 <code class="language-css">
 aside {
-	display: none; 
+	display: none;
 	width: 30%;
 	max-width:200px;
 }
@@ -490,7 +496,7 @@ section, aside {
 }
 
 @media screen and (min-width: 600px) {
-	#menu-toggle {
+	.menu-toggle {
 		display: none;
 	}
 
@@ -508,34 +514,15 @@ section, aside {
 <h4>JS</h4>
 <pre>
 <code class="language-javascript">
-var menuTog = document.getElementById("menu-toggle");
-var page = document.getElementById("page");
-
-
-function toggleClass(el, classWanted) {
-  var classes = el.className.split(/\s+/);
-  var found;
-
-  for(i = 0; i < classes.length; i++) {
-    if (classes[i] === classWanted) {
-      classes.splice(i, 1);
-      var found = true;      }
-  }
-
-  if (found != true) {
-      classes.push(classWanted);
-  }
-
-  el.className = classes.join(' ');
-}
+var menuTog = document.getElementsByClassName("menu-toggle")[0];
 
 menuTog.onclick = function() {
- toggleClass(page, "open");
+	document.getElementsByTagName('body')[0].classList.toggle('open');
 }
 </code>
 </pre>
 			</div><!--end pattern-->
-		
+
 		</section>
 
 
